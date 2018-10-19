@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>StudebtHome</title>
+	<title>Index</title>
 	<!-- UIkit CSS -->
 	<link rel="stylesheet" href="css/uikit.min.css" />
 	<!-- UIkit JS -->
@@ -28,14 +28,20 @@
 	<div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
 		<div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
+				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #c7c9fb;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs flex-column flex-lg-column">
 							<li class="nav-item">
-								<a href="./adminHome.html" class="nav-link active"><i class="fe fe-home"></i> Apply for a Leave</a>
+								<a href="./adminHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="adduser.html" class="nav-link"><i class="fe fe-plus"></i> Edit Profile</a>
+								<a href="adduser.html" class="nav-link active"><i class="fe fe-plus"></i> Add User</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
@@ -48,11 +54,11 @@
 				</div>
 				<div class="col-sm-8 col-md-9 col-lg-10" style="margin: 0px; padding: 0px; width: 100%;">
 					<form class="uk-card-default uk-center" style="padding: 10px; width: 100%; margin: 0px;" action="" method="post">
-						<div class="col-sm">
+						<div class="col-12">
 							<div class="card-header" align="center"><center>Apply for Leave</center></div>
 							<div class="card-body">
 								<div class="row">
-									<div class="col-md-12 col-lg-12">
+									<div class="col-md-6 col-lg-6">
 										<div class="form-group">
 											<label class="form-label">Leave from</label>
 											<select class="form-control custom-select" id="roleSelect">
@@ -76,9 +82,9 @@
 										</div>
 										<div class="form-group">
 											<label class="form-label">Leave Duration</label>
-											<div class="row" style="padding: 0px; margin: 0px;">
-											<div class="col-sm-1" style="padding: 5px; text-align: center; margin: 0px;">
-												<label class="form-label" style="padding: 5px; text-align: left; margin: 0px;">From</label>
+											<div class="row">
+											<div  style="padding: 5px; text-align: center; margin: 0px;">
+												<label class="form-label" style="padding: 5px; text-align: center; margin: 0px;">From</label>
 											</div>
 											
 											<div class="col-sm-5">
@@ -262,9 +268,9 @@
 						                        </div>
 											</div>
 										</div>
-										<div class="row" style="padding: 0px; margin: 0px;">	
+										<div class="row">	
 											<div class="col-sm-1" style="padding: 5px; text-align: center; margin: 0px;">
-												<label class="form-label" style="padding: 5px; text-align: left; margin: 0px;">To</label>
+												<label class="form-label" style="padding: 5px; text-align: center; margin: 0px;">To</label>
 											</div>
 					<div class="col-sm-5">
 						<div class="row gutters-xs">
@@ -448,14 +454,15 @@
 					</div>
 				</div>
 			</div>
-										<div class="form-group col-lg-4">
+									<div class="row">	
+										<div class="form-group col-lg-12">
 					                        <div class="form-label">Upload the Proof Document</div>
 					                        <div class="custom-file">
 					                          <input type="file" class="custom-file-input" name="example-file-input-custom">
 					                          <label class="custom-file-label">Choose file</label>
 					                        </div>
 					                      </div>
-										
+										</div>
 									</div>
 								</div>
 								<div class="card-footer col-lg-2">
