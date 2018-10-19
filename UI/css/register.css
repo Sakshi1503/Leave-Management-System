@@ -1,0 +1,29 @@
+.page {
+	height: auto;
+	background-color: #edf2fa !important;
+}
+
+.header{
+	background-color: black !important;
+}
+
+.uk-heading-divider{
+	margin: 0px !important; 
+	padding: 0px !important; 
+	border-color: black !important;
+}
+
+.uk-heading-line{
+	margin: 10px !important; 
+	padding: 4px !important; 
+	color: white !important; 
+	font-weight: lighter !important;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.selectgroup-button {
+  padding: 0.375rem 1rem !important;
+}
