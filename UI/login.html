@@ -71,7 +71,7 @@
 	$(document).ready(function() {
 		$('#roleSelect').change(function() {
 			var link = "adminHome.html".replace('admin',($(this).val()).toLowerCase());
-			$('#submitLink').attr("href",link);
+			$('#submitLink').attr("formaction",link);
 		});
 	});
 	</script>
