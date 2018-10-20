@@ -11810,8 +11810,8 @@ a.icon:hover {
 }
 
 .nav-tabs .nav-link.active {
-  border-color: blue;
-  color: blue;
+  border-color: #0b46b1;
+  color: #0b46b1;
   background: transparent;
 }
 
