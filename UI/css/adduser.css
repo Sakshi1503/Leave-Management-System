@@ -4,24 +4,24 @@
 	background-color: #edf2fa;
 }
 
-.header{
+.header {
 	background-color: black !important;
 }
 
-.uk-heading-divider{
-	margin: 0px !important; 
-	padding: 0px !important; 
+.uk-heading-divider {
+	margin: 0px !important;
+	padding: 0px !important;
 	border-color: black !important;
 }
 
-.uk-heading-line{
-	margin: 10px !important; 
-	padding: 10px !important; 
-	color: white !important; 
+.uk-heading-line {
+	margin: 10px !important;
+	padding: 10px !important;
+	color: white !important;
 	font-weight: lighter !important;
 }
 
-ul{
+ul {
 	padding-left: 0px !important;
 }
 
