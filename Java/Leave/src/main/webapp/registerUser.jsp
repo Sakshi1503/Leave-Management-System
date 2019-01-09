@@ -21,7 +21,7 @@
 </head>
 
 <body style="height: -webkit-fill-available;">
-	<a href="login.html">
+	<a href="login.jsp">
 		<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 			<h1 class="uk-heading-divider"></h1>
 			<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -50,13 +50,13 @@
 								</div>
 								<div class="form-footer">
 									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-									 formaction="registerHoD.html">
-										<!--< a href="registerHoD.html" id="submitLink" style="color: white;">Submit</a> -->Submit</button>
+									 formaction="registerHoD.jsp">
+										<!--< a href="registerHoD.jsp" id="submitLink" style="color: white;">Submit</a> -->Submit</button>
 								</div>
 							</div>
 						</form>
 						<div class="text-center text-muted">
-							Already Registered? <a href="./index.html">Login</a>
+							Already Registered? <a href="./index.jsp">Login</a>
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#roleSelect').change(function () {
-				var link = "registerHoD.html".replace('HoD', $(this).val());
+				var link = "registerHoD.jsp".replace('HoD', $(this).val());
 				$('#submitLink').attr("formaction", link);
 			});
 		});

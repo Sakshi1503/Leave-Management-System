@@ -58,15 +58,15 @@
 								</div>
 
 								<div class="form-footer">
-									<!-- <button type="submit" class="btn btn-primary btn-block"><a href="adminHome.html" id="submitLink" style="color: white;">Sign in</a></button> -->
+									<!-- <button type="submit" class="btn btn-primary btn-block"><a href="adminHome.jsp" id="submitLink" style="color: white;">Sign in</a></button> -->
 									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-									 formaction="adminHome.html" style="color: white;">
-										<!--< a href="registerHoD.html" id="submitLink" style="color: white;">Submit</a> -->Sign in</button>
+									 formaction="adminHome.jsp" style="color: white;">
+										<!--< a href="registerHoD.jsp" id="submitLink" style="color: white;">Submit</a> -->Sign in</button>
 								</div>
 							</div>
 						</form>
 						<div class="text-center text-muted">
-							Don't have account yet? <a href="./registerUser.html">Sign up</a>
+							Don't have account yet? <a href="./registerUser.jsp">Sign up</a>
 						</div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#roleSelect').change(function () {
-				var link = "adminHome.html".replace('admin', ($(this).val()).toLowerCase());
+				var link = "adminHome.jsp".replace('admin', ($(this).val()).toLowerCase());
 				$('#submitLink').attr("formaction", link);
 			});
 		});

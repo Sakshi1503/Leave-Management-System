@@ -24,7 +24,7 @@
 
 <body style="height: -webkit-fill-available;">
 
-	<a href="login.html">
+	<a href="login.jsp">
 		<div class="header" style="width: 100%; z-index: 980;" uk-sticky="" uk-sticky="bottom: #offset">
 			<h1 class="uk-heading-divider"></h1>
 			<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -38,28 +38,28 @@
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs flex-column flex-lg-column">
 							<li class="nav-item">
-								<a href="./facultyHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+								<a href="./facultyHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyApplyLeave.html" class="nav-link active"><i class="fe fe-plus"></i> Apply for Leave</a>
+								<a href="facultyApplyLeave.jsp" class="nav-link active"><i class="fe fe-plus"></i> Apply for Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyApproveStudent.html" class="nav-link"><i class="fe fe-check-circle"></i> Approve Student</a>
+								<a href="facultyApproveStudent.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve Student</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyRemoveStudent.html" class="nav-link"><i uk-icon="icon: close"></i> Remove Student</a>
+								<a href="facultyRemoveStudent.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove Student</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyEditProfile.html" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="facultyEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyChangePassword.html" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="facultyChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -478,9 +478,9 @@
 												</div>
 
 												<div class="form-footer">
-													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.html" style="color: white;">Submit</a></button> -->
+													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="index.html">Submit</button>
+													 formaction="index.jsp">Submit</button>
 												</div>
 											</div>
 										</form>

@@ -32,29 +32,29 @@
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs flex-column flex-lg-column">
 							<li class="nav-item">
-								<a href="./hodHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+								<a href="./hodHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodApplyLeave.html" class="nav-link"><i class="fe fe-plus"></i>Apply For Leave</a>
+								<a href="hodApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i>Apply For Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodApproveUsers.html" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
+								<a href="hodApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodRemoveUsers.html" class="nav-link"><i uk-icon="icon: close"></i> Remove User</a>
+								<a href="hodRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove User</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodEditProfile.html" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="hodEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="hodChangePassword.html" class="nav-link active"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="hodChangePassword.jsp" class="nav-link active"><i class="fe fe-lock"></i> Change Password</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -84,7 +84,7 @@
 												 onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-footer">
-												<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.html" style="color: white;">Submit</a></button>
+												<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button>
 											</div>
 										</div>
 									</form>
