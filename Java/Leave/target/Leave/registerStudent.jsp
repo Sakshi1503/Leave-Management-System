@@ -22,7 +22,7 @@
 
 <body style="height: -webkit-fill-available;">
 
-	<a href="login.html">
+	<a href="login.jsp">
 		<div class="header" style="width: 100%; z-index: 980;" uk-sticky="" uk-sticky="bottom: #offset">
 			<h1 class="uk-heading-divider"></h1>
 			<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -153,9 +153,9 @@
 								</div>
 
 								<div class="form-footer">
-									<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.html" style="color: white;">Submit</a></button> -->
+									<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-									 formaction="index.html">Submit</button>
+									 formaction="index.jsp">Submit</button>
 								</div>
 							</div>
 						</form>

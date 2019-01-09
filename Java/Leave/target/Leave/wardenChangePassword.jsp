@@ -32,35 +32,35 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs flex-column flex-lg-column">
                             <li class="nav-item">
-                                <a href="./wardenHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                                <a href="./wardenHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenApplyLeave.html" class="nav-link"><i class="fe fe-plus"></i>Apply For
+                                <a href="wardenApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i>Apply For
                                     Leave</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenApproveStudent.html" class="nav-link"><i class="fe fe-check-circle"></i>
+                                <a href="wardenApproveStudent.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
                                     Approve User</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenRemoveUsers.html" class="nav-link"><i uk-icon="icon: close"></i> Remove
+                                <a href="wardenRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
                                     User</a>
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenEditProfile.html" class="nav-link"><i class="fe fe-user"></i> Edit
+                                <a href="wardenEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
                                     Profile</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="wardenChangePassword.html" class="nav-link active"><i class="fe fe-lock"></i>
+                                <a href="wardenChangePassword.jsp" class="nav-link active"><i class="fe fe-lock"></i>
                                     Change
                                     Password</a>
                             </li>
                             <li class="nav-item">
-                                <a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+                                <a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="form-footer">
                                                 <button type="submit" class="btn btn-primary btn-block" id="submit"
-                                                    disabled=""><a href="login.html" style="color: white;">Submit</a></button>
+                                                    disabled=""><a href="login.jsp" style="color: white;">Submit</a></button>
                                             </div>
                                         </div>
                                     </form>

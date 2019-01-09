@@ -34,10 +34,10 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs flex-column flex-lg-column">
                             <li class="nav-item">
-                                <a href="./adminHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                                <a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="adduser.html" class="nav-link active"><i class="fe fe-plus"></i> Add User</a>
+                                <a href="adduser.jsp" class="nav-link active"><i class="fe fe-plus"></i> Add User</a>
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
@@ -52,7 +52,7 @@
                                 <a href="" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
                             </li>
                             <li class="nav-item">
-                                <a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+                                <a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
                             </li>
                         </ul>
                     </div>

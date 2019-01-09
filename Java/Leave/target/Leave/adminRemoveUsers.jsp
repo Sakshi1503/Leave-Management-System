@@ -32,29 +32,29 @@
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs flex-column flex-lg-column">
 							<li class="nav-item">
-								<a href="./adminHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminApproveUsers.html" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
+								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminRemoveUsers.html" class="nav-link active"><i uk-icon="icon: close"></i> Remove User</a>
+								<a href="adminRemoveUsers.jsp" class="nav-link active"><i uk-icon="icon: close"></i> Remove User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminAddAdmin.html" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
+								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminEditProfile.html" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="adminChangePassword.html" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -90,7 +90,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -111,7 +111,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -132,29 +132,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -176,7 +154,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -198,7 +176,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -220,7 +198,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -242,7 +220,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -264,7 +242,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -286,7 +264,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -308,7 +286,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -330,7 +308,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -352,7 +330,29 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.html" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
+																</div>
+															</li>
+														</ul>
+													</td>
+
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>HoD</td>
+													<td>Prof. A. A. Patel</td>
+													<td>8888888888</td>
+													<td>aapatel@email.com</td>
+													<td>Information Technology</td>
+													<td style="padding: 0px; margin: 1px;">
+														<ul class="uk-iconnav">
+															<li>
+																<div uk-lightbox>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>

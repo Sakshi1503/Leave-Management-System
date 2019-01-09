@@ -32,33 +32,33 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs flex-column flex-lg-column">
                             <li class="nav-item">
-                                <a href="./wardenHome.html" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                                <a href="./wardenHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenApplyLeave.html" class="nav-link"><i class="fe fe-plus"></i> Apply for
+                                <a href="wardenApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i> Apply for
                                     Leave</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenApproveStudent.html" class="nav-link"><i class="fe fe-check-circle"></i>
+                                <a href="wardenApproveStudent.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
                                     Approve Student</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenRemoveStudent.html" class="nav-link active"><i uk-icon="icon: close"></i>
+                                <a href="wardenRemoveStudent.jsp" class="nav-link active"><i uk-icon="icon: close"></i>
                                     Remove Student</a>
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenEditProfile.html" class="nav-link"><i class="fe fe-user"></i> Edit
+                                <a href="wardenEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
                                     Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a href="wardenChangePassword.html" class="nav-link"><i class="fe fe-lock"></i> Change
+                                <a href="wardenChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
                                     Password</a>
                             </li>
                             <li class="nav-item">
-                                <a href="login.html" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+                                <a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -96,7 +96,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -118,7 +118,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -140,30 +140,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-
-                                                    <td style="padding: 0px;">
-                                                        <ul class="uk-iconnav">
-                                                            <li><a href="#" uk-icon="icon: close"></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Student</td>
-                                                    <td>A. A. Patel</td>
-                                                    <td>160170116100</td>
-                                                    <td>8888888888</td>
-                                                    <td>aapatel@email.com</td>
-                                                    <td>Information Technology</td>
-                                                    <td style="padding: 0px; margin: 1px;">
-                                                        <ul class="uk-iconnav">
-                                                            <li>
-                                                                <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -186,7 +163,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -209,7 +186,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -232,7 +209,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -255,7 +232,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -278,7 +255,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -301,7 +278,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -324,7 +301,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -347,7 +324,7 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -370,7 +347,30 @@
                                                         <ul class="uk-iconnav">
                                                             <li>
                                                                 <div uk-lightbox>
-                                                                    <a href="viewButtonStudent.html" uk-icon="icon: push"></a>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+
+                                                    <td style="padding: 0px;">
+                                                        <ul class="uk-iconnav">
+                                                            <li><a href="#" uk-icon="icon: close"></a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Student</td>
+                                                    <td>A. A. Patel</td>
+                                                    <td>160170116100</td>
+                                                    <td>8888888888</td>
+                                                    <td>aapatel@email.com</td>
+                                                    <td>Information Technology</td>
+                                                    <td style="padding: 0px; margin: 1px;">
+                                                        <ul class="uk-iconnav">
+                                                            <li>
+                                                                <div uk-lightbox>
+                                                                    <a href="viewButtonStudent.jsp" uk-icon="icon: push"></a>
                                                                 </div>
                                                             </li>
                                                         </ul>
