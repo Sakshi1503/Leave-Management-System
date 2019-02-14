@@ -1,5 +1,5 @@
 <title>Approve Student</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerWarden.jsp" />
 
 
 <body style="height: 100vh;">

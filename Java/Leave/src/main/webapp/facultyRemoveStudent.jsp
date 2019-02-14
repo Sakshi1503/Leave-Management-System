@@ -1,5 +1,5 @@
 <title>Remove Student</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerFaculty.jsp" />
 
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">

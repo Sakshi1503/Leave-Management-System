@@ -1,11 +1,9 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Index</title>
-    <!-- UIkit CSS -->
+        <!-- UIkit CSS -->
     <link rel="stylesheet" href="css/uikit.min.css" />
     <!-- UIkit JS -->
     <script src="js/uikit.min.js"></script>
@@ -13,8 +11,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <link href="./css/dashboard.css" rel="stylesheet" />
-    <link href="./css/index.css" rel="stylesheet" />
-
+    <link href="./css/register.css" rel="stylesheet" />
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

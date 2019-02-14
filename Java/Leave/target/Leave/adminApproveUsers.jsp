@@ -1,6 +1,6 @@
 
 <title>Approve Users</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerAdmin.jsp" />
 
 <%@page import="Connection.Connect"%>
 <%@page import="java.sql.ResultSet"%>

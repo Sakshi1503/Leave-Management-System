@@ -1,5 +1,5 @@
 <title>ViewButtonFaculty</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerStudent.jsp" />
 
 
 

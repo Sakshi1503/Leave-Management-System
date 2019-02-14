@@ -1,5 +1,5 @@
 <title>Register Warden</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerWarden.jsp" />
 
 
 <body style="height: -webkit-fill-available;">

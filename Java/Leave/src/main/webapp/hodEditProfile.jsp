@@ -1,5 +1,5 @@
 <title>Edit Profile</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerHod.jsp" />
 
 
 <body style="height: 91vh;">

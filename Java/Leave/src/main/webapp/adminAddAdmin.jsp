@@ -1,6 +1,6 @@
 
 <title>Add Admin</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerAdmin.jsp" />
 
 
 <body style="height: 91vh;">

@@ -1,5 +1,5 @@
 <title>Register Faculty</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerFaculty.jsp" />
 
 <body style="height: -webkit-fill-available;">
 

@@ -1,5 +1,5 @@
 <title>Edit Profile</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerStudent.jsp" />
 
 <body style="height: -webkit-fill-available;">
 

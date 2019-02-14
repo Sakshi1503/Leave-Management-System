@@ -1,5 +1,5 @@
 <title>Register HOD</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerHod.jsp" />
 
 <body style="height: -webkit-fill-available;">
 

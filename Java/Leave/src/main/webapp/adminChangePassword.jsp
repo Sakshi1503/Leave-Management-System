@@ -1,6 +1,6 @@
 
 <title>Change Password</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerAdmin.jsp" />
 
 
 <body style="height: -webkit-fill-available;">

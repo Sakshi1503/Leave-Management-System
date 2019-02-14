@@ -1,5 +1,5 @@
 <title>Admin Home</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="headerAdmin.jsp" />
 
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
