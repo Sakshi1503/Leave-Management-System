@@ -13,7 +13,7 @@
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
 				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
 					<div class="col-lg order-lg-first">
-						<ul class="nav nav-tabs flex-column flex-lg-column">
+						<ul class="nav nav-tabs">
 							<li class="nav-item">
 								<a href="./hodHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
@@ -74,7 +74,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="cAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -100,7 +100,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -126,7 +126,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -152,7 +152,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -178,7 +178,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -204,7 +204,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -230,7 +230,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -256,7 +256,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -282,7 +282,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -308,7 +308,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -334,7 +334,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -360,7 +360,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
@@ -386,7 +386,7 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButton.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdminAdmin.jsp" uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>

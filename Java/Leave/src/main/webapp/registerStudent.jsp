@@ -184,3 +184,5 @@
 </body>
 
 </html>
+
+<!--insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch) values('asad','asd',1,'aad','aaaa','aaaa','aaaa','aaaa','aaa','a','a','a',17);-->
