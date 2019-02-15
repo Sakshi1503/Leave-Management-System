@@ -144,7 +144,6 @@
 										<label class="form-label">Confirm Password</label>
 										<input type="password" name="studentPasswordCheck" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
 									</div>
-	
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 										<button type="submit" name="studentRegisterSubmit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
