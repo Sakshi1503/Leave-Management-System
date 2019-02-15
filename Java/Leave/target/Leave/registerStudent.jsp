@@ -1,12 +1,12 @@
+
+<%@page import="Connection.Connect"%>
+<%@page import="java.lang.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <title>Register Student</title>
 <jsp:include page="headerStudent.jsp" />
-<%@page import="Connection.Connect"%>
-<%@page import="java.sql.ResultSet"%>
-
 <body style="height: -webkit-fill-available;">
 
-	<body style="height: -webkit-fill-available;">
-	
 		<a href="login.jsp">
 			<div class="header" style="width: 100%; z-index: 980;" uk-sticky="" uk-sticky="bottom: #offset">
 				<h1 class="uk-heading-divider"></h1>
@@ -19,7 +19,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col col-login mx-auto">
-							<form class="card" action="" method="post">
+							<form class="card" action="login.jsp" method="post">
 								<div class="card-body p-6">
 									<div class="card-title">
 										<center>Register</center>
@@ -144,13 +144,41 @@
 										<label class="form-label">Confirm Password</label>
 										<input type="password" name="studentPasswordCheck" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
 									</div>
-	
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-										<button type="submit" name="studentRegisterSubmit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-										 formaction="index.jsp">Submit</button>
+										<button type="submit" value="Submit" name="studentRegisterSubmit" class="btn btn-primary btn-block"  >Submit</button>
+										<%										
+															try {
+																					Connect con=new Connect();
+																					if(request.getParameter("studentRegisterSubmit")!=null)
+																					{
+																						if(con.CheckData("select * from student_master where studentEno="+request.getParameter("studentEno")+""))
+																						{
+																							out.println("<script>alert('Record already exists......');</script>");
+																						}
+																						else
+																						{
+																							String str=request.getParameter("studentEno");
+																							String branchstr=str.substring(7,8);
+																							int branch=Integer.parseInt(branchstr);
+																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"');"))
+																							{
+																								out.println("<script>alert('Record inserted......');</script>");
+																							}
+																							else
+																							{
+																								out.println("<script>alert('Record was not inserted......');</script>");
+																							}
+																						}
+																					}
+																	}
+																	catch(Exception e){
+																		out.println(e);
+																	}
+%>
 									</div>
 								</div>
+
 							</form>
 						</div>
 					</div>
@@ -198,18 +226,3 @@
 	</html>
 
 <!--insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch) values('asad','asd',1,'aad','aaaa','aaaa','aaaa','aaaa','aaa','a','a','a',17);-->
-<!--			<%
-								            Connect con=new Connect();
-								            if(request.getParameter("studentRegisterSubmit")!=null)
-								            {
-								                if(con.CheckData("select * from student_master where studentEno="+request.getParameter("studentEno")+""))
-								                {
-								                    out.println("<script>alert('Record already exists......');</script>");
-								                }
-								                else
-								                {
-								                       con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentHosteller")+")");
-								                }
-								            }
-										%>
-					-->

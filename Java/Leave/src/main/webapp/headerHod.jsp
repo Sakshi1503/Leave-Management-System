@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<link href="./css/dashboard.css" rel="stylesheet" />
-	<link href="./css/adminHome.css" rel="stylesheet" />
-	<script src="js/uikit-icons.min.js"></script>
+	<link href="./css/register.css" rel="stylesheet" />
+
 	<!-- <link rel="stylesheet" type="feather-icons" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.js"> -->
 </head>
