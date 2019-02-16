@@ -59,7 +59,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input type="text" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Gender</label>
@@ -76,25 +76,24 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
+													<input type="text" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
 													 placeholder="Enter Mobile No">
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+													<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 													 placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
+													<input type="text" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
 													 placeholder="Enter Current Position">
 												</div>
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="adminHome.jsp">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="Submit" name="addAdminSubmit">Submit</button>
 												</div>
 											</div>
 										</form>
