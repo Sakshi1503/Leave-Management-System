@@ -83,7 +83,7 @@
 												<div class="form-group">
 													<label class="form-label">Email</label>
 													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-													 placeholder="Enter Name">
+													 placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
@@ -94,7 +94,7 @@
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="index.jsp">Submit</button>
+													 formaction="adminHome.jsp">Submit</button>
 												</div>
 											</div>
 										</form>

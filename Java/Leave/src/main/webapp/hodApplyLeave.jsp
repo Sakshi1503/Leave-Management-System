@@ -57,11 +57,11 @@
 												<div class="form-group">
 													<label class="form-label">Type of Leave</label>
 													<select class="form-control custom-select" id="roleSelect">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
+														<option value="CasualLeave">Casual Leave</option>
+														<option value="SpecialCasualLeave">Special Casual Leave</option>
+														<option value="HalfPayLeave">Half Pay Leave</option>
+														<option value="EarnedLeave">Earned Leave</option>
+														<option value="MedicalLeave">Medical Leave</option>
 													</select>
 												</div>
 												<div class="form-group">
@@ -446,6 +446,14 @@
 														<input type="file" class="custom-file-input" name="example-file-input-custom">
 														<label class="custom-file-label">Choose file</label>
 													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="form-label">Leave Application to:</label>
+													<select class="form-control custom-select" id="applyTo">
+														<option value="">Mr. A. A. Patel</option>
+														<option value="">Mr. A. B. Patel</option>
+													</select>
 												</div>
 
 												<div class="form-footer">
