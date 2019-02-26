@@ -88,7 +88,7 @@
 				Connect con = new Connect();
 				if (request.getParameter("registerHodSubmit") != null) {
 					if (con.CheckData(
-							"select * from hodEmail where hodEmail='" + request.getParameter("hodEmail") + "'")) {
+							"select * from hod_master where hodEmail='" + request.getParameter("hodEmail") + "'")) {
 						out.println("<script>alert('Record already exists......');</script>");
 					}
 					
