@@ -24,7 +24,7 @@ public class Connect {
 
 	public boolean Ins_Upd_Del(String str) {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/leave?user=root&password=");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/leave?user=root&password=root");
 			Statement st = con.createStatement();
 			st.executeUpdate(str);
 			st.close();
@@ -39,7 +39,7 @@ public class Connect {
 	public ResultSet SelectData(String str) {
 		ResultSet rs = null;
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/leave?user=root&password=");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/leave?user=root&password=root");
 			Statement st = con.createStatement();
 			rs = st.executeQuery(str);
 		} catch (SQLException ex) {
