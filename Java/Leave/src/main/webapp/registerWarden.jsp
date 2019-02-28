@@ -29,17 +29,17 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+									<input type="text" class="form-control" id="name" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="50" class="selectgroup-input" >
+											<input type="radio" name="value" value="female" class="selectgroup-input" >
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="100" class="selectgroup-input">
+											<input type="radio" name="value" value="male" class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -48,29 +48,29 @@
 									<label class="form-label">Hostel</label>
 									<select class="form-control custom-select">
 										<option value="" disabled="" selected="">Select Hostel</option>
-										<option value="">Hostel 1</option>
-										<option value="">Hostel 2</option>
+										<option value="hostel1">Hostel 1</option>
+										<option value="hostel2">Hostel 2</option>
 									</select>
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+									<input type="text" class="form-control" id="email" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+									<input type="text" class="form-control" id="mobile" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-footer">
 									<!-- 	<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
+									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="registerWardenSubmit"
 									 formaction="index.jsp">Submit</button>
 								</div>
 							</div>
