@@ -38,11 +38,11 @@
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="hodGender" value="50" class="selectgroup-input">
+											<input type="radio" name="hodGender" value="female" class="selectgroup-input">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="hodGender" value="100" class="selectgroup-input">
+											<input type="radio" name="hodGender" value="male" class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>

@@ -42,11 +42,11 @@
 										<label class="form-label">Gender</label>
 										<div class="selectgroup w-100">
 											<label class="selectgroup-item">
-												<input type="radio" name="studentGender" value="50" class="selectgroup-input">
+												<input type="radio" name="studentGender" value="female" class="selectgroup-input">
 												<span class="selectgroup-button">Female</span>
 											</label>
 											<label class="selectgroup-item">
-												<input type="radio" name="studentGender" value="100" class="selectgroup-input">
+												<input type="radio" name="studentGender" value="male" class="selectgroup-input">
 												<span class="selectgroup-button">Male</span>
 											</label>
 										</div>
@@ -138,11 +138,11 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Password</label>
-										<input type="password" name="studentPassword" class="form-control" id="Password" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPassword" class="form-control" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Confirm Password</label>
-										<input type="password" name="studentPasswordCheck" class="form-control" id="ConfirmPassword" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPasswordCheck" class="form-control" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->

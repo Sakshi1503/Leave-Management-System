@@ -28,17 +28,17 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+									<input type="text" class="form-control" name="facultyName" id="name" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="50" class="selectgroup-input">
+											<input type="radio" name="facultyGender" value="female" class="selectgroup-input">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="100" class="selectgroup-input">
+											<input type="radio" name="facultyGender" value="male" class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -52,7 +52,7 @@
 										<option value="">Computer Engineering</option>
 										<option value="">Electrincal Enginnering</option>
 										<option value="">Electronics & Communication</option>
-										<option value="">Information Technology</option>
+										<option value="IT">Information Technology</option>
 										<option value="">Instrumentation & Control</option>
 										<option value="">Mechanical Engineering</option>
 										<option value="">Power Electronics</option>
@@ -62,35 +62,34 @@
 									<label class="form-label">Are you appointed as Hostel In-Charge for above Branch?</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="hostelincharge" value="Yes" class="selectgroup-input">
+											<input type="radio" name="hostelincharge" value="yes" class="selectgroup-input">
 											<span class="selectgroup-button">Yes</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="hostelincharge" value="No" class="selectgroup-input">
+											<input type="radio" name="hostelincharge" value="no" class="selectgroup-input">
 											<span class="selectgroup-button">No</span>
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="form-label">Position</label>
-									<input type="position" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
-									 placeholder="Enter Position">
+									<input type="position" class="form-control" name="facultyPosition" id="position" placeholder="Enter Position">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+									<input type="email" class="form-control" name="facultyEmail" id="email"  placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+									<input type="mobileno" class="form-control" name="facultyMobile" id="mobile" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="facultyPassword" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="facultyConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-footer">
 									<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
@@ -106,8 +105,8 @@
 	<script type="text/javascript">
 		function checkPass() {
 
-			var pass1 = document.getElementById('exampleInputPassword1');
-			var pass2 = document.getElementById('exampleInputPassword2');
+			var pass1 = document.getElementById('Password');
+			var pass2 = document.getElementById('ConfirmPassword');
 			var b = document.getElementById('submit')
 
 			if (pass1.value == 0) {
