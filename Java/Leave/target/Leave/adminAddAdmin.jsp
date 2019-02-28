@@ -1,6 +1,11 @@
 
+<%@page import="Connection.Connect"%>
+<%@page import="java.lang.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <title>Add Admin</title>
 <jsp:include page="headerAdmin.jsp" />
+
 
 
 <body style="height: 91vh;">
@@ -52,24 +57,24 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post">
+										<form class="card" action="adminAddAdmin.jsp" method="post">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Add Admin</center>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="text" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input type="text" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name" name="adminName">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Gender</label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="value" value="50" class="selectgroup-input">
+															<input type="radio" name="adminGender" value="female" class="selectgroup-input">
 															<span class="selectgroup-button">Female</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="value" value="100" class="selectgroup-input">
+															<input type="radio" name="adminGender" value="male" class="selectgroup-input">
 															<span class="selectgroup-button">Male</span>
 														</label>
 													</div>
@@ -77,25 +82,51 @@
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
 													<input type="text" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
-													 placeholder="Enter Mobile No">
+													 placeholder="Enter Mobile No" name="adminContact">
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
 													<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-													 placeholder="Enter Email">
+													 placeholder="Enter Email" name="adminEmail">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
 													<input type="text" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
-													 placeholder="Enter Current Position">
+													 placeholder="Enter Current Position" name="adminPosition">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Password</label>
+													<input type="text" class="form-control" id="exampleInputpasssword" aria-describedby="passwordHelp" placeholder="Enter Password"
+													 name="adminPassword">
 												</div>
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="Submit" name="addAdminSubmit">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="addAdminSubmit">Submit</button>
 												</div>
 											</div>
+											<% 
+											Connect con=new Connect();
+																					if(request.getParameter("addAdminSubmit")!=null)
+																					{
+																						if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("adminEmail")+"'"))
+																						{
+																							out.println("<script>alert('Record already exists......');</script>");
+																						}
+																						else
+																						{
+																							if(con.Ins_Upd_Del("insert into admin_master(adminName,adminGender,adminContact,adminEmail,adminPosition,adminPassword) values('"+request.getParameter("adminName")+"','"+request.getParameter("adminGender")+"',"+request.getParameter("adminContact")+",'"+request.getParameter("adminEmail")+"','"+request.getParameter("adminPosition")+"','"+request.getParameter("adminPassword")+"');"))
+																							{
+																								out.println("<script>alert('Record inserted......');</script>");
+																							}
+																							else
+																							{
+																								out.println("<script>alert('Record was not inserted......');</script>");
+																							}
+																						}
+																					}
+											%>
 										</form>
 									</div>
 								</div>
