@@ -88,16 +88,16 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Address</label>
-										<textarea type="address" name="studentAddress" class="form-control" id="address" aria-describedby="addressHelp"
+										<textarea type="textarea" name="studentAddress" class="form-control" id="address" aria-describedby="addressHelp"
 										 placeholder="Enter Address"></textarea>
 									</div>
 									<div class="form-group">
 										<label class="form-label">City</label>
-										<input type="city" name="studentCity" class="form-control" id="city" aria-describedby="cityHelp" placeholder="Enter City">
+										<input type="text" name="studentCity" class="form-control" id="city" aria-describedby="cityHelp" placeholder="Enter City">
 									</div>
 									<div class="form-group">
 										<label class="form-label">State</label>
-										<input type="state" name="studentState" class="form-control" id="state" aria-describedby="stateHelp" placeholder="Enter State">
+										<input type="text" name="studentState" class="form-control" id="state" aria-describedby="stateHelp" placeholder="Enter State">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Are you Hosteller?</label>
@@ -122,19 +122,19 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Email Address</label>
-										<input type="email" name="studentEmail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+										<input type="text" name="studentEmail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mobile No</label>
-										<input type="mobileno" name="studentContact" class="form-control" id="mobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+										<input type="text" name="studentContact" class="form-control" id="mobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Father's Contact No.</label>
-										<input type="mobileno" name="studentFatherContact" class="form-control" id="fathercontact" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
+										<input type="text" name="studentFatherContact" class="form-control" id="fathercontact" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mother's Contact No.</label>
-										<input type="mobileno" name="studentMotherContact" class="form-control" id="mothercontact" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
+										<input type="text" name="studentMotherContact" class="form-control" id="mothercontact" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Password</label>

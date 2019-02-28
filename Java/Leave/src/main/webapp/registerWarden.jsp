@@ -29,7 +29,7 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+									<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>

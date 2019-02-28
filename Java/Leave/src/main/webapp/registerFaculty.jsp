@@ -73,15 +73,15 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Position</label>
-									<input type="position" class="form-control" name="facultyPosition" id="position" placeholder="Enter Position">
+									<input type="text" class="form-control" name="facultyPosition" id="position" placeholder="Enter Position">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" class="form-control" name="facultyEmail" id="email"  placeholder="Enter Email">
+									<input type="text" class="form-control" name="facultyEmail" id="email"  placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="mobileno" class="form-control" name="facultyMobile" id="mobile" placeholder="Enter Mobile No">
+									<input type="text" class="form-control" name="facultyMobile" id="mobile" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>

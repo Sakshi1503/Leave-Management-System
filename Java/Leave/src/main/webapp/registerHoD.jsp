@@ -64,7 +64,7 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" name="hodEmail" class="form-control" placeholder="Enter Email">
+									<input type="text" name="hodEmail" class="form-control" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
