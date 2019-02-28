@@ -32,11 +32,11 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Name</label>
-										<input type="text" name="studentName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+										<input type="text" name="studentName" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Enrollment No</label>
-										<input type="text" name="studentEno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Enrollmemt No">
+										<input type="text" name="studentEno" class="form-control" id="enrollmentno" aria-describedby="emailHelp" placeholder="Enter Enrollmemt No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Gender</label>
@@ -88,16 +88,16 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Address</label>
-										<textarea type="address" name="studentAddress" class="form-control" id="exampleInputAddress" aria-describedby="addressHelp"
+										<textarea type="address" name="studentAddress" class="form-control" id="address" aria-describedby="addressHelp"
 										 placeholder="Enter Address"></textarea>
 									</div>
 									<div class="form-group">
 										<label class="form-label">City</label>
-										<input type="city" name="studentCity" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
+										<input type="city" name="studentCity" class="form-control" id="city" aria-describedby="cityHelp" placeholder="Enter City">
 									</div>
 									<div class="form-group">
 										<label class="form-label">State</label>
-										<input type="state" name="studentState" class="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter State">
+										<input type="state" name="studentState" class="form-control" id="state" aria-describedby="stateHelp" placeholder="Enter State">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Are you Hosteller?</label>
@@ -122,27 +122,27 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Email Address</label>
-										<input type="email" name="studentEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+										<input type="email" name="studentEmail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mobile No</label>
-										<input type="mobileno" name="studentContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+										<input type="mobileno" name="studentContact" class="form-control" id="mobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Father's Contact No.</label>
-										<input type="mobileno" name="studentFatherContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
+										<input type="mobileno" name="studentFatherContact" class="form-control" id="fathercontact" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mother's Contact No.</label>
-										<input type="mobileno" name="studentMotherContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
+										<input type="mobileno" name="studentMotherContact" class="form-control" id="mothercontact" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Password</label>
-										<input type="password" name="studentPassword" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPassword" class="form-control" id="Password" placeholder="Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Confirm Password</label>
-										<input type="password" name="studentPasswordCheck" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPasswordCheck" class="form-control" id="ConfirmPassword" placeholder="Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
@@ -202,8 +202,8 @@
 		<script type="text/javascript">
 			function checkPass() {
 
-				var pass1 = document.getElementById('exampleInputPassword1');
-				var pass2 = document.getElementById('exampleInputPassword2');
+				var pass1 = document.getElementById('Password');
+				var pass2 = document.getElementById('ConfirmPassword');
 				var b = document.getElementById('submit')
 
 				if (pass1.value == 0) {

@@ -32,7 +32,7 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" name="hodName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+									<input type="text" name="hodName" class="form-control" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
@@ -64,19 +64,19 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" name="hodEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+									<input type="email" name="hodEmail" class="form-control" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="text" name="hodContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+									<input type="text" name="hodContact" class="form-control" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" name="hodPassword" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" name="hodPassword" class="form-control" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" name="hodConfirmPassword" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
+									<input type="password" name="hodConfirmPassword" class="form-control" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-footer">
 									<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
@@ -118,8 +118,8 @@
 	<script type="text/javascript">
 		function checkPass() {
 
-			var pass1 = document.getElementById('exampleInputPassword1');
-			var pass2 = document.getElementById('exampleInputPassword2');
+			var pass1 = document.getElementById('Password');
+			var pass2 = document.getElementById('ConfirmPassword');
 			var b = document.getElementById('submit')
 
 			if (pass1.value == 0) {
