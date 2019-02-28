@@ -54,19 +54,19 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="text" class="form-control" id="email" placeholder="Enter Email">
+									<input type="text" class="form-control" name="wardenEmail" id="email" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="text" class="form-control" id="mobile" placeholder="Enter Mobile No">
+									<input type="text" class="form-control" name="wardenMobile" id="mobile" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" class="form-control" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="wardenPassword" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" class="form-control" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="wardenConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-footer">
 									<!-- 	<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
