@@ -63,47 +63,50 @@
 													<center>Add Admin</center>
 												</div>
 												<div class="form-group">
-													<label class="form-label">Name</label>
-													<input type="text" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name" name="adminName">
+													<label class="form-label">Name<span style="color:red">*</span></label>
+													<input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z0-9\s]*" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name" name="adminName" required="">
 												</div>
 												<div class="form-group">
-													<label class="form-label">Gender</label>
+													<label class="form-label">Gender<span style="color:red">*</span></label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="adminGender" value="female" class="selectgroup-input">
+															<input type="radio" name="adminGender" value="Female" class="selectgroup-input" required="">
 															<span class="selectgroup-button">Female</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="adminGender" value="male" class="selectgroup-input">
+															<input type="radio" name="adminGender" value="Male" class="selectgroup-input" required="">
 															<span class="selectgroup-button">Male</span>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="form-label">Contact No</label>
-													<input type="text" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
-													 placeholder="Enter Mobile No" name="adminContact">
+													<label class="form-label">Contact No<span style="color:red">*</span></label>
+													<input type="text" class="form-control" pattern="[0-9]{10}" id="exampleInputMobile" aria-describedby="MobileNo"
+													 placeholder="Enter Mobile No" name="adminContact" required="">
 												</div>
 
 												<div class="form-group">
-													<label class="form-label">Email</label>
-													<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-													 placeholder="Enter Email" name="adminEmail">
+													<label class="form-label">Email<span style="color:red">*</span></label>
+													<input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="exampleInputEmail1" aria-describedby="emailHelp"
+													 placeholder="Enter Email" name="adminEmail" required="">
 												</div>
 												<div class="form-group">
-													<label class="form-label">Designation</label>
+													<label class="form-label">Designation<span style="color:red">*</span></label>
 													<input type="text" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
-													 placeholder="Enter Current Position" name="adminPosition">
+													 placeholder="Enter Current Position" name="adminPosition" required="">
 												</div>
 												<div class="form-group">
-													<label class="form-label">Password</label>
-													<input type="text" class="form-control" id="exampleInputpasssword" aria-describedby="passwordHelp" placeholder="Enter Password"
-													 name="adminPassword">
+													<label class="form-label">Password<span style="color:red">*</span></label>
+													<input type="password" class="form-control" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="Password1" aria-describedby="passwordHelp" placeholder="Enter Password"
+													 name="adminPassword" required="">
 												</div>
-
+												<div class="form-group">
+													<label class="form-label">Confirm Password<span style="color:red">*</span></label>
+													<input type="password" class="form-control" id="Password2" placeholder="Re-enter Password" onkeyup="checkPass(); return false;" required="">
+												</div>
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="addAdminSubmit">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block" id="submit" value="submit" name="addAdminSubmit">Submit</button>
 												</div>
 											</div>
 											<% 
@@ -135,6 +138,27 @@
 					</div>
 				</div>
 			</div>
+			<script type="text/javascript">
+				function checkPass() {
+
+					var pass1 = document.getElementById('Password1');
+					var pass2 = document.getElementById('Password2');
+					var b = document.getElementById('submit')
+
+					if (pass1.value == 0) {
+						b.disabled = true;
+					} else if (pass1.value == pass2.value) {
+						pass2.classList.remove("state-invalid");
+						b.disabled = false;
+						pass2.classList.add("state-valid");
+					} else {
+						pass2.classList.remove("state-valid");
+						b.disabled = true;
+						pass2.classList.add("state-invalid");
+
+					}
+				}  
+			</script>
 </body>
 
 </html>
