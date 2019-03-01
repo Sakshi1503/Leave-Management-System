@@ -16,7 +16,7 @@ public class Connect {
 	Connection con = null;
 	public Connect() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, ex);
 		}
