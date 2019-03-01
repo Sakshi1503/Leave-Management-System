@@ -1,4 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "editor.fontSize": 16
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "editor.fontSize": 16,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
