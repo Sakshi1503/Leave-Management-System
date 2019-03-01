@@ -29,17 +29,17 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" class="form-control" id="name" placeholder="Enter Name">
+									<input type="text" class="form-control" name="wardenName" id="name" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="female" class="selectgroup-input" >
+											<input type="radio" name="wardenGender" value="female" class="selectgroup-input" >
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="value" value="male" class="selectgroup-input">
+											<input type="radio" name="wardenGender" value="male" class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -82,8 +82,8 @@
 	</div>
 	<script type="text/javascript">
 		function checkPass() {
-			var pass1 = document.getElementById('exampleInputPassword1');
-			var pass2 = document.getElementById('exampleInputPassword2');
+			var pass1 = document.getElementById('Password');
+			var pass2 = document.getElementById('ConfirmPassword');
 			var b = document.getElementById('submit')
 
 			if (pass1.value == 0) {
