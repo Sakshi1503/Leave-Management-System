@@ -19,7 +19,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col col-login mx-auto">
-							<form class="card" action="login.jsp" method="post">
+							<form class="card" action="registerStudent.jsp" method="post">
 								<div class="card-body p-6">
 									<div class="card-title">
 										<center>Register</center>
@@ -146,7 +146,7 @@
 									</div>
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-										<button type="submit" value="Submit" name="studentRegisterSubmit" class="btn btn-primary btn-block"  >Submit</button>
+										<button type="submit" value="Submit" name="studentRegisterSubmit" class="btn btn-primary btn-block" id="submit" >Submit</button>
 										<%										
 															try {
 																					Connect con=new Connect();
@@ -158,10 +158,12 @@
 																						}
 																						else
 																						{
+																							RequestDispatcher rd;
 																							String str=request.getParameter("studentEno");
-																							String branchstr=str.substring(7,8);
+																							String branchstr=str.substring(7,9);
 																							int branch=Integer.parseInt(branchstr);
-																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"');"))
+																							System.out.println(branch);
+																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender,isApprovedStudent) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"','No');"))
 																							{
 																								out.println("<script>alert('Record inserted......');</script>");
 																							}
@@ -170,6 +172,9 @@
 																								out.println("<script>alert('Record was not inserted......');</script>");
 																							}
 																						}
+																						String site = new String("http://localhost:8080/Leave/login.jsp");
+																						response.setStatus(response.SC_MOVED_TEMPORARILY);
+																						response.setHeader("Location", site);
 																					}
 																	}
 																	catch(Exception e){
