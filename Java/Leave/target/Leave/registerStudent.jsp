@@ -19,7 +19,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col col-login mx-auto">
-							<form class="card" action="login.jsp" method="post">
+							<form class="card" action="registerStudent.jsp" method="post">
 								<div class="card-body p-6">
 									<div class="card-title">
 										<center>Register</center>
@@ -32,21 +32,21 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Name</label>
-										<input type="text" name="studentName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+										<input type="text" name="studentName" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Enrollment No</label>
-										<input type="text" name="studentEno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Enrollmemt No">
+										<input type="text" name="studentEno" class="form-control" id="enrollmentno" aria-describedby="emailHelp" placeholder="Enter Enrollmemt No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Gender</label>
 										<div class="selectgroup w-100">
 											<label class="selectgroup-item">
-												<input type="radio" name="studentGender" value="50" class="selectgroup-input">
+												<input type="radio" name="studentGender" value="female" class="selectgroup-input">
 												<span class="selectgroup-button">Female</span>
 											</label>
 											<label class="selectgroup-item">
-												<input type="radio" name="studentGender" value="100" class="selectgroup-input">
+												<input type="radio" name="studentGender" value="male" class="selectgroup-input">
 												<span class="selectgroup-button">Male</span>
 											</label>
 										</div>
@@ -88,16 +88,16 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Address</label>
-										<textarea type="address" name="studentAddress" class="form-control" id="exampleInputAddress" aria-describedby="addressHelp"
+										<textarea type="textarea" name="studentAddress" class="form-control" id="address" aria-describedby="addressHelp"
 										 placeholder="Enter Address"></textarea>
 									</div>
 									<div class="form-group">
 										<label class="form-label">City</label>
-										<input type="city" name="studentCity" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
+										<input type="text" name="studentCity" class="form-control" id="city" aria-describedby="cityHelp" placeholder="Enter City">
 									</div>
 									<div class="form-group">
 										<label class="form-label">State</label>
-										<input type="state" name="studentState" class="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter State">
+										<input type="text" name="studentState" class="form-control" id="state" aria-describedby="stateHelp" placeholder="Enter State">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Are you Hosteller?</label>
@@ -122,31 +122,31 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">Email Address</label>
-										<input type="email" name="studentEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+										<input type="text" name="studentEmail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mobile No</label>
-										<input type="mobileno" name="studentContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
+										<input type="text" name="studentContact" class="form-control" id="mobile" aria-describedby="MobileNo" placeholder="Enter Mobile No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Father's Contact No.</label>
-										<input type="mobileno" name="studentFatherContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
+										<input type="text" name="studentFatherContact" class="form-control" id="fathercontact" aria-describedby="MobileNo" placeholder="Enter Father's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Mother's Contact No.</label>
-										<input type="mobileno" name="studentMotherContact" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
+										<input type="text" name="studentMotherContact" class="form-control" id="mothercontact" aria-describedby="MobileNo" placeholder="Enter Mother's Contact No">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Password</label>
-										<input type="password" name="studentPassword" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPassword" class="form-control" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-group">
 										<label class="form-label">Confirm Password</label>
-										<input type="password" name="studentPasswordCheck" class="form-control" id="exampleInputPassword2" placeholder="Password" onkeyup="checkPass(); return false;">
+										<input type="password" name="studentPasswordCheck" class="form-control" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
 									</div>
 									<div class="form-footer">
 										<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-										<button type="submit" value="Submit" name="studentRegisterSubmit" class="btn btn-primary btn-block"  >Submit</button>
+										<button type="submit" value="Submit" name="studentRegisterSubmit" class="btn btn-primary btn-block" id="submit" >Submit</button>
 										<%										
 															try {
 																					Connect con=new Connect();
@@ -158,10 +158,12 @@
 																						}
 																						else
 																						{
+																							RequestDispatcher rd;
 																							String str=request.getParameter("studentEno");
-																							String branchstr=str.substring(7,8);
+																							String branchstr=str.substring(7,9);
 																							int branch=Integer.parseInt(branchstr);
-																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"');"))
+																							System.out.println(branch);
+																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender,isApprovedStudent) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"','No');"))
 																							{
 																								out.println("<script>alert('Record inserted......');</script>");
 																							}
@@ -170,6 +172,9 @@
 																								out.println("<script>alert('Record was not inserted......');</script>");
 																							}
 																						}
+																						String site = new String("http://localhost:8080/Leave/login.jsp");
+																						response.setStatus(response.SC_MOVED_TEMPORARILY);
+																						response.setHeader("Location", site);
 																					}
 																	}
 																	catch(Exception e){
@@ -202,8 +207,8 @@
 		<script type="text/javascript">
 			function checkPass() {
 
-				var pass1 = document.getElementById('exampleInputPassword1');
-				var pass2 = document.getElementById('exampleInputPassword2');
+				var pass1 = document.getElementById('Password');
+				var pass2 = document.getElementById('ConfirmPassword');
 				var b = document.getElementById('submit')
 
 				if (pass1.value == 0) {
