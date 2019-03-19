@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
 <jsp:include page="headerAdmin.jsp" />
 
@@ -50,33 +52,41 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post">
+										<form class="card" action="adminEditProfile.jsp" method="post">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Edit Profile</center>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input type="text" name="username" class="form-control" id="exampleUsername1" aria-describedby="nameHelp" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
+													<input type="text" name="contactNo" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
 													 placeholder="Enter Mobile No">
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+													<input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 													 placeholder="Enter Email">
 												</div>
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="adminHome.jsp">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="adminEditProfile"
+													>Submit</button>
 												</div>
 											</div>
+											<%
+											if(request.getParameter("adminEditProfile")!=null)
+												{
+													Connect con=new Connect();
+													con.Ins_Upd_Del("update admin_master set adminName='"+request.getParameter("username")+"',adminEmail='"+request.getParameter("email")+"',adminContact='"+request.getParameter("contactNo")+"' where adminEmail='"+request.getParameter("email")+"'");
+													out.println("<script>alert('Record successfully updated')</script>");
+												}
+											%>
 										</form>
 									</div>
 								</div>
