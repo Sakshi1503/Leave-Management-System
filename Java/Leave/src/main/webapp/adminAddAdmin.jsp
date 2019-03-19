@@ -8,15 +8,15 @@
 
 
 
-<body style="height: 91vh;">
-	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
+<body style="height:  -webkit-fill-available;">
+	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="" uk-sticky="bottom: #offset">
 		<h1 class="uk-heading-divider"></h1>
 		<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
 		<h1 class="uk-heading-divider"></h1>
 	</div>
 
 	<div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
-		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
+		<div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
 				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
 					<div class="col-lg order-lg-first">
@@ -50,8 +50,6 @@
 					</div>
 				</div>
 				<div class="col-sm-8 col-md-9 col-lg-10" style="margin: 0px; padding: 0px; width: 100%;">
-
-
 					<div class="page">
 						<div class="page-single" style="width: 100%;">
 							<div class="container">
@@ -137,7 +135,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 			<script type="text/javascript">
 				function checkPass() {
 
