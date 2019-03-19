@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/uikit.min.css" />
 	<!-- UIkit JS -->
 	<script src="js/uikit.min.js"></script>
-
+	<script src="js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="./css/dashboard.css" rel="stylesheet" />
