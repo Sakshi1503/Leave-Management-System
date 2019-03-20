@@ -10,9 +10,10 @@
 	<script src="js/uikit.min.js"></script>
 
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="./css/dashboard.css" rel="stylesheet" />
 	<link href="./css/register.css" rel="stylesheet" />
-
+	<script src="js/uikit-icons.min.js"></script>
+	<link href="./css/adminHome.css" rel="stylesheet" />
 	<!-- <link rel="stylesheet" type="feather-icons" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.js"> -->
 </head>

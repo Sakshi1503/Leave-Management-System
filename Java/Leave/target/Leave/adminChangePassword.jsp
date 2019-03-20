@@ -70,16 +70,20 @@
 												 onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-footer">
-												<button type="submit" name="adminEditProfile" class="btn btn-primary btn-block" id="submit" disabled="">Submit</button>
+												<button type="submit" name="adminChangePassword" class="btn btn-primary btn-block" id="submit" disabled="">Submit</button>
 											</div>
 										</div>
 										<%
-																					if(request.getParameter("adminEditProfile")!=null)
-																						{
-																							Connect con=new Connect();
-																							con.Ins_Upd_Del("update admin_master set adminPassword='"+request.getParameter("adminNewPassword")+"' where adminPassword='"+request.getParameter("adminPassword")+"'");
-																							out.println("<script>alert('Password is successfully updated')</script>");
-																						}
+											if(request.getParameter("adminChangePassword")!=null)
+												{
+													Connect con=new Connect();
+													con.Ins_Upd_Del("update admin_master set adminPassword='"+request.getParameter("adminNewPassword")+"' where adminPassword='"+request.getParameter("adminPassword")+"'");
+													out.println("<script>alert('Password is successfully updated')</script>");
+												}
+												else{
+												out.println("
+												<script>alert('Password is not updated')</script>");
+												}
 										%>
 									</form>
 								</div>

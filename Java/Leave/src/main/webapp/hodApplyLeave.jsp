@@ -66,7 +66,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea type="reason" class="form-control" id="leaveReason" aria-describedby="leaveReason" placeholder="Enter reason for leave"></textarea>
+													<textarea name="hodReason" class="form-control" id="leaveReason" aria-describedby="leaveReason" placeholder="Enter reason for leave"></textarea>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Leave Duration</label>

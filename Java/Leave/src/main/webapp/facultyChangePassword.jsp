@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Change Password</title>
 <jsp:include page="headerFaculty.jsp" />
 
@@ -53,31 +55,42 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col col-login mx-auto">
-                                    <form class="card" action="" method="post">
+                                    <form class="card" action="facultyChangePassword.jsp" method="post">
                                         <div class="card-body p-6">
                                             <div class="card-title">
                                                 <center>Change Password</center>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Old Password</label>
-                                                <input type="password" class="form-control" id="oldPassword"
+                                                <input type="password" name="facultyPassword" class="form-control" id="oldPassword"
                                                     placeholder="Enter Old Password">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">New Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                                <input type="password" name="facultyNewPassword" class="form-control" id="exampleInputPassword1"
                                                     placeholder="Enter New Password" onkeyup="checkPass(); return false;">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Confirm New Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword2"
+                                                <input type="password" name="facultyConfirmPassword" class="form-control" id="exampleInputPassword2"
                                                     placeholder="Confirm New Password" onkeyup="checkPass(); return false;">
                                             </div>
                                             <div class="form-footer">
-                                                <button type="submit" class="btn btn-primary btn-block" id="submit"
-                                                    disabled=""><a href="login.jsp" style="color: white;">Submit</a></button>
+                                                <button type="submit" class="btn btn-primary btn-block" id="submit" name="facultyChangePassword"
+                                                    disabled="">Submit</button>
                                             </div>
                                         </div>
+                                        <%
+                                                        if(request.getParameter("facultyChangePassword")!=null)
+                                                            {
+                                                                Connect con=new Connect();
+                                                                con.Ins_Upd_Del("update faculty_master set facultyPassword='"+request.getParameter("facultyNewPassword")+"' where facultyPassword='"+request.getParameter("facultyPassword")+"'");
+                                                                out.println("<script>alert('Password is successfully updated')</script>");
+                                                            }
+                                                        else{
+                                                            out.println("<script>alert('Password is not updated')</script>");
+                                                        }
+                                        %>
                                     </form>
                                 </div>
                             </div>

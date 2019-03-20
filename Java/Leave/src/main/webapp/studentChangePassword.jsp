@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
 <jsp:include page="headerStudent.jsp" />
 
@@ -37,29 +39,40 @@
 						<div class="container">
 							<div class="row">
 								<div class="col col-login mx-auto">
-									<form class="card" action="" method="post">
+									<form class="card" action="studentChangePassword.jsp" method="post">
 										<div class="card-body p-6">
 											<div class="card-title">
 												<center>Change Password</center>
 											</div>
 											<div class="form-group">
 												<label class="form-label">Old Password</label>
-												<input type="password" class="form-control" id="oldPassword" placeholder="Enter Old Password">
+												<input type="password" name="studentPassword" class="form-control" id="oldPassword" placeholder="Enter Old Password">
 											</div>
 											<div class="form-group">
 												<label class="form-label">New Password</label>
-												<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password"
+												<input type="password" name="studentNewPassword" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password"
 												 onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-group">
 												<label class="form-label">Confirm New Password</label>
-												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm New Password"
+												<input type="password" name="studentConfirmPassword" class="form-control" id="exampleInputPassword2" placeholder="Confirm New Password"
 												 onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-footer">
-												<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button>
+												<button type="submit" name="studentChangePassword" class="btn btn-primary btn-block" id="submit" disabled="">Submit</button>
 											</div>
 										</div>
+										<%
+														if(request.getParameter("studentChangePassword")!=null)
+															{
+																Connect con=new Connect();
+																con.Ins_Upd_Del("update student_master set studentPassword='"+request.getParameter("studentNewPassword")+"' where studentPassword='"+request.getParameter("studentPassword")+"'");
+																out.println("<script>alert('Password is successfully updated')</script>");
+															}
+														else{
+															out.println("<script>alert('Password is not updated')</script>");
+														}
+										%>
 									</form>
 								</div>
 							</div>
