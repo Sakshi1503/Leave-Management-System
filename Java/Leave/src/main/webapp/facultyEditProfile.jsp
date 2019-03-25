@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
 <jsp:include page="headerFaculty.jsp" />
 
@@ -49,7 +51,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post">
+										<form class="card" action="facultyEditProfile.jsp" method="post">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Edit Profile</center>
@@ -62,25 +64,25 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleInputname" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input type="username" name="username" class="form-control" id="exampleInputname" aria-describedby="nameHelp" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
+													<input type="mobileno" name="contactNo" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
 													 placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+													<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input type="branch" class="form-control" id="exampleInputbranch" aria-describedby="branchHelp"
+													<input type="branch" name="branchID" class="form-control" id="exampleInputbranch" aria-describedby="branchHelp"
 													 placeholder="Enter branch">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
+													<input type="position" name="designation" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
 													 placeholder="Enter Current Position">
 												</div>
 												<div class="form-group">
@@ -109,10 +111,21 @@
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="index.jsp">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="facultyEditProfile">Submit</button>
 												</div>
 											</div>
+											<%
+												if(request.getParameter("facultyEditProfile")!=null)
+													{
+														Connect con=new Connect();
+														con.Ins_Upd_Del("update faculty_master set facultyName='"+request.getParameter("username")+"',facultyEmail='"+request.getParameter("email")+"',facultyContact='"+request.getParameter("contactNo")+"',facultyBranch="+request.getParameter("branchID")+",facultyPosition='"+request.getParameter("designation")+"',isHostelIncharge='"+request.getParameter("hosteller")+"' where facultyEmail='"+request.getParameter("email")+"'");
+														out.println("<script>alert('Record successfully updated')</script>");
+													}
+												else
+												{
+													out.println("<script>alert('There was some problem in updating your information.!')</script>");
+												}
+											%>
 										</form>
 									</div>
 								</div>

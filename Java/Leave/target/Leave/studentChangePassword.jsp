@@ -59,7 +59,7 @@
 												 onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-footer">
-												<button type="submit" name="studentChangePassword" class="btn btn-primary btn-block" id="submit" disabled="">Submit</button>
+												<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""  name="studentChangePassword">Submit</button>
 											</div>
 										</div>
 										<%
