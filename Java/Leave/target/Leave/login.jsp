@@ -1,4 +1,5 @@
 <%@page import="java.sql.ResultSet"%>
+<%@page import="java.io.*"%>
 <%@page import="Connection.Connect"%>
 <title>Index</title>
 <jsp:include page="header.jsp" />
@@ -24,11 +25,11 @@
 								<div class="form-group">
 									<label class="form-label">You are</label>
 									<select class="form-control custom-select" id="roleSelect">
-										<option value="Admin" value="1">Admin</option>
-										<option value="HoD" value="2">HoD</option>
-										<option value="Faculty" value="3">Faculty</option>
-										<option value="Warden" value="4">Warden</option>
-										<option value="Student" value="5">Student</option>
+										<option value="Admin">Admin</option>
+										<option value="HoD">HoD</option>
+										<option value="Faculty">Faculty</option>
+										<option value="Warden">Warden</option>
+										<option value="Student">Student</option>
 									</select>
 								</div>
 								<div class="form-group">
@@ -45,7 +46,8 @@
 								</div>
 							</div>
 							<%
-							            if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==1)
+										String role = (String)request.getParameter("roleSelect");
+							            if(request.getParameter("btnLogin")!=null && role.equals("Admin"))
 							            {
 							                Connect con=new Connect();
 							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
@@ -61,7 +63,7 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==2)
+										else if(request.getParameter("btnLogin")!=null && role.equals("HoD"))
 										{
 											Connect con=new Connect();
 											if(con.CheckData("select * from hod_master where hodEmail='"+request.getParameter("email")+"' and hodPassword='"+request.getParameter("password")+"'"))
@@ -77,7 +79,7 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==3)
+										else if(request.getParameter("btnLogin")!=null && role.equals("Faculty"))
 										{
 											Connect con=new Connect();
 											if(con.CheckData("select * from faculty_master where facultyEmail='"+request.getParameter("email")+"' and facultyPassword='"+request.getParameter("password")+"'"))
@@ -93,7 +95,7 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==4)
+										else if(request.getParameter("btnLogin")!=null && role.equals("Warden"))
 										{
 											Connect con=new Connect();
 											if(con.CheckData("select * from warden_master where wardenEmail='"+request.getParameter("email")+"' and wardenPassword='"+request.getParameter("password")+"'"))
@@ -109,7 +111,7 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==5)
+										else if(request.getParameter("btnLogin")!=null && role.equals("Student"))
 										{
 											Connect con=new Connect();
 											if(con.CheckData("select * from student_master where studentEmail='"+request.getParameter("email")+"' and studentPassword='"+request.getParameter("password")+"'"))
