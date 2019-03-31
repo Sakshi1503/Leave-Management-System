@@ -46,7 +46,8 @@
 								</div>
 							</div>
 							<%
-										String role = (String)request.getParameter("roleSelect");
+										String role = request.getParameter("roleSelect");
+										//System.out.println(role);
 							            if(request.getParameter("btnLogin")!=null && role.equals("Admin"))
 							            {
 							                Connect con=new Connect();
