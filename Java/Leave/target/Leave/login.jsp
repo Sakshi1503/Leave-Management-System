@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Index</title>
 <jsp:include page="header.jsp" />
 
@@ -31,20 +33,35 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email</label>
-									<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+									<input type="username" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 								</div>
 
 								<div class="form-footer">
-									<!-- <button type="submit" class="btn btn-primary btn-block"><a href="adminHome.jsp" id="submitLink" style="color: white;">Sign in</a></button> -->
-									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-									 formaction="adminHome.jsp" style="color: white;">
-										<!--< a href="registerHoD.jsp" id="submitLink" style="color: white;">Submit</a> -->Sign in</button>
+									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="btnLogin" style="color: white;">Sign in</button>
 								</div>
 							</div>
+							<%
+							            if(request.getParameter("btnLogin")!=null)
+							            {
+							                Connect con=new Connect();
+							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
+							                {
+												String Uname=request.getParameter("email");
+												session.setAttribute("adminLoggedIn" ,Uname);
+												out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("adminHome.jsp");
+											}
+												else
+											{	
+												out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+      						 %>
 						</form>
 						<div class="text-center text-muted">
 							Don't have account yet? <a href="./registerUser.jsp">Sign up</a>
