@@ -43,7 +43,11 @@
 					</div>
 				</div>
 				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
-
+					<%
+					String name=request.getParameter("email");  
+					out.print("Welcome "+name);  
+					session.setAttribute("user",name);  
+					%>
 
 				</div>
 				<!-- 			</div>
