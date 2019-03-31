@@ -24,11 +24,11 @@
 								<div class="form-group">
 									<label class="form-label">You are</label>
 									<select class="form-control custom-select" id="roleSelect">
-										<option value="Admin">Admin</option>
-										<option value="HoD">HoD</option>
-										<option value="Faculty">Faculty</option>
-										<option value="Warden">Warden</option>
-										<option value="Student">Student</option>
+										<option value="Admin" value="1">Admin</option>
+										<option value="HoD" value="2">HoD</option>
+										<option value="Faculty" value="3">Faculty</option>
+										<option value="Warden" value="4">Warden</option>
+										<option value="Student" value="5">Student</option>
 									</select>
 								</div>
 								<div class="form-group">
@@ -45,19 +45,83 @@
 								</div>
 							</div>
 							<%
-							            if(request.getParameter("btnLogin")!=null)
+							            if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==1)
 							            {
 							                Connect con=new Connect();
 							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
 							                {
 												String Uname=request.getParameter("email");
-												session.setAttribute("adminLoggedIn" ,Uname);
-												out.println("<script>alert('You have logged in')</script>");
+												session.setAttribute("adminUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
 												response.sendRedirect("adminHome.jsp");
 											}
-												else
+											else
 											{	
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==2)
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from hod_master where hodEmail='"+request.getParameter("email")+"' and hodPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("hodUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("hodHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==3)
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from faculty_master where facultyEmail='"+request.getParameter("email")+"' and facultyPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("facultyUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("facultyHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==4)
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from warden_master where wardenEmail='"+request.getParameter("email")+"' and wardenPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("wardenUsername" ,Uname);
+												out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("wardenHome.jsp");
+											}
+											else
+											{
 												out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==5)
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from student_master where studentEmail='"+request.getParameter("email")+"' and studentPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("studentUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("studentHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
 												response.sendRedirect("login.jsp");
 											}
 										}

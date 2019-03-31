@@ -45,19 +45,83 @@
 								</div>
 							</div>
 							<%
-							            if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==Admin)
+							            if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")=="Admin")
 							            {
 							                Connect con=new Connect();
 							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
 							                {
 												String Uname=request.getParameter("email");
 												session.setAttribute("adminUsername" ,Uname);
-												out.println("<script>alert('You have logged in')</script>");
+												System.out.println("<script>alert('You have logged in')</script>");
 												response.sendRedirect("adminHome.jsp");
 											}
-												else
+											else
 											{	
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")=="HoD")
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from hod_master where hodEmail='"+request.getParameter("email")+"' and hodPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("hodUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("hodHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")=="Faculty")
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from faculty_master where facultyEmail='"+request.getParameter("email")+"' and facultyPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("facultyUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("facultyHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")=="Warden")
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from warden_master where wardenEmail='"+request.getParameter("email")+"' and wardenPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("wardenUsername" ,Uname);
+												out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("wardenHome.jsp");
+											}
+											else
+											{
 												out.println("<script>alert('Wrong username or password')</script>");
+												response.sendRedirect("login.jsp");
+											}
+										}
+										else if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")=="Student")
+										{
+											Connect con=new Connect();
+											if(con.CheckData("select * from student_master where studentEmail='"+request.getParameter("email")+"' and studentPassword='"+request.getParameter("password")+"'"))
+											{
+												String Uname=request.getParameter("email");
+												session.setAttribute("studentUsername" ,Uname);
+												System.out.println("<script>alert('You have logged in')</script>");
+												response.sendRedirect("studentHome.jsp");
+											}
+											else
+											{
+												System.out.println("<script>alert('Wrong username or password')</script>");
 												response.sendRedirect("login.jsp");
 											}
 										}
