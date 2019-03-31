@@ -45,13 +45,13 @@
 								</div>
 							</div>
 							<%
-							            if(request.getParameter("btnLogin")!=null)
+							            if(request.getParameter("btnLogin")!=null && request.getParameter("roleSelect")==Admin)
 							            {
 							                Connect con=new Connect();
 							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
 							                {
 												String Uname=request.getParameter("email");
-												session.setAttribute("adminLoggedIn" ,Uname);
+												session.setAttribute("adminUsername" ,Uname);
 												out.println("<script>alert('You have logged in')</script>");
 												response.sendRedirect("adminHome.jsp");
 											}

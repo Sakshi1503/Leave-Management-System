@@ -80,9 +80,8 @@
 													con.Ins_Upd_Del("update admin_master set adminPassword='"+request.getParameter("adminNewPassword")+"' where adminPassword='"+request.getParameter("adminPassword")+"'");
 													out.println("<script>alert('Password is successfully updated')</script>");
 												}
-												else{
-												out.println("
-												<script>alert('Password is not updated')</script>");
+												if(request.getParameter("adminChangePassword")==null){
+												out.println("<script>alert('Password is not updated')</script>");
 												}
 										%>
 									</form>
