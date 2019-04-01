@@ -46,11 +46,12 @@
 								</div>
 							</div>
 							<%
-										String role = request.getParameter("roleSelect");
-										//System.out.println(role);
-							            if(request.getParameter("btnLogin")!=null && role.equals("Admin"))
+									if(request.getParameter("btnLogin")!=null)
+									{
+										Connect con=new Connect();
+										String role = (String)request.getParameter("roleSelect");
+							            if(role.equals("Admin"))
 							            {
-							                Connect con=new Connect();
 							                if(con.CheckData("select * from admin_master where adminEmail='"+request.getParameter("email")+"' and adminPassword='"+request.getParameter("password")+"'"))
 							                {
 												String Uname=request.getParameter("email");
@@ -64,9 +65,8 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && role.equals("HoD"))
+										else if(role.equals("HoD"))
 										{
-											Connect con=new Connect();
 											if(con.CheckData("select * from hod_master where hodEmail='"+request.getParameter("email")+"' and hodPassword='"+request.getParameter("password")+"'"))
 											{
 												String Uname=request.getParameter("email");
@@ -80,9 +80,8 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && role.equals("Faculty"))
+										else if(role.equals("Faculty"))
 										{
-											Connect con=new Connect();
 											if(con.CheckData("select * from faculty_master where facultyEmail='"+request.getParameter("email")+"' and facultyPassword='"+request.getParameter("password")+"'"))
 											{
 												String Uname=request.getParameter("email");
@@ -96,9 +95,8 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && role.equals("Warden"))
+										else if(role.equals("Warden"))
 										{
-											Connect con=new Connect();
 											if(con.CheckData("select * from warden_master where wardenEmail='"+request.getParameter("email")+"' and wardenPassword='"+request.getParameter("password")+"'"))
 											{
 												String Uname=request.getParameter("email");
@@ -112,9 +110,8 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
-										else if(request.getParameter("btnLogin")!=null && role.equals("Student"))
+										else if(role.equals("Student"))
 										{
-											Connect con=new Connect();
 											if(con.CheckData("select * from student_master where studentEmail='"+request.getParameter("email")+"' and studentPassword='"+request.getParameter("password")+"'"))
 											{
 												String Uname=request.getParameter("email");
@@ -128,6 +125,7 @@
 												response.sendRedirect("login.jsp");
 											}
 										}
+									}
       						 %>
 						</form>
 						<div class="text-center text-muted">
