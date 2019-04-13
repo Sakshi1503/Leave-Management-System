@@ -34,15 +34,18 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email</label>
-									<input type="username" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" required="">
+									<input type="username" name="email" class="form-control" id="exampleInputEmail1"
+										aria-describedby="emailHelp" placeholder="Enter Email" required="">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required="">
+									<input type="password" name="password" class="form-control"
+										id="exampleInputPassword1" placeholder="Password" required="">
 								</div>
 
 								<div class="form-footer">
-									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="btnLogin" style="color: white;">Sign in</button>
+									<button type="submit" class="btn btn-primary btn-block" id="submitLink"
+										value="submit" name="btnLogin" style="color: white;">Sign in</button>
 								</div>
 							</div>
 							<%

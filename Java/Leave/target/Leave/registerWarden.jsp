@@ -29,17 +29,20 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" class="form-control" name="wardenName" id="name" placeholder="Enter Name">
+									<input type="text" class="form-control" name="wardenName" id="name"
+										placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="wardenGender" value="female" class="selectgroup-input" >
+											<input type="radio" name="wardenGender" value="female"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="wardenGender" value="male" class="selectgroup-input">
+											<input type="radio" name="wardenGender" value="male"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -54,24 +57,30 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="text" class="form-control" name="wardenEmail" id="email" placeholder="Enter Email">
+									<input type="text" class="form-control" name="wardenEmail" id="email"
+										placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="text" class="form-control" name="wardenMobile" id="mobile" placeholder="Enter Mobile No">
+									<input type="text" class="form-control" name="wardenMobile" id="mobile"
+										placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" class="form-control" name="wardenPassword" id="Password" placeholder="Enter Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="wardenPassword" id="Password"
+										placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" class="form-control" name="wardenConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" onkeyup="checkPass(); return false;">
+									<input type="password" class="form-control" name="wardenConfirmPassword"
+										id="ConfirmPassword" placeholder="Enter Confirm Password"
+										onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-footer">
 									<!-- 	<button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="registerWardenSubmit"
-									 formaction="index.jsp">Submit</button>
+									<button type="submit" class="btn btn-primary btn-block" id="submitLink"
+										value="submit" name="registerWardenSubmit"
+										formaction="index.jsp">Submit</button>
 								</div>
 							</div>
 						</form>

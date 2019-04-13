@@ -13,7 +13,8 @@
     <div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
         <div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
             <div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-                <div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
+                <div class="col-sm-4 col-md-3 col-lg-2"
+                    style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
@@ -62,22 +63,25 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Old Password</label>
-                                                <input type="password" name="facultyPassword" class="form-control" id="oldPassword"
-                                                    placeholder="Enter Old Password">
+                                                <input type="password" name="facultyPassword" class="form-control"
+                                                    id="oldPassword" placeholder="Enter Old Password">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">New Password</label>
-                                                <input type="password" name="facultyNewPassword" class="form-control" id="exampleInputPassword1"
-                                                    placeholder="Enter New Password" onkeyup="checkPass(); return false;">
+                                                <input type="password" name="facultyNewPassword" class="form-control"
+                                                    id="exampleInputPassword1" placeholder="Enter New Password"
+                                                    onkeyup="checkPass(); return false;">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Confirm New Password</label>
-                                                <input type="password" name="facultyConfirmPassword" class="form-control" id="exampleInputPassword2"
-                                                    placeholder="Confirm New Password" onkeyup="checkPass(); return false;">
+                                                <input type="password" name="facultyConfirmPassword"
+                                                    class="form-control" id="exampleInputPassword2"
+                                                    placeholder="Confirm New Password"
+                                                    onkeyup="checkPass(); return false;">
                                             </div>
                                             <div class="form-footer">
-                                                <button type="submit" class="btn btn-primary btn-block" id="submit" name="facultyChangePassword"
-                                                    disabled="">Submit</button>
+                                                <button type="submit" class="btn btn-primary btn-block" id="submit"
+                                                    name="facultyChangePassword" disabled="">Submit</button>
                                             </div>
                                         </div>
                                         <%

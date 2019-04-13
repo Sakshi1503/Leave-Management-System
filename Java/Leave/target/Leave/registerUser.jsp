@@ -30,8 +30,8 @@
 									</select>
 								</div>
 								<div class="form-footer">
-									<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-									 formaction="registerHoD.jsp">
+									<button type="submit" class="btn btn-primary btn-block" id="submitLink"
+										value="submit" name="submit" formaction="registerHoD.jsp">
 										<!--< a href="registerHoD.jsp" id="submitLink" style="color: white;">Submit</a> -->Submit</button>
 								</div>
 							</div>

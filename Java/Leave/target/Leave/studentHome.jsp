@@ -13,17 +13,21 @@
 	<div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
 		<div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a href="./studentHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Apply for Leave</a>
+								<a href="./studentHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Apply for
+									Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit Profile</a>
+								<a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit
+									Profile</a>
 							</li>
 							<li class="nav-item">
-								<a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -60,7 +64,9 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea type="reason" class="form-control" id="leaveReason" aria-describedby="leaveReason" placeholder="Enter reason for leave"></textarea>
+													<textarea type="reason" class="form-control" id="leaveReason"
+														aria-describedby="leaveReason"
+														placeholder="Enter reason for leave"></textarea>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Leave Duration</label>
@@ -71,7 +77,8 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]" class="form-control custom-select">
+																<select name="user[month]"
+																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
 																	<option value="2">February</option>
@@ -88,7 +95,8 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]" class="form-control custom-select">
+																<select name="user[day]"
+																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -124,7 +132,8 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]" class="form-control custom-select">
+																<select name="user[year]"
+																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
 																	<option value="2013">2013</option>
@@ -151,7 +160,8 @@
 																	<option value="1992">1992</option>
 																	<option value="1991">1991</option>
 																	<option value="1990">1990</option>
-																	<option selected="selected" value="1989">1989</option>
+																	<option selected="selected" value="1989">1989
+																	</option>
 																	<option value="1988">1988</option>
 																	<option value="1987">1987</option>
 																	<option value="1986">1986</option>
@@ -255,7 +265,8 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]" class="form-control custom-select">
+																<select name="user[month]"
+																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
 																	<option value="2">February</option>
@@ -272,7 +283,8 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]" class="form-control custom-select">
+																<select name="user[day]"
+																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -308,7 +320,8 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]" class="form-control custom-select">
+																<select name="user[year]"
+																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
 																	<option value="2013">2013</option>
@@ -335,7 +348,8 @@
 																	<option value="1992">1992</option>
 																	<option value="1991">1991</option>
 																	<option value="1990">1990</option>
-																	<option selected="selected" value="1989">1989</option>
+																	<option selected="selected" value="1989">1989
+																	</option>
 																	<option value="1988">1988</option>
 																	<option value="1987">1987</option>
 																	<option value="1986">1986</option>
@@ -437,11 +451,12 @@
 												<div class="form-group col-sm" style="padding: 0px;">
 													<div class="form-label">Upload Proof Document</div>
 													<div class="custom-file">
-														<input type="file" class="custom-file-input" name="example-file-input-custom">
+														<input type="file" class="custom-file-input"
+															name="example-file-input-custom">
 														<label class="custom-file-label">Choose file</label>
 													</div>
 												</div>
-												
+
 												<div class="form-group">
 													<label class="form-label">Leave Application to:</label>
 													<select class="form-control custom-select" id="applyTo">
@@ -452,14 +467,15 @@
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="index.jsp">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block"
+														id="submitLink" value="submit" name="submit"
+														formaction="index.jsp">Submit</button>
 												</div>
 											</div>
 										</form>
 									</div>
 								</div>
-						
+
 </body>
 
 </html>

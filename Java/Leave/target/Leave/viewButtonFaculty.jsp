@@ -18,8 +18,8 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="username" class="form-control" id="exampleInputname" disabled="" aria-describedby="nameHelp"
-									 placeholder="A. A. Patel">
+									<input type="username" class="form-control" id="exampleInputname" disabled=""
+										aria-describedby="nameHelp" placeholder="A. A. Patel">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Branch</label>
@@ -38,13 +38,13 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" disabled="" aria-describedby="emailHelp"
-									 placeholder="aapatel@email.com">
+									<input type="email" class="form-control" id="exampleInputEmail1" disabled=""
+										aria-describedby="emailHelp" placeholder="aapatel@email.com">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="mobileno" class="form-control" id="exampleInputMobile" disabled="" aria-describedby="MobileNo"
-									 placeholder="8888888888">
+									<input type="mobileno" class="form-control" id="exampleInputMobile" disabled=""
+										aria-describedby="MobileNo" placeholder="8888888888">
 								</div>
 							</div>
 						</form>
