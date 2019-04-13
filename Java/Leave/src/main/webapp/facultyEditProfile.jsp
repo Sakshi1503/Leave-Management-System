@@ -15,29 +15,35 @@
 	<div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
 		<div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
 								<a href="./facultyHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i> Apply for Leave</a>
+								<a href="facultyApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i> Apply for
+									Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyApproveStudent.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve Student</a>
+								<a href="facultyApproveStudent.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Student</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyRemoveStudent.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove Student</a>
+								<a href="facultyRemoveStudent.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
+									Student</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyEditProfile.jsp" class="nav-link active"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="facultyEditProfile.jsp" class="nav-link active"><i class="fe fe-user"></i> Edit
+									Profile</a>
 							</li>
 							<li class="nav-item">
-								<a href="facultyChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="facultyChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -64,54 +70,54 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" name="username" class="form-control" id="exampleInputname" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input type="username" name="username" class="form-control"
+														id="exampleInputname" aria-describedby="nameHelp"
+														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" name="contactNo" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
-													 placeholder="Mobile No">
+													<input type="mobileno" name="contactNo" class="form-control"
+														id="exampleInputMobile" aria-describedby="MobileNo"
+														placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
-													<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+													<input type="email" name="email" class="form-control"
+														id="exampleInputEmail1" aria-describedby="emailHelp"
+														placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input type="branch" name="branchID" class="form-control" id="exampleInputbranch" aria-describedby="branchHelp"
-													 placeholder="Enter branch">
+													<input type="branch" name="branchID" class="form-control"
+														id="exampleInputbranch" aria-describedby="branchHelp"
+														placeholder="Enter branch">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" name="designation" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
-													 placeholder="Enter Current Position">
+													<input type="position" name="designation" class="form-control"
+														id="exampleInputposition" aria-describedby="positionHelp"
+														placeholder="Enter Current Position">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Is appointed as a hostel incharge?</label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="Yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="No" class="selectgroup-input">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
 												</div>
-												<!-- <div class="form-group" name="hostel" id="hostel" style="display: none;">
-											<label class="form-label">Hostel</label>
-											<select class="form-control custom-select">
-												<option value="" disabled="" selected="">Select Hostel</option>
-												<option value="">Hostel 1</option>
-												<option value="">Hostel 2</option>
-											</select>
-										</div> -->
-
-
-
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="facultyEditProfile">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block"
+														id="submitLink" value="submit"
+														name="facultyEditProfile">Submit</button>
 												</div>
 											</div>
 											<%

@@ -2,8 +2,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <!-- UIkit CSS -->
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- UIkit CSS -->
     <link rel="stylesheet" href="css/uikit.min.css" />
     <!-- UIkit JS -->
     <script src="js/uikit.min.js"></script>

@@ -11,17 +11,20 @@
 	<div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
 		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
 								<a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
+								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove User</a>
+								<a href="adminRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
+									User</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
@@ -30,11 +33,13 @@
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
+									Profile</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -50,12 +55,6 @@
 					%>
 
 				</div>
-				<!-- 			</div>
-							</div>
-						</div>
-					</div>
-
-				</div> -->
 			</div>
 		</div>
 	</div>

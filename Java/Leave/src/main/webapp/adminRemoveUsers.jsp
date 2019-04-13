@@ -11,17 +11,20 @@
 	<div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
 		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
 								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Approve User</a>
+								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminRemoveUsers.jsp" class="nav-link active"><i uk-icon="icon: close"></i> Remove User</a>
+								<a href="adminRemoveUsers.jsp" class="nav-link active"><i uk-icon="icon: close"></i>
+									Remove User</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
@@ -30,11 +33,13 @@
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
+								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
+									Profile</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -47,9 +52,11 @@
 						<div class="row">
 							<div class="col-12">
 
-								<div class="card" style="margin: 0.05rem;  padding-top: 0.75rem; height: 75vh; width: 61vw; position: inherit;">
+								<div class="card"
+									style="margin: 0.05rem;  padding-top: 0.75rem; height: 75vh; width: 61vw; position: inherit;">
 									<div class="table-responsive">
-										<table class="table table-hover table-outline table-vcenter table-hcenter card-table">
+										<table
+											class="table table-hover table-outline table-vcenter table-hcenter card-table">
 											<thead>
 												<tr>
 													<th>Role</i></th>
@@ -73,274 +80,12 @@
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
+																	<a href="viewButtonAdmin.jsp"
+																		uk-icon="icon: push"></a>
 																</div>
 															</li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: close"></a></li>
@@ -357,12 +102,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- 			</div>
-							</div>
-						</div>
-					</div>
-
-				</div> -->
 	</div>
 	</div>
 	</div>

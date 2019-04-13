@@ -18,7 +18,7 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a href="./wardenHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                  ઇ              <a href="./wardenHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="wardenApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i> Apply for

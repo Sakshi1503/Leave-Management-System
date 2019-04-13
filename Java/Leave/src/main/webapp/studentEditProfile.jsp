@@ -13,17 +13,21 @@
 	<div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
 		<div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a href="./studentHome.jsp" class="nav-link"><i class="fe fe-home"></i> Apply for Leave</a>
+								<a href="./studentHome.jsp" class="nav-link"><i class="fe fe-home"></i> Apply for
+									Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="studentEditProfile.jsp" class="nav-link active"><i class="fe fe-plus"></i> Edit Profile</a>
+								<a href="studentEditProfile.jsp" class="nav-link active"><i class="fe fe-plus"></i> Edit
+									Profile</a>
 							</li>
 							<li class="nav-item">
-								<a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
+								<a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -50,41 +54,48 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-													 placeholder="Enter Name">
+													<input type="username" class="form-control" id="exampleInputEmail1"
+														aria-describedby="emailHelp" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Enrollment No</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-													 placeholder="Enter Enrollmemt No" disabled="">
+													<input type="username" class="form-control" id="exampleInputEmail1"
+														aria-describedby="emailHelp" placeholder="Enter Enrollmemt No"
+														disabled="">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Address</label>
-													<textarea type="address" class="form-control" id="exampleInputAddress" aria-describedby="addressHelp"
-													 placeholder="Enter Address"></textarea>
+													<textarea type="address" class="form-control"
+														id="exampleInputAddress" aria-describedby="addressHelp"
+														placeholder="Enter Address"></textarea>
 												</div>
 												<div class="form-group">
 													<label class="form-label">City</label>
-													<input type="city" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
+													<input type="city" class="form-control" id="exampleInputCity"
+														aria-describedby="cityHelp" placeholder="Enter City">
 												</div>
 												<div class="form-group">
 													<label class="form-label">State</label>
-													<input type="state" class="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter State">
+													<input type="state" class="form-control" id="exampleInputState"
+														aria-describedby="stateHelp" placeholder="Enter State">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Are you Hosteller?</label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="Yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="No" class="selectgroup-input">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
 												</div>
-												<div class="form-group" name="hostel" id="hostel" style="display: none;">
+												<div class="form-group" name="hostel" id="hostel"
+													style="display: none;">
 													<label class="form-label">Hostel</label>
 													<select class="form-control custom-select">
 														<option value="" disabled="" selected="">Select Hostel</option>
@@ -94,27 +105,29 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email Address</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+													<input type="email" class="form-control" id="exampleInputEmail1"
+														aria-describedby="emailHelp" placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Student's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
-													 placeholder="Student's No">
+													<input type="mobileno" class="form-control" id="exampleInputMobile"
+														aria-describedby="MobileNo" placeholder="Student's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Father's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile1" aria-describedby="MobileNo"
-													 placeholder="Father's No">
+													<input type="mobileno" class="form-control" id="exampleInputMobile1"
+														aria-describedby="MobileNo" placeholder="Father's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Mother's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile2" aria-describedby="MobileNo"
-													 placeholder="Mother's No">
+													<input type="mobileno" class="form-control" id="exampleInputMobile2"
+														aria-describedby="MobileNo" placeholder="Mother's No">
 												</div>
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block" id="submitLink" value="submit" name="submit"
-													 formaction="index.jsp">Submit</button>
+													<button type="submit" class="btn btn-primary btn-block"
+														id="submitLink" value="submit" name="submit"
+														formaction="index.jsp">Submit</button>
 												</div>
 											</div>
 										</form>

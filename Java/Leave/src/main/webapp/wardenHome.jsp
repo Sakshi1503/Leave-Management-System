@@ -11,7 +11,8 @@
     <div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
         <div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
             <div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-                <div class="col-sm-4 col-md-3 col-lg-2" style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
+                <div class="col-sm-4 col-md-3 col-lg-2"
+                    style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
