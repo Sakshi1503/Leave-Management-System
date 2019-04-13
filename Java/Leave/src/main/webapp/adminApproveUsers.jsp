@@ -149,17 +149,6 @@
 													<td><%out.println(studentContact);%></td>
 													<td><%out.println(studentEmail);%></td>
 													<td><%out.println(studentBranch);%></td>
-												</tr>
-												<%
-													}
-													con.CloseConnection();
-												%>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
 													<td style="padding: 0px; margin: 1px;">
 														<ul class="uk-iconnav">
 															<li>
@@ -181,6 +170,10 @@
 														</ul>
 													</td>
 												</tr>
+												<%
+													}
+													con.CloseConnection();
+												%>
 											</tbody>
 										</table>
 									</div>

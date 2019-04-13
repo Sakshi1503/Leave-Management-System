@@ -73,6 +73,50 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <%
+                                                    Connect con=null;
+                                                    ResultSet rs=null;
+                                                    ResultSetMetaData mtdt=null;
+                                                    con=new Connect();
+                                                    rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes' and studentHosteller='Yes'");
+                                                    mtdt=rs.getMetaData();
+                                                    while(rs.next())
+                                                    {
+                                                        String studentName=rs.getString("studentName");
+                                                        String studentContact=rs.getString("studentContact");
+                                                        String studentEmail=rs.getString("studentEmail");
+                                                        int studentBranch=rs.getInt("studentBranch");
+                                                %>
+                                                <tr>
+                                                    <td>Student</td>
+                                                    <td><%out.println(studentName);%></td>
+                                                    <td><%out.println(studentContact);%></td>
+                                                    <td><%out.println(studentEmail);%></td>
+                                                    <td><%out.println(studentBranch);%></td>
+                                                    <td style="padding: 0px; margin: 1px;">
+                                                        <ul class="uk-iconnav">
+                                                            <li>
+                                                                <div uk-lightbox>
+                                                                    <a href="viewButtonAdmin.jsp" uk-icon="icon: push"></a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td style="padding: 0px;">
+                                                        <ul class="uk-iconnav">
+                                                            <li><a href="#" uk-icon="icon: check"></a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td style="padding: 0px;">
+                                                        <ul class="uk-iconnav">
+                                                            <li><a href="#" uk-icon="icon: close"></a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <%
+                                                    }
+                                                    con.CloseConnection();
+                                                %>
                                                 <tr>
                                                     <td>Student</td>
                                                     <td>A. A. Patel</td>
