@@ -77,7 +77,7 @@
                     if(rs2.next()){
                     	adminID = rs2.getInt("adminID");
                     }
-                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin';");
+                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin' and leaveApproved='no';");
                     while(rs.next()){
 						rs3 = con.SelectData("select branchName from branch_info where branchCode = " + rs.getInt("hodBranch") +";");
 						String branch = new String();
