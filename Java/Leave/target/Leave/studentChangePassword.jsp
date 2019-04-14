@@ -1,3 +1,11 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("student")){
+%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
@@ -113,3 +121,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>

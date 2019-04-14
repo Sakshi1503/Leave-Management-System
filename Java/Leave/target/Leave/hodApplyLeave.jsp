@@ -1,3 +1,11 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("hod")){
+%>
 <title>Apply for Leave</title>
 <jsp:include page="headerHod.jsp" />
 <%@page import="Connection.Connect"%>
@@ -74,7 +82,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea name="hodReason" class="form-control" id="leaveReason" name="reason"
+													<textarea name="hodReason" class="form-control" id="leaveReason"
 														aria-describedby="leaveReason"
 														placeholder="Enter reason for leave"></textarea>
 												</div>
@@ -87,7 +95,7 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]"
+																<select name="leaveFromMonth"
 																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
@@ -105,7 +113,7 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]"
+																<select name="leaveFromDay"
 																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
@@ -142,7 +150,7 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]"
+																<select name="leaveFromYear"
 																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
@@ -275,7 +283,7 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]"
+																<select name="leaveToMonth"
 																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
@@ -293,7 +301,7 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]"
+																<select name="leaveToDay"
 																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
@@ -330,7 +338,7 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]"
+																<select name="leaveToYear"
 																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
@@ -474,12 +482,13 @@
 														ResultSet rs=null;
 														ResultSetMetaData mtdt=null;
 														con=new Connect();
-														rs=con.SelectData("select adminName from admin_master");
+														rs=con.SelectData("select adminID,adminName from admin_master");
 														mtdt=rs.getMetaData();
 														while(rs.next())
 														{
+															int ID = rs.getInt("adminID");
 													%>
-														<option value='rs.getString("adminName")'><%= rs.getString("adminName")%></option>
+														<option value="<%= ID%>"><%= rs.getString("adminName")%></option>
 													<%
 														}
 														con.CloseConnection();
@@ -489,9 +498,36 @@
 
 												<div class="form-footer">
 													<button type="submit" class="btn btn-primary btn-block"
-														id="submitLink" value="submit" name="submit"
-														formaction="index.jsp">Submit</button>
+														id="submitLink" value="submit" name="hodApplyLeave">Submit</button>
 												</div>
+												<%
+												try {
+												String Uname = (String)session.getAttribute("hodUsername");
+												
+												ResultSet rs2 = con.SelectData("select * from hod_master where hodEmail = '+ Uname +'");
+												int appID = 1;
+												if(rs2.next()){
+													out.println(rs2.getInt("hodID"));
+													appID = rs2.getInt("hodID");
+												}
+											
+												if (request.getParameter("hodApplyLeave") != null) {
+												if (con.CheckData(
+												"select * from leave_record where appID='" + appID + "' and appRole='hod'")) {
+												out.println("<script>alert('You have already applied for leave');</script>");
+												}
+												
+												else {
+												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'hod','"+request.getParameter("hodReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'admin');"))
+												out.println("<script>alert('Record inserted......');</script>");
+												else
+												out.println("<script>alert('Record was not inserted......');</script>");
+												}
+												}
+												} catch (Exception e) {
+												out.println(e);
+												}
+												%>
 										</form>
 									</div>
 								</div>
@@ -505,3 +541,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>

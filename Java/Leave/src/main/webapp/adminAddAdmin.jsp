@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 	String userRole = new String("SUPERSTAR");
-	out.println((String)session.getAttribute("role"));
+	
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
