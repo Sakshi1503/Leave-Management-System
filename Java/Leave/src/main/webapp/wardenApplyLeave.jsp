@@ -1,3 +1,11 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	out.println((String)session.getAttribute("role"));
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("warden")){
+%>
 <title>Apply for Leave</title>
 <jsp:include page="headerWarden.jsp" />
 
@@ -494,3 +502,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>
