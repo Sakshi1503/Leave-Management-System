@@ -1,5 +1,8 @@
 <title>Approve Student</title>
 <jsp:include page="headerFaculty.jsp" />
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
 
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
@@ -90,7 +93,15 @@
 													<td><%out.println(studentName);%></td>
 													<td><%out.println(studentContact);%></td>
 													<td><%out.println(studentEmail);%></td>
-													<td><%out.println(studentBranch);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
 													<td style="padding: 0px; margin: 1px;">
 														<ul class="uk-iconnav">
 															<li>
