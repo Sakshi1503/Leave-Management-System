@@ -8,6 +8,9 @@
 %>
 <title>Apply for Leave</title>
 <jsp:include page="headerWarden.jsp" />
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
 
 <body style="height: -webkit-fill-available;">
 
@@ -69,13 +72,6 @@
 												<div class="card-title">
 													<center>Apply for Leave</center>
 												</div>
-												<!-- 	<div class="form-group">
-											<label class="form-label">Leave from</label>
-											<select class="form-control custom-select" id="roleSelect">
-												<option value="1">College</option>
-												<option value="2">Hostel</option>
-											</select>
-										</div> -->
 												<div class="form-group">
 													<label class="form-label">Type of Leave</label>
 													<select class="form-control custom-select" id="roleSelect">
@@ -88,7 +84,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea type="reason" class="form-control" id="leaveReason"
+													<textarea type="reason" class="form-control" id="leaveReason" name="wardenReason"
 														aria-describedby="leaveReason"
 														placeholder="Enter reason for leave"></textarea>
 												</div>
@@ -101,7 +97,7 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]"
+																<select name="leaveFromMonth"
 																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
@@ -119,7 +115,7 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]"
+																<select name="leaveFromDay"
 																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
@@ -156,7 +152,7 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]"
+																<select name="leaveFromYear"
 																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
@@ -289,7 +285,7 @@
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
-																<select name="user[month]"
+																<select name="leaveToMonth"
 																	class="form-control custom-select">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
@@ -307,7 +303,7 @@
 																</select>
 															</div>
 															<div class="col-3">
-																<select name="user[day]"
+																<select name="leaveToDay"
 																	class="form-control custom-select">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
@@ -344,7 +340,7 @@
 																</select>
 															</div>
 															<div class="col-4">
-																<select name="user[year]"
+																<select name="leaveToYear"
 																	class="form-control custom-select">
 																	<option value="">Year</option>
 																	<option value="2014">2014</option>
@@ -476,26 +472,66 @@
 													<div class="form-label">Upload Proof Document</div>
 													<div class="custom-file">
 														<input type="file" class="custom-file-input"
-															name="example-file-input-custom">
+															name="example-file-input-custom" pattern="/^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.jpeg|.JPEG|.gif|.GIF|.png|.PNG|.JPG|.jpg|.bitmap|.BITMAP|.pdf|.PDF)$/">
 														<label class="custom-file-label">Choose file</label>
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Leave Application to:</label>
-													<select class="form-control custom-select" id="applyTo">
-														<option value="">Prof. A. A. Patel</option>
-														<option value="">Prof. A. B. Patel</option>
+													<select class="form-control custom-select" id="applyTo" name="applyTo">
+															<%
+														Connect con=null;
+														ResultSet rs=null;
+														ResultSetMetaData mtdt=null;
+														con=new Connect();
+														rs=con.SelectData("select adminID,adminName from admin_master");
+														mtdt=rs.getMetaData();
+														while(rs.next())
+														{
+															int ID = rs.getInt("adminID");
+													%>
+														<option value="<%= ID%>"><%= rs.getString("adminName")%></option>
+													<%
+														}
+														con.CloseConnection();
+													%>
 													</select>
 												</div>
 
 												<div class="form-footer">
-													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 													<button type="submit" class="btn btn-primary btn-block"
-														id="submitLink" value="submit" name="submit"
-														formaction="index.jsp">Submit</button>
+														id="submitLink" value="submit" name="wardenApplyLeave">Submit</button>
 												</div>
 											</div>
+											<%
+												try {
+												String Uname = (String)session.getAttribute("wardenUsername");
+												
+												ResultSet rs2 = con.SelectData("select * from warden_master where wardenEmail = '+ Uname +'");
+												int appID = 1;
+												if(rs2.next()){
+													out.println(rs2.getInt("wardenID"));
+													appID = rs2.getInt("wardenID");
+												}
+											
+												if (request.getParameter("wardenApplyLeave") != null) {
+												if (con.CheckData(
+												"select * from leave_record where appID='" + appID + "' and appRole='warden'")) {
+												out.println("<script>alert('You have already applied for leave');</script>");
+												}
+												
+												else {
+												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'warden','"+request.getParameter("wardenReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
+												out.println("<script>alert('Record inserted......');</script>");
+												else
+												out.println("<script>alert('Record was not inserted......');</script>");
+												}
+												}
+												} catch (Exception e) {
+												out.println(e);
+												}
+												%>
 										</form>
 									</div>
 								</div>
