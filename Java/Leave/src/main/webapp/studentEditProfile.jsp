@@ -63,12 +63,12 @@
 												<div class="form-group">
 													<label class="form-label">Name</label>
 													<input type="username" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" placeholder="Enter Name">
+														aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Enrollment No</label>
 													<input type="username" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" placeholder="Enter Enrollmemt No"
+														aria-describedby="emailHelp" pattern="[1][6][0][1][7][0][1][1][6][0][0-9][0-9]" placeholder="Enter Enrollmemt No"
 														disabled="">
 												</div>
 												<div class="form-group">
@@ -114,22 +114,22 @@
 												<div class="form-group">
 													<label class="form-label">Email Address</label>
 													<input type="email" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" placeholder="Enter Email">
+														aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Student's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile"
-														aria-describedby="MobileNo" placeholder="Student's No">
+														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Student's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Father's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile1"
-														aria-describedby="MobileNo" placeholder="Father's No">
+														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Father's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Mother's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile2"
-														aria-describedby="MobileNo" placeholder="Mother's No">
+														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Mother's No">
 												</div>
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->

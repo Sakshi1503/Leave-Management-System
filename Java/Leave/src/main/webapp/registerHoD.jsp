@@ -32,7 +32,8 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" name="hodName" class="form-control" placeholder="Enter Name">
+									<input type="text" name="hodName" class="form-control"
+									pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
@@ -65,17 +66,18 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="text" name="hodEmail" class="form-control" placeholder="Enter Email">
+									<input type="text" name="hodEmail" class="form-control"
+									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
 									<input type="text" name="hodContact" class="form-control"
-										placeholder="Enter Mobile No">
+										pattern="[0-9]{10}" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
 									<input type="password" name="hodPassword" class="form-control" id="Password"
-										placeholder="Enter Password" onkeyup="checkPass(); return false;">
+									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>

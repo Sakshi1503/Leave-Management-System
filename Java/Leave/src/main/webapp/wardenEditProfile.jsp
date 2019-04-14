@@ -77,17 +77,17 @@
                                                 <div class="form-group">
                                                     <label class="form-label">Name</label>
                                                     <input type="username" class="form-control" id="exampleInputname"
-                                                        aria-describedby="nameHelp" placeholder="Enter Name">
+                                                        aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Contact No</label>
                                                     <input type="mobileno" class="form-control" id="exampleInputMobile"
-                                                        aria-describedby="MobileNo" placeholder="Mobile No">
+                                                        aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Mobile No">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Email ID</label>
                                                     <input type="email" class="form-control" id="exampleInputEmail1"
-                                                        aria-describedby="emailHelp" placeholder="Enter Email">
+                                                        aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Branch ID</label>
