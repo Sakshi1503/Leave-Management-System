@@ -71,9 +71,19 @@
 					ResultSet rs=null;
 					ResultSetMetaData mtdt=null;
 			        con=new Connect();
-
-                    rs = con.SelectData("");
-
+					int adminID = 0;
+                    ResultSet rs2 = con.SelectData("select adminID from admin_master where adminEmail = '"+ session.getAttribute("adminUsername") +"';");
+                    ResultSet rs3 = null;
+                    if(rs2.next()){
+                    	adminID = rs2.getInt("adminID");
+                    }
+                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin';");
+                    while(rs.next()){
+						rs3 = con.SelectData("select branchName from branch_info where branchCode = " + rs.getInt("hodBranch") +";");
+						String branch = new String();
+						if(rs3.next()){
+							branch = rs3.getString("branchName");
+						}
                     %>
 
                     
@@ -82,23 +92,23 @@
                             <table style="width: 80%;">
                             <tr>
                             <td><b>HoD Name:</b></td>
-                            <td>Prof A A Patel</td>
+                            <td><%= rs.getString("hodName")%></td>
                             </tr>
                             <tr>
                             <td><b>HoD Department:</b></td>
-                            <td>Information Technology</td>
+                            <td><%= branch%></td>
                             </tr>
                             <tr>
                             <td><b>Leave From:</b></td>
-                            <td>2019-04-14</td>
+                            <td><%= rs.getDate("leaveFrom")%></td>
                             </tr>
                             <tr>
                             <td><b>Leave To:</b></td>
-                            <td>2019-04-15</td>
+                            <td><%= rs.getDate("leaveTo")%></td>
                             </tr>
                             <tr>
                             <td><b>Leave Reason:</b></td>
-                            <td>Personal Reason</td>
+                            <td><%= rs.getString("leaveReason")%></td>
                             </tr>
                             </table>
                             <a href="#" class="card-link">Approve</a>
@@ -106,7 +116,9 @@
                         </div>
                     </div>
                     
-                    
+                    <%
+                    }
+                    %>
                     </div>
 				</div>
 			</div>
