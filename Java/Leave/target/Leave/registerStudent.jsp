@@ -33,12 +33,12 @@
 								<div class="form-group">
 									<label class="form-label">Name</label>
 									<input type="text" name="studentName" class="form-control" id="name"
-										aria-describedby="emailHelp" placeholder="Enter Name">
+										aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Enrollment No</label>
 									<input type="text" name="studentEno" class="form-control" id="enrollmentno"
-										aria-describedby="emailHelp" placeholder="Enter Enrollmemt No">
+										aria-describedby="emailHelp" pattern="[1][6][0][1][7][0][1][1][6][0][0-9][0-9]" placeholder="Enter Enrollmemt No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
@@ -131,29 +131,29 @@
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
 									<input type="text" name="studentEmail" class="form-control" id="email"
-										aria-describedby="emailHelp" placeholder="Enter Email">
+										aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
 									<input type="text" name="studentContact" class="form-control" id="mobile"
-										aria-describedby="MobileNo" placeholder="Enter Mobile No">
+										aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Father's Contact No.</label>
 									<input type="text" name="studentFatherContact" class="form-control"
-										id="fathercontact" aria-describedby="MobileNo"
+										id="fathercontact" pattern="[0-9]{10}" aria-describedby="MobileNo"
 										placeholder="Enter Father's Contact No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mother's Contact No.</label>
 									<input type="text" name="studentMotherContact" class="form-control"
-										id="mothercontact" aria-describedby="MobileNo"
+										id="mothercontact" pattern="[0-9]{10}" aria-describedby="MobileNo"
 										placeholder="Enter Mother's Contact No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
 									<input type="password" name="studentPassword" class="form-control" id="Password"
-										placeholder="Enter Password" onkeyup="checkPass(); return false;">
+										placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>

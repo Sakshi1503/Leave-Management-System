@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- hello world -->
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="css/uikit.min.css" />
+	<!-- UIkit JS -->
+	<script src="js/uikit.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="./css/dashboard.css" rel="stylesheet" />
+	<link href="./css/adminHome.css" rel="stylesheet" />
+	<script src="js/uikit-icons.min.js"></script>
+
+<title>Admin Home</title>
+</head>
+<body style="height: 91vh;">
+	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
+		<h1 class="uk-heading-divider"></h1>
+		<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
+		<h1 class="uk-heading-divider"></h1>
+	</div>
+
+	<div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
+		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
+			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
+				<div class="col-sm-4 col-md-3 col-lg-2"
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: auto;">
+					<div class="col-lg order-lg-first">
+						<ul class="nav nav-tabs">
+							<li class="nav-item">
+								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
+							</li>
+							<li class="nav-item">
+								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve User</a>
+							</li>
+							<li class="nav-item">
+								<a href="adminRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
+									User</a>
+							</li>
+                            <li class="nav-item">
+								<a href="adminApproveLeave.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+							<li class="nav-item">
+								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+							</li>
+							<li class="nav-item">
+								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
+									Profile</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+									Password</a>
+							</li>
+							<li class="nav-item">
+								<a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
+					<div class="card">
+                        <div class="card-body">
+                            <table style="width: 80%;">
+                            <tr>
+                            <td>HoD Name:</td>
+                            <td>Prof A A Patel</td>
+                            </tr>
+                            <tr>
+                            <td>HoD Department:</td>
+                            <td>Information Technology</td>
+                            </tr>
+                            <tr>
+                            <td>Leave From:</td>
+                            <td>2019-04-14</td>
+                            </tr>
+                            <tr>
+                            <td>Leave To:</td>
+                            <td>2019-04-15</td>
+                            </tr>
+                            <tr>
+                            <td>Leave Reason:</td>
+                            <td>Personal Reason</td>
+                            </tr>
+                            </table>
+                            <a href="#" class="card-link">Approve</a>
+                            <a href="#" class="card-link">Reject</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

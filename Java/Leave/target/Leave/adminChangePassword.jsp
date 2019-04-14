@@ -77,7 +77,7 @@
 											<div class="form-group">
 												<label class="form-label">New Password</label>
 												<input type="password" name="adminNewPassword" class="form-control"
-													id="exampleInputPassword1" placeholder="Enter New Password"
+													id="exampleInputPassword1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter New Password"
 													onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-group">

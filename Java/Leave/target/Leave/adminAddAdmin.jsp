@@ -3,6 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 	String userRole = new String("SUPERSTAR");
+	
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -75,7 +76,7 @@
 													<label class="form-label">Name<span
 															style="color:red">*</span></label>
 													<input type="text" class="form-control"
-														pattern="[a-zA-Z][a-zA-Z0-9\s]*" id="exampleUsername1"
+														pattern="[a-zA-Z][a-zA-Z\s]*" id="exampleUsername1"
 														aria-describedby="nameHelp" placeholder="Enter Name"
 														name="adminName" required="">
 												</div>
