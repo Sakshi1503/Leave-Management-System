@@ -1,5 +1,14 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Connection.Connect"%>
+<%
+	String userRole = new String("SUPERSTAR");
+	out.println((String)session.getAttribute("role"));
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("admin")){
+%>
+
 <title>Change Password</title>
 <jsp:include page="headerAdmin.jsp" />
 
@@ -125,3 +134,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>
