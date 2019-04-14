@@ -64,17 +64,17 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Type of Leave</label>
-													<select class="form-control custom-select" id="roleSelect">
-														<option value="CasualLeave">Casual Leave</option>
-														<option value="SpecialCasualLeave">Special Casual Leave</option>
-														<option value="HalfPayLeave">Half Pay Leave</option>
-														<option value="EarnedLeave">Earned Leave</option>
-														<option value="MedicalLeave">Medical Leave</option>
+													<select class="form-control custom-select" id="roleSelect" name="roleSelect">
+														<option value="Casual Leave">Casual Leave</option>
+														<option value="Special Casual Leave">Special Casual Leave</option>
+														<option value="Half Pay Leave">Half Pay Leave</option>
+														<option value="Earned Leave">Earned Leave</option>
+														<option value="Medical Leave">Medical Leave</option>
 													</select>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea name="hodReason" class="form-control" id="leaveReason"
+													<textarea name="hodReason" class="form-control" id="leaveReason" name="reason"
 														aria-describedby="leaveReason"
 														placeholder="Enter reason for leave"></textarea>
 												</div>
@@ -461,15 +461,14 @@
 												<div class="form-group col-sm" style="padding: 0px;">
 													<div class="form-label">Upload Proof Document</div>
 													<div class="custom-file">
-														<input type="file" class="custom-file-input"
-															name="example-file-input-custom">
+														<input type="file" class="custom-file-input" name="document">
 														<label class="custom-file-label">Choose file</label>
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Leave Application to:</label>
-													<select class="form-control custom-select" id="applyTo">
+													<select class="form-control custom-select" id="applyTo" name="applyTo">
 													<%
 														Connect con=null;
 														ResultSet rs=null;
@@ -480,7 +479,7 @@
 														while(rs.next())
 														{
 													%>
-														<option value=""><%= rs.getString("adminName")%></option>
+														<option value="<%= rs.getString("adminName") %>"><%= rs.getString("adminName")%></option>
 													<%
 														}
 														con.CloseConnection();
@@ -490,9 +489,37 @@
 
 												<div class="form-footer">
 													<button type="submit" class="btn btn-primary btn-block"
-														id="submitLink" value="submit" name="submit"
-														formaction="index.jsp">Submit</button>
+														id="submitLink" value="submit" name="hodApplyLeave">Submit</button>
 												</div>
+												<%
+												try {
+												Connect con = new Connect();
+												if (request.getParameter("hodApplyLeave") != null) {
+												if (con.CheckData(
+												"select * from leave_record where hodEmail='" + request.getParameter("hodEmail") + "'")) {
+												out.println("
+												<script>alert('You have already applied for leave');</script>");
+												}
+												
+												else {
+												if (con.Ins_Upd_Del(
+												"insert into hod_master(hodName,hodGender,hodContact,hodEmail,hodPassword,hodBranch) VALUES('"
+												+ request.getParameter("hodName") + "','" + request.getParameter("hodGender")
+												+ "', '" + request.getParameter("hodContact") + "', '"
+												+ request.getParameter("hodEmail") + "', '"
+												+ request.getParameter("hodPassword") + "', "
+												+ request.getParameter("hodBranch") + ");"))
+												out.println("
+												<script>alert('Record inserted......');</script>");
+												else
+												out.println("
+												<script>alert('Record was not inserted......');</script>");
+												}
+												}
+												} catch (Exception e) {
+												out.println(e);
+												}
+												%>
 										</form>
 									</div>
 								</div>
