@@ -1,3 +1,11 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	out.println((String)session.getAttribute("role"));
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("student")){
+%>
 <title>Student Home</title>
 <jsp:include page="headerStudent.jsp" />
 
@@ -479,3 +487,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>
