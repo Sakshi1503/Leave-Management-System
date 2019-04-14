@@ -79,6 +79,8 @@
 												 Connect con=null;
 												 ResultSet rs=null;
 												 ResultSetMetaData mtdt=null;
+												 ResultSet rs2=null;
+												 ResultSetMetaData mtdt2=null;
 												 con=new Connect();
 												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='Yes'");
 												 mtdt=rs.getMetaData();
@@ -94,7 +96,15 @@
 													<td><%out.println(hodName);%></td>
 													<td><%out.println(hodContact);%></td>
 													<td><%out.println(hodEmail);%></td>
-													<td><%out.println(hodBranch);%></td>
+													<td><%
+														rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("hodBranch"));
+														mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
 												</tr>
 												<%
 													}
