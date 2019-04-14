@@ -13,7 +13,7 @@
 
 <title>Admin Home</title>
 <jsp:include page="headerAdmin.jsp" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -111,8 +111,8 @@
                             <td><%= rs.getString("leaveReason")%></td>
                             </tr>
                             </table>
-                            <a href="#" class="card-link">Approve</a>
-                            <a href="#" class="card-link">Reject</a>
+                            <button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button>
+							<button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button>
                         </div>
                     </div>
                     
@@ -125,7 +125,23 @@
 		</div>
 	</div>
 </body>
-
+<script>
+$(document).ready(function () {
+	$(".approve").click( function() {
+		var id = +this.id;
+		$.ajax({
+			url: "update-approve-ajax.jsp",
+			type: "post",
+			data: {
+				id : id,
+			},
+			success: function(data){
+				location.reload();
+			}
+		});
+	});
+});
+</script>
 </html>
 <%
 	}
@@ -134,3 +150,4 @@
 		response.sendRedirect("login.jsp");
 	}
 %>
+

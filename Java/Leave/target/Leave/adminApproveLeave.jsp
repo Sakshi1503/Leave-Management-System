@@ -13,7 +13,7 @@
 
 <title>Admin Home</title>
 <jsp:include page="headerAdmin.jsp" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -77,7 +77,7 @@
                     if(rs2.next()){
                     	adminID = rs2.getInt("adminID");
                     }
-                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin';");
+                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin' and leaveApproved='no';");
                     while(rs.next()){
 						rs3 = con.SelectData("select branchName from branch_info where branchCode = " + rs.getInt("hodBranch") +";");
 						String branch = new String();
@@ -111,8 +111,8 @@
                             <td><%= rs.getString("leaveReason")%></td>
                             </tr>
                             </table>
-                            <a href="#" class="card-link">Approve</a>
-                            <a href="#" class="card-link">Reject</a>
+                            <button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button>
+							<button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button>
                         </div>
                     </div>
                     
@@ -125,7 +125,23 @@
 		</div>
 	</div>
 </body>
-
+<script>
+$(document).ready(function () {
+	$(".approve").click( function() {
+		var id = +this.id;
+		$.ajax({
+			url: "update-approve-ajax.jsp",
+			type: "post",
+			data: {
+				id : id,
+			},
+			success: function(data){
+				location.reload();
+			}
+		});
+	});
+});
+</script>
 </html>
 <%
 	}
@@ -134,3 +150,4 @@
 		response.sendRedirect("login.jsp");
 	}
 %>
+
