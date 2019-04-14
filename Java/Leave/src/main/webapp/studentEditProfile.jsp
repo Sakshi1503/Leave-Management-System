@@ -30,7 +30,7 @@
 									Password</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+								<a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
 							</li>
 						</ul>
 					</div>
