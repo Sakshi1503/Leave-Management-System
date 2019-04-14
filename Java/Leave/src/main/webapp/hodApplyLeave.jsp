@@ -1,6 +1,8 @@
 <title>Apply for Leave</title>
 <jsp:include page="headerHod.jsp" />
-
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
 
 <body style="height: max-content;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
@@ -468,8 +470,21 @@
 												<div class="form-group">
 													<label class="form-label">Leave Application to:</label>
 													<select class="form-control custom-select" id="applyTo">
-														<option value="">Mr. A. A. Patel</option>
-														<option value="">Mr. A. B. Patel</option>
+													<%
+														Connect con=null;
+														ResultSet rs=null;
+														ResultSetMetaData mtdt=null;
+														con=new Connect();
+														rs=con.SelectData("select adminName from admin_master");
+														mtdt=rs.getMetaData();
+														while(rs.next())
+														{
+													%>
+														<option value=""><%= rs.getString("adminName")%></option>
+													<%
+														}
+														con.CloseConnection();
+													%>
 													</select>
 												</div>
 
