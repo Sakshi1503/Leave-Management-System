@@ -1,3 +1,11 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	out.println((String)session.getAttribute("role"));
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("admin")){
+%>
 <title>Admin Home</title>
 <jsp:include page="headerAdmin.jsp" />
 
@@ -42,18 +50,15 @@
 									Password</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+								<a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
 					<%
-					String name=request.getParameter("email");  
-					out.print("Welcome "+name);  
-					session.setAttribute("user",name);  
+						out.print("Welcome "+ (String)session.getAttribute("adminUsername"));
 					%>
-
 				</div>
 			</div>
 		</div>
@@ -61,3 +66,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>

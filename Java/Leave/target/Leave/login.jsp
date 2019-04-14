@@ -57,6 +57,7 @@
 										{
 											String Uname=request.getParameter("email");
 											session.setAttribute("adminUsername" ,Uname);
+											session.setAttribute("role" ,"admin");
 											response.sendRedirect("adminHome.jsp");
 										}
 										else
@@ -71,6 +72,7 @@
 										{
 											String Uname=request.getParameter("email");
 											session.setAttribute("hodUsername" ,Uname);
+											session.setAttribute("role" ,"hod");
 											response.sendRedirect("hodHome.jsp");
 										}
 										else
@@ -85,6 +87,7 @@
 										{
 											String Uname=request.getParameter("email");
 											session.setAttribute("facultyUsername" ,Uname);
+											session.setAttribute("role" ,"faculty");
 											response.sendRedirect("facultyHome.jsp");
 										}
 										else
@@ -99,6 +102,7 @@
 										{
 											String Uname=request.getParameter("email");
 											session.setAttribute("wardenUsername" ,Uname);
+											session.setAttribute("role" ,"warden");
 											response.sendRedirect("wardenHome.jsp");
 										}
 										else
@@ -113,6 +117,7 @@
 										{
 											String Uname=request.getParameter("email");
 											session.setAttribute("studentUsername" ,Uname);
+											session.setAttribute("role" ,"student");
 											response.sendRedirect("studentHome.jsp");
 										}
 										else
