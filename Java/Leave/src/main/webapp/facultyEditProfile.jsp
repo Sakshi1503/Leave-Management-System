@@ -79,19 +79,21 @@
 												<div class="form-group">
 													<label class="form-label">Name</label>
 													<input type="username" name="username" class="form-control"
-														id="exampleInputname" aria-describedby="nameHelp"
+														id="exampleInputname" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
 													<input type="mobileno" name="contactNo" class="form-control"
 														id="exampleInputMobile" aria-describedby="MobileNo"
+														pattern="[0-9]{10}"
 														placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
 													<input type="email" name="email" class="form-control"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
+														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Email">
 												</div>
 												<div class="form-group">
