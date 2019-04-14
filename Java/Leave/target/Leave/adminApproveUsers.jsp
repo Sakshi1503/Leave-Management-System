@@ -79,8 +79,6 @@
 												 Connect con=null;
 												 ResultSet rs=null;
 												 ResultSetMetaData mtdt=null;
-												 ResultSet rs2=null;
-												 ResultSetMetaData mtdt2=null;
 												 con=new Connect();
 												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='Yes'");
 												 mtdt=rs.getMetaData();
@@ -97,8 +95,8 @@
 													<td><%out.println(hodContact);%></td>
 													<td><%out.println(hodEmail);%></td>
 													<td><%
-														rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("hodBranch"));
-														mtdt2 = rs2.getMetaData();
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("hodBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
 														String branch=null;
 														if(rs2.next()){
 														branch = rs2.getString("branchName");
@@ -122,7 +120,14 @@
 													<td><%out.println(facultyName);%></td>
 													<td><%out.println(facultyContact);%></td>
 													<td><%out.println(facultyEmail);%></td>
-													<td><%out.println(facultyBranch);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("facultyBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);%></td>
 												</tr>
 												<%
 														}
@@ -140,7 +145,7 @@
 													<td><%out.println(wardenName);%></td>
 													<td><%out.println(wardenContact);%></td>
 													<td><%out.println(wardenEmail);%></td>
-													<td><%out.println(wardenBranch);%></td>
+													<td><%out.println("-");%></td>
 												</tr>
 												<%
 													}
@@ -158,7 +163,15 @@
 													<td><%out.println(studentName);%></td>
 													<td><%out.println(studentContact);%></td>
 													<td><%out.println(studentEmail);%></td>
-													<td><%out.println(studentBranch);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
 													<td style="padding: 0px; margin: 1px;">
 														<ul class="uk-iconnav">
 															<li>
