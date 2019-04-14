@@ -1,4 +1,11 @@
-<title>Remove Users</title>
+<%
+	String userRole = new String("SUPERSTAR");
+	out.println((String)session.getAttribute("role"));
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("admin")){
+%><title>Remove Users</title>
 <jsp:include page="headerAdmin.jsp" />
 
 <body style="height: 100vh;">
@@ -108,3 +115,10 @@
 </body>
 
 </html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>
