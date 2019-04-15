@@ -39,6 +39,10 @@
 									User</a>
 							</li>
 							<li class="nav-item">
+								<a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+							<li class="nav-item">
 								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
 							</li>
 							<li class="nav-item">
@@ -98,9 +102,6 @@
 													Connect con=new Connect();
 													con.Ins_Upd_Del("update admin_master set adminPassword='"+request.getParameter("adminNewPassword")+"' where adminPassword='"+request.getParameter("adminPassword")+"'");
 													out.println("<script>alert('Password is successfully updated')</script>");
-												}
-												if(request.getParameter("adminChangePassword")==null){
-												out.println("<script>alert('Password is not updated')</script>");
 												}
 										%>
 									</form>

@@ -39,6 +39,10 @@
 									User</a>
 							</li>
 							<li class="nav-item">
+								<a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+							<li class="nav-item">
 								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
 							</li>
 							<li class="nav-item">

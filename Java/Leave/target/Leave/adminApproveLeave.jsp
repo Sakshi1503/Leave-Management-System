@@ -6,15 +6,16 @@
 	}
 	if(userRole.equals("admin")){
 %>
+<title>Admin Home</title>
+<jsp:include page="headerAdmin.jsp" />
 
 <%@page import="Connection.Connect"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 
-<title>Admin Home</title>
-<jsp:include page="headerAdmin.jsp" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<body style="height: 91vh;">
+
+<<body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
 		<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -25,11 +26,11 @@
 		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
 			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
 				<div class="col-sm-4 col-md-3 col-lg-2"
-					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: auto;">
+					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
+								<a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
@@ -39,8 +40,8 @@
 								<a href="adminRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
 									User</a>
 							</li>
-                            <li class="nav-item">
-								<a href="adminApproveLeave.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
+							<li class="nav-item">
+								<a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
@@ -64,9 +65,9 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
-                    
-                    <%
+				<div class="col-sm col-md col-lg" style="margin-top: 1%; padding-left: 10%; width: 100%;">
+
+					<%
                     Connect con=null;
 					ResultSet rs=null;
 					ResultSetMetaData mtdt=null;
@@ -85,63 +86,63 @@
 							branch = rs3.getString("branchName");
 						}
                     %>
-
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <table style="width: 80%;">
-                            <tr>
-                            <td><b>HoD Name:</b></td>
-                            <td><%= rs.getString("hodName")%></td>
-                            </tr>
-                            <tr>
-                            <td><b>HoD Department:</b></td>
-                            <td><%= branch%></td>
-                            </tr>
-                            <tr>
-                            <td><b>Leave From:</b></td>
-                            <td><%= rs.getDate("leaveFrom")%></td>
-                            </tr>
-                            <tr>
-                            <td><b>Leave To:</b></td>
-                            <td><%= rs.getDate("leaveTo")%></td>
-                            </tr>
-                            <tr>
-                            <td><b>Leave Reason:</b></td>
-                            <td><%= rs.getString("leaveReason")%></td>
-                            </tr>
-                            </table>
-                            <button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button>
+					<div class="card">
+						<div class="card-body">
+							<table style="width: 80%;">
+								<tr>
+									<td><b>HoD Name:</b></td>
+									<td><%= rs.getString("hodName")%></td>
+								</tr>
+								<tr>
+									<td><b>HoD Department:</b></td>
+									<td><%= branch%></td>
+								</tr>
+								<tr>
+									<td><b>Leave From:</b></td>
+									<td><%= rs.getDate("leaveFrom")%></td>
+								</tr>
+								<tr>
+									<td><b>Leave To:</b></td>
+									<td><%= rs.getDate("leaveTo")%></td>
+								</tr>
+								<tr>
+									<td><b>Leave Reason:</b></td>
+									<td><%= rs.getString("leaveReason")%></td>
+								</tr>
+							</table>
+							<button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button>
 							<button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button>
-                        </div>
-                    </div>
-                    
-                    <%
+						</div>
+					</div>
+
+					<%
                     }
                     %>
-                    </div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
 </body>
 <script>
-$(document).ready(function () {
-	$(".approve").click( function() {
-		var id = +this.id;
-		$.ajax({
-			url: "update-approve-ajax.jsp",
-			type: "post",
-			data: {
-				id : id,
-			},
-			success: function(data){
-				location.reload();
-			}
+	$(document).ready(function () {
+		$(".approve").click(function () {
+			var id = +this.id;
+			$.ajax({
+				url: "update-approve-ajax.jsp",
+				type: "post",
+				data: {
+					id: id,
+				},
+				success: function (data) {
+					location.reload();
+				}
+			});
 		});
 	});
-});
 </script>
+
 </html>
 <%
 	}
@@ -150,4 +151,3 @@ $(document).ready(function () {
 		response.sendRedirect("login.jsp");
 	}
 %>
-
