@@ -3,15 +3,9 @@
 <%@page import="Connection.Connect"%>
 <title>Index</title>
 <jsp:include page="header.jsp" />
-<script type="text/javascript">
-        window.history.forward();
-        function noBack()
-        {
-            window.history.forward();
-        }
-</script>
 
-<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="" style="height: -webkit-fill-available;">
+
+<body style="height: -webkit-fill-available;">
 
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
