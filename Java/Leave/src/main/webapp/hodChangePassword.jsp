@@ -41,6 +41,10 @@
 									User</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">

@@ -41,6 +41,10 @@
                                     User</a>
                             </li>
                             <li class="nav-item">
+								<a href="facultyApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+                            <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
                             </li>
                             <li class="nav-item">
@@ -99,9 +103,6 @@
                                                                 con.Ins_Upd_Del("update faculty_master set facultyPassword='"+request.getParameter("facultyNewPassword")+"' where facultyPassword='"+request.getParameter("facultyPassword")+"'");
                                                                 out.println("<script>alert('Password is successfully updated')</script>");
                                                             }
-                                                        else{
-                                                            out.println("<script>alert('Password is not updated')</script>");
-                                                        }
                                         %>
                                     </form>
                                 </div>

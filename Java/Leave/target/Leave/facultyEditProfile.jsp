@@ -43,6 +43,10 @@
 									Student</a>
 							</li>
 							<li class="nav-item">
+								<a href="facultyApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Approve Leave</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
@@ -79,7 +83,7 @@
 												<div class="form-group">
 													<label class="form-label">Name</label>
 													<input type="username" name="username" class="form-control"
-														id="exampleInputname" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*
+														id="exampleInputname" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
@@ -137,10 +141,6 @@
 														con.Ins_Upd_Del("update faculty_master set facultyName='"+request.getParameter("username")+"',facultyEmail='"+request.getParameter("email")+"',facultyContact='"+request.getParameter("contactNo")+"',facultyBranch="+request.getParameter("branchID")+",facultyPosition='"+request.getParameter("designation")+"',isHostelIncharge='"+request.getParameter("hosteller")+"' where facultyEmail='"+request.getParameter("email")+"'");
 														out.println("<script>alert('Record successfully updated')</script>");
 													}
-												else
-												{
-													out.println("<script>alert('There was some problem in updating your information.!')</script>");
-												}
 											%>
 										</form>
 									</div>

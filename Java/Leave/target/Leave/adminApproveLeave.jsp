@@ -6,7 +6,7 @@
 	}
 	if(userRole.equals("admin")){
 %>
-<title>Admin Home</title>
+<title>Approve Leave</title>
 <jsp:include page="headerAdmin.jsp" />
 
 <%@page import="Connection.Connect"%>
@@ -159,11 +159,12 @@
 	</div>
 </body>
 
-</html>
-<%
+	</script>
+
+	</html>
+	<%
 	}
 	else{
-		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
 		response.sendRedirect("login.jsp");
 	}
 %>
