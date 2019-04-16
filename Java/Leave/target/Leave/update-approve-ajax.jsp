@@ -4,9 +4,7 @@
 <%
 String id = request.getParameter("id");
 
-Connect con = null;
-ResultSet rs = null;
-
-rs = con.Ins_Upd_Del("Update leave_record set leaveApproved = 'yes' where recordID = "+id);
+Connect con = new Connect();
+boolean status = con.Ins_Upd_Del("update leave_record set leaveApproved = 'yes' where recordID = "+id);
 
 %>

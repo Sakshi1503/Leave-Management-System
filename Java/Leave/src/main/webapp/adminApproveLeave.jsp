@@ -14,8 +14,41 @@
 <%@page import="java.sql.ResultSetMetaData"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".approve").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
 
-<<body style="height: 91vh;">
+	$(document).ready(function () {
+		$(".reject").click(function () {
+			var id3 = this.id;
+			$.ajax({
+				url: "update-reject-ajax.jsp",
+				type: "post",
+				data: {
+					id: id3,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+</script>
+
+<body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
 		<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -30,7 +63,7 @@
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
@@ -41,7 +74,7 @@
 									User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+								<a href="adminApproveLeave.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
@@ -78,7 +111,7 @@
                     if(rs2.next()){
                     	adminID = rs2.getInt("adminID");
                     }
-                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin' and leaveApproved='no';");
+                    rs = con.SelectData("select * from leave_record,hod_master where appID = hodID and appRole='hod' and appToID = "+ adminID +" and appToRole='admin' and leaveApproved='no' and leaveRejected='no';");
                     while(rs.next()){
 						rs3 = con.SelectData("select branchName from branch_info where branchCode = " + rs.getInt("hodBranch") +";");
 						String branch = new String();
@@ -125,23 +158,6 @@
 	</div>
 	</div>
 </body>
-<script>
-	$(document).ready(function () {
-		$(".approve").click(function () {
-			var id = +this.id;
-			$.ajax({
-				url: "update-approve-ajax.jsp",
-				type: "post",
-				data: {
-					id: id,
-				},
-				success: function (data) {
-					location.reload();
-				}
-			});
-		});
-	});
-</script>
 
 </html>
 <%

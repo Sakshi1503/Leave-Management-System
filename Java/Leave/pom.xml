@@ -43,8 +43,8 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Internal repo</name>
-			 <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>  
-      <!--<url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>-->
+			 <!-- <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>   -->
+      <url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>
 		</repository>
 	</distributionManagement>
 
