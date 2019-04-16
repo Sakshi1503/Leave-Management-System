@@ -6,15 +6,12 @@
 	}
 	if(userRole.equals("admin")){
 %>
-<title>Admin Home</title>
+<title>Approve Leave</title>
 <jsp:include page="headerAdmin.jsp" />
 
 <%@page import="Connection.Connect"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <<body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -30,7 +27,7 @@
 					<div class="col-lg order-lg-first">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+								<a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
@@ -41,7 +38,7 @@
 									User</a>
 							</li>
 							<li class="nav-item">
-								<a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+								<a href="adminApproveLeave.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
@@ -124,30 +121,30 @@
 	</div>
 	</div>
 	</div>
-</body>
-<script>
-	$(document).ready(function () {
-		$(".approve").click(function () {
-			var id = +this.id;
-			$.ajax({
-				url: "update-approve-ajax.jsp",
-				type: "post",
-				data: {
-					id: id,
-				},
-				success: function (data) {
-					location.reload();
-				}
+	</body>
+	<script>
+		$(document).ready(function () {
+			$(".approve").click(function () {
+				var id = +this.id;
+				$.ajax({
+					url: "update-approve-ajax.jsp",
+					type: "post",
+					data: {
+						id: id,
+					},
+					success: function (data) {
+						location.reload();
+					}
+				});
 			});
 		});
-	});
-</script>
 
-</html>
-<%
+	</script>
+
+	</html>
+	<%
 	}
 	else{
-		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
 		response.sendRedirect("login.jsp");
 	}
 %>
