@@ -142,9 +142,13 @@
 									<td><b>Leave Reason:</b></td>
 									<td><%= rs.getString("leaveReason")%></td>
 								</tr>
+								<tr>
+								<td><button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button></td>
+								<td><button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button></td>
+								</tr>
 							</table>
-							<button class="approve" id="<%= rs.getInt("recordID")%>">Approve</button>
-							<button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button>
+							
+							
 						</div>
 					</div>
 

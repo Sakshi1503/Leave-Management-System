@@ -30,16 +30,14 @@
 								<a href="./hodHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i>Apply For
-									Leave</a>
+								<a href="hodApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i>Apply For Leave</a>
 							</li>
 							<li class="nav-item">
 								<a href="hodApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
 									Approve User</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
-									User</a>
+								<a href="hodRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove User</a>
 							</li>
                             <li class="nav-item">
 								<a href="hodApproveLeave.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
@@ -49,13 +47,11 @@
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
-									Profile</a>
+								<a href="hodEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit Profile</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="hodChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
-									Password</a>
+								<a href="hodChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change Password</a>
 							</li>
 							<li class="nav-item">
 								<a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
@@ -75,7 +71,7 @@
                     if(rs2.next()){
                     	hodID = rs2.getInt("hodID");
                     }
-                    rs = con.SelectData("select * from leave_record,faculty_master where appID = facultyID and appRole='faculty' and appToID = "+ hodID +" and appToRole='hod' and leaveApproved='no';");
+                    rs = con.SelectData("select * from leave_record,faculty_master where appID = facultyID and appRole='faculty' and appToID = "+ hodID +" and appToRole='hod' and leaveApproved='no' and leaverejected='no';");
                     while(rs.next()){
 						rs3 = con.SelectData("select branchName from branch_info where branchCode = " + rs.getInt("facultyBranch") +";");
 						String branch = new String();
