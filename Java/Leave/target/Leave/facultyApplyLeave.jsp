@@ -555,7 +555,7 @@
 											
 												if (request.getParameter("facultyApplyLeave") != null) {
 												if (con.CheckData(
-												"select * from leave_record where appID='" + appID + "' and appRole='faculty'")) {
+												"select * from leave_record where appID='" + appID + "' and appRole='faculty' and leaveApproved='no' and leaveRejected='no'")) {
 												out.println("<script>alert('You have already applied for leave');</script>");
 												}
 												

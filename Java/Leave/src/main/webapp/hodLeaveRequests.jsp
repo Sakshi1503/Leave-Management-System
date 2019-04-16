@@ -6,7 +6,7 @@
 	}
 	if(userRole.equals("hod")){
 %>
-<title>HOD Home</title>
+<title>Leave Requests</title>
 <jsp:include page="headerHod.jsp" />
 
 <body style="height: 91vh;">
@@ -94,7 +94,7 @@
                                             if(rs2.next()){
                                                 hodID = rs2.getInt("hodID");
                                             }
-                                            rs = con.SelectData("select * from leave_record,faculty_master where appID = "+ hodID +" and appRole='hod';");
+                                            rs = con.SelectData("select * from leave_record where appID = "+ hodID +" and appRole='hod';");
 
                                             while(rs.next()){
                                             

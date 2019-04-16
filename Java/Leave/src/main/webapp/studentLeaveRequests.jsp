@@ -4,67 +4,53 @@
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
-	if(userRole.equals("hod")){
+	if(userRole.equals("student")){
 %>
 <title>Leave Requests</title>
-<jsp:include page="headerHod.jsp" />
+<jsp:include page="headerStudent.jsp" />
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
 
-<body style="height: 91vh;">
-	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
-		<h1 class="uk-heading-divider"></h1>
-		<h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
-		<h1 class="uk-heading-divider"></h1>
-	</div>
+<body style="height: -webkit-fill-available;">
 
-	<div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
-		<div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
-			<div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
-				<div class="col-sm-4 col-md-3 col-lg-2"
-					style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
-					<div class="col-lg order-lg-first">
-						<ul class="nav nav-tabs">
-							<li class="nav-item">
-								<a href="./hodHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodApplyLeave.jsp" class="nav-link"><i class="fe fe-plus"></i>Apply For
-									Leave</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
-									Approve User</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
-									User</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
-									Approve Leave</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodLeaveRequests.jsp" class="nav-link active"><i class="fe fe-check-circle"></i>
-									Your Leaves</a>
-							</li>
-							<li class="nav-item">
-								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
-							</li>
-							<li class="nav-item">
-								<a href="hodEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
-									Profile</a>
-							</li>
+    <a href="login.jsp">
+        <div class="header" style="width: 100%; z-index: 980;" uk-sticky="" uk-sticky="bottom: #offset">
+            <h1 class="uk-heading-divider"></h1>
+            <h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
+            <h1 class="uk-heading-divider"></h1>
+        </div>
+    </a>
+    <div class="uk-modal-container" style="padding: 0px; margin: 0px; background-color: #edf2fa;">
+        <div class="container" style="height: 100%; width: 100%; padding: 0px; margin: 0px;">
+            <div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
+                <div class="col-sm-4 col-md-3 col-lg-2"
+                    style="padding: 10px; margin-top: 0px; background-color: #b3d9ff;">
+                    <div class="col-lg order-lg-first">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a href="./studentHome.jsp" class="nav-link"><i class="fe fe-home"></i> Apply for
+                                    Leave</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit
+                                    Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="studentLeaveRequests.jsp" class="nav-link active"><i class="fe fe-check-circle"></i> Your Leaves</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+                                    Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-							<li class="nav-item">
-								<a href="hodChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
-									Password</a>
-							</li>
-							<li class="nav-item">
-								<a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
+               <div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
                     <div class="container">
 						<div class="row">
 							<div class="col-12">
@@ -88,13 +74,13 @@
                                             ResultSet rs=null;
                                             ResultSetMetaData mtdt=null;
                                             con=new Connect();
-                                            int hodID = 0;
-                                            ResultSet rs2 = con.SelectData("select hodID from hod_master where hodEmail = '"+ session.getAttribute("hodUsername") +"';");
+                                            int studentID = 0;
+                                            ResultSet rs2 = con.SelectData("select studentID from student_master where studentEmail = '"+ session.getAttribute("studentUsername") +"';");
                                             ResultSet rs3 = null;
                                             if(rs2.next()){
-                                                hodID = rs2.getInt("hodID");
+                                                studentID = rs2.getInt("studentID");
                                             }
-                                            rs = con.SelectData("select * from leave_record where appID = "+ hodID +" and appRole='hod';");
+                                            rs = con.SelectData("select * from leave_record where appID = "+ studentID +" and appRole='student';");
 
                                             while(rs.next()){
                                             
