@@ -12,6 +12,41 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".approve").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+
+	$(document).ready(function () {
+		$(".reject").click(function () {
+			var id3 = this.id;
+			$.ajax({
+				url: "update-reject-ajax.jsp",
+				type: "post",
+				data: {
+					id: id3,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+</script>
+
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -64,7 +99,7 @@
 					</div>
 				</div>
 				<div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
-<%
+				<%
                     Connect con=null;
 					ResultSet rs=null;
 					ResultSetMetaData mtdt=null;
