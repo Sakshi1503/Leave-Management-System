@@ -8,6 +8,10 @@
 %>
 <title>Leave Requests</title>
 <jsp:include page="headerHod.jsp" />
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
+
 
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
@@ -108,22 +112,22 @@
                                                 String lR = rs.getString("leaveRejected");
                                                 if(lA.equals("no") && lR.equals("no")){
                                                 %>
-                                                <tr>Pending</tr>
+                                                <td>Pending</td>
                                                 <%    
                                                 }
                                                 else if(lA.equals("yes") && lR.equals("no")){
                                                 %>
-                                                <tr>Approved</tr>
+                                                <td>Approved</td>
                                                 <%    
                                                 }
                                                 else if(lA.equals("no") && lR.equals("yes")){
                                                 %>
-                                                <tr>Rejected</tr>
+                                                <td>Rejected</td>
                                                 <%    
                                                 }
                                                 else{
                                                 %>
-                                                <tr>Status Unavailable</tr>
+                                                <td>Status Unavailable</td>
                                                 <%  
                                                 }
                                                 %>
