@@ -33,11 +33,11 @@
                                     Leave</a>
                             </li>
                             <li class="nav-item">
-                                <a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit
-                                    Profile</a>
+                                <a href="studentLeaveRequests.jsp" class="nav-link active"><i class="fe fe-check-circle"></i> Your Leaves</a>
                             </li>
                             <li class="nav-item">
-                                <a href="studentLeaveRequests.jsp" class="nav-link active"><i class="fe fe-check-circle"></i> Your Leaves</a>
+                                <a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit
+                                    Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a href="studentChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change

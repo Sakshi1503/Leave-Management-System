@@ -83,7 +83,6 @@
 													<th>Branch</th>
 													<th></th>
 													<th></th>
-													<th></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -115,6 +114,16 @@
 														}	
 														out.println(branch);
 														%></td>
+														<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
 												</tr>
 												<%
 													}
@@ -140,6 +149,16 @@
 														branch = rs2.getString("branchName");
 														}	
 														out.println(branch);%></td>
+														<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
 												</tr>
 												<%
 														}
@@ -158,6 +177,16 @@
 													<td><%out.println(wardenContact);%></td>
 													<td><%out.println(wardenEmail);%></td>
 													<td><%out.println("-");%></td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
 												</tr>
 												<%
 													}
@@ -184,7 +213,7 @@
 														}	
 														out.println(branch);
 														%></td>
-													<td style="padding: 0px; margin: 1px;">
+													<%-- <td style="padding: 0px; margin: 1px;">
 														<ul class="uk-iconnav">
 															<li>
 																<div uk-lightbox>
@@ -193,7 +222,7 @@
 																</div>
 															</li>
 														</ul>
-													</td>
+													</td> --%>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>

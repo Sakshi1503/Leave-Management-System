@@ -33,6 +33,9 @@
 									Leave</a>
 							</li>
 							<li class="nav-item">
+                                <a href="studentLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Your Leaves</a>
+                            </li>
+							<li class="nav-item">
 								<a href="studentEditProfile.jsp" class="nav-link"><i class="fe fe-plus"></i> Edit
 									Profile</a>
 							</li>
