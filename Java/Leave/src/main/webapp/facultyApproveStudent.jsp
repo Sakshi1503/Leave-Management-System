@@ -46,6 +46,10 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
@@ -82,7 +86,6 @@
 													<th>Branch</th>
 													<th></th>
 													<th></th>
-													<th></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -91,11 +94,12 @@
 													ResultSet rs=null;
 													ResultSetMetaData mtdt=null;
 													con=new Connect();
-													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes'");
+													rs=con.SelectData("select studentName,studentEno ,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes'");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{
 														String studentName=rs.getString("studentName");
+														String studentEno=rs.getString("studentEno");
 														String studentContact=rs.getString("studentContact");
 														String studentEmail=rs.getString("studentEmail");
 														int studentBranch=rs.getInt("studentBranch");
@@ -103,6 +107,7 @@
 												<tr>
 													<td>Student</td>
 													<td><%out.println(studentName);%></td>
+													<td><%out.println(studentEno);%></td>
 													<td><%out.println(studentContact);%></td>
 													<td><%out.println(studentEmail);%></td>
 													<td><%
@@ -114,16 +119,6 @@
 														}	
 														out.println(branch);
 														%></td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
@@ -139,34 +134,6 @@
 													}
 													con.CloseConnection();
 												%>
-												<tr>
-													<td>Student</td>
-													<td>A. A. Patel</td>
-													<td>160170116100</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonStudent.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
 											</tbody>
 										</table>
 									</div>

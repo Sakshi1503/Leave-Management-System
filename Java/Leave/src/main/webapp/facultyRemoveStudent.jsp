@@ -43,6 +43,10 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
@@ -83,21 +87,39 @@
 												</tr>
 											</thead>
 											<tbody>
+												<%
+													Connect con=null;
+													ResultSet rs=null;
+													ResultSetMetaData mtdt=null;
+													con=new Connect();
+													rs=con.SelectData("select studentName,studentEno ,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes'");
+													mtdt=rs.getMetaData();
+													while(rs.next())
+													{
+														String studentName=rs.getString("studentName");
+														String studentName=rs.getString("studentEno");
+														String studentContact=rs.getString("studentContact");
+														String studentEmail=rs.getString("studentEmail");
+														int studentBranch=rs.getInt("studentBranch");
+												%>
 												<tr>
 													<td>Student</td>
-													<td>A. A. Patel</td>
-													<td>160170116100</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
+													<td><%out.println(studentName);%></td>
+													<td><%out.println(studentEno);%></td>
+													<td><%out.println(studentContact);%></td>
+													<td><%out.println(studentEmail);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
+													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonStudent.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
+															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
@@ -106,6 +128,10 @@
 														</ul>
 													</td>
 												</tr>
+												<%
+													}
+													con.CloseConnection();
+												%>
 											</tbody>
 										</table>
 									</div>
