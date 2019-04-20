@@ -45,6 +45,10 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
@@ -102,9 +106,6 @@
 																con.Ins_Upd_Del("update hod_master set hodPassword='"+request.getParameter("hodNewPassword")+"' where hodPassword='"+request.getParameter("hodPassword")+"'");
 																out.println("<script>alert('Password is successfully updated')</script>");
 															}
-														else{
-															out.println("<script>alert('Password is not updated')</script>");
-														}
 										%>
 									</form>
 								</div>
@@ -140,7 +141,6 @@
 <%
 	}
 	else{
-		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
 		response.sendRedirect("login.jsp");
 	}
 %>

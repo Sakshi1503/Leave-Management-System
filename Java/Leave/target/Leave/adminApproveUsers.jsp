@@ -124,6 +124,16 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
 												</tr>
 												<%
 													}
@@ -150,6 +160,16 @@
 														}	
 														out.println(branch);%></td>
 														<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
@@ -187,6 +207,16 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
 												</tr>
 												<%
 													}
@@ -213,16 +243,6 @@
 														}	
 														out.println(branch);
 														%></td>
-													<%-- <td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td> --%>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>

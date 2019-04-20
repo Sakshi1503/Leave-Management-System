@@ -46,6 +46,10 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">

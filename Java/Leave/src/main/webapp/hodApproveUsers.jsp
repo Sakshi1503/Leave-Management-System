@@ -46,6 +46,10 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
+								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
+							<li class="nav-item">
 								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
@@ -83,7 +87,6 @@
 													<th>Branch</th>
 													<th></th>
 													<th></th>
-													<th></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -114,16 +117,6 @@
 														branch = rs2.getString("branchName");
 														}	
 														out.println(branch);%></td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
@@ -159,27 +152,7 @@
 														branch = rs2.getString("branchName");
 														}	
 														out.println(branch);%></td>
-												</tr>
-												<%
-													}
-													con.CloseConnection();
-												%>
-												<tr>
-													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
-														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="cAdmin.jsp" uk-icon="icon: push"></a>
-																</div>
-															</li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
+														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
@@ -190,7 +163,10 @@
 														</ul>
 													</td>
 												</tr>
-
+												<%
+													}
+													con.CloseConnection();
+												%>
 											</tbody>
 										</table>
 									</div>
