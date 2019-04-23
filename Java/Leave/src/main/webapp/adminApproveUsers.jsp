@@ -13,6 +13,70 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".approveStudent").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-student-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+	$(document).ready(function () {
+		$(".approveFaculty").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-faculty-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+	$(document).ready(function () {
+		$(".approveWarden").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-warden-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+	$(document).ready(function () {
+		$(".approveHod").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-hod-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+</script>
+
 
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
@@ -116,7 +180,7 @@
 														%></td>
 														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><a href="#" class="approveHod" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
@@ -124,7 +188,7 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
+													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
@@ -133,7 +197,7 @@
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
-													</td>
+													</td> --%>
 												</tr>
 												<%
 													}
@@ -161,7 +225,7 @@
 														out.println(branch);%></td>
 														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><a href="#" class="approveFaculty" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
@@ -169,7 +233,7 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
+													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
@@ -178,7 +242,7 @@
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
-													</td>
+													</td> --%>
 												</tr>
 												<%
 														}
@@ -199,7 +263,7 @@
 													<td><%out.println("-");%></td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><a href="#" class="approveWarden" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
@@ -207,7 +271,7 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
+													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
@@ -216,7 +280,7 @@
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
-													</td>
+													</td> --%>
 												</tr>
 												<%
 													}
@@ -245,7 +309,7 @@
 														%></td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><a href="#" class="approveStudent" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
