@@ -31,7 +31,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.15</version>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
     <dependency>
       <groupId>org.apache.tomcat.maven</groupId>
@@ -49,8 +48,8 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Internal repo</name>
-			 <!-- <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>   -->
-      <url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>
+			 <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>  
+     <!--  <url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>  -->
 		</repository>
 	</distributionManagement>
 

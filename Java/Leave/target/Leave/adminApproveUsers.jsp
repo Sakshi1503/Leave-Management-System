@@ -91,7 +91,7 @@
 												 ResultSet rs=null;
 												 ResultSetMetaData mtdt=null;
 												 con=new Connect();
-												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='Yes'");
+												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='No'");
 												 mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -123,21 +123,10 @@
 														<ul class="uk-iconnav">
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
 												</tr>
 												<%
 													}
-												 rs=con.SelectData("select facultyName,facultyContact,facultyEmail,facultyBranch from faculty_master where isApprovedFaculty='Yes'");
+												 rs=con.SelectData("select facultyName,facultyContact,facultyEmail,facultyBranch from faculty_master where isApprovedFaculty='No'");
 												 mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -169,20 +158,10 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
 												</tr>
 												<%
 														}
-														rs=con.SelectData("select wardenName,wardenContact,wardenEmail from warden_master where isApprovedWarden='Yes'");
+														rs=con.SelectData("select wardenName,wardenContact,wardenEmail from warden_master where isApprovedWarden='No'");
 														mtdt=rs.getMetaData();
 														while(rs.next())
 														{
@@ -207,20 +186,10 @@
 															<li><a href="#" uk-icon="icon: close"></a></li>
 														</ul>
 													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
 												</tr>
 												<%
 													}
-													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes'");
+													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='No'");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{

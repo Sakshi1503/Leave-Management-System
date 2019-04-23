@@ -118,11 +118,11 @@
 													<div class="form-group">
 													<label class="form-label">Type of Leave</label>
 													<select class="form-control custom-select" id="roleSelect">
-														<option value="CasualLeave">Casual Leave</option>
-														<option value="SpecialCasualLeave">Special Casual Leave</option>
-														<option value="HalfPayLeave">Half Pay Leave</option>
-														<option value="EarnedLeave">Earned Leave</option>
-														<option value="MedicalLeave">Medical Leave</option>
+														<option value="Casual Leave">Casual Leave</option>
+														<option value="Special Casual Leave">Special Casual Leave</option>
+														<option value="HalfPay Leave">Half Pay Leave</option>
+														<option value="Earned Leave">Earned Leave</option>
+														<option value="Medical Leave">Medical Leave</option>
 													</select>
 												</div>
 												<div class="form-group">
