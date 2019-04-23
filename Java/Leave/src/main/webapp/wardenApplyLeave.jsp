@@ -78,12 +78,12 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Type of Leave</label>
-													<select class="form-control custom-select" id="roleSelect">
-														<option value="CasualLeave">Casual Leave</option>
-														<option value="SpecialCasualLeave">Special Casual Leave</option>
-														<option value="HalfPayLeave">Half Pay Leave</option>
-														<option value="EarnedLeave">Earned Leave</option>
-														<option value="MedicalLeave">Medical Leave</option>
+													<select class="form-control custom-select" id="roleSelect" name="wardenTypeLeave">
+														<option value="Casual Leave">Casual Leave</option>
+														<option value="Special Casual Leave">Special Casual Leave</option>
+														<option value="HalfPay Leave">Half Pay Leave</option>
+														<option value="Earned Leave">Earned Leave</option>
+														<option value="Medical Leave">Medical Leave</option>
 													</select>
 												</div>
 												<div class="form-group">
@@ -520,13 +520,12 @@
 												}
 											
 												if (request.getParameter("wardenApplyLeave") != null) {
-												if (con.CheckData(
-												"select * from leave_record where appID='" + appID + "' and appRole='warden' and leaveApproved='no' and leaveRejected='no'")) {
+												if (con.CheckData("select * from leave_record where appID='" + appID + "' and appRole='warden' and leaveApproved='no' and leaveRejected='no'")) {
 												out.println("<script>alert('You have already applied for leave');</script>");
 												}
 												
 												else {
-												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'warden','"+request.getParameter("wardenReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
+												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveType ,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'warden','"+request.getParameter("wardenTypeLeave")+"','"+request.getParameter("wardenReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
 												else
 												out.println("<script>alert('Record was not inserted......');</script>");

@@ -8,6 +8,12 @@
 %><title>Remove Users</title>
 <jsp:include page="headerAdmin.jsp" />
 
+
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
+
+
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -81,20 +87,71 @@
 												</tr>
 											</thead>
 											<tbody>
+												<%
+												 Connect con=null;
+												 ResultSet rs=null;
+												 ResultSetMetaData mtdt=null;
+												 con=new Connect();
+												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='Yes'");
+												 mtdt=rs.getMetaData();
+													while(rs.next())
+													{
+														String hodName=rs.getString("hodName");
+														String hodContact=rs.getString("hodContact");
+														String hodEmail=rs.getString("hodEmail");
+														int hodBranch=rs.getInt("hodBranch");
+												%>
 												<tr>
 													<td>HoD</td>
-													<td>Prof. A. A. Patel</td>
-													<td>8888888888</td>
-													<td>aapatel@email.com</td>
-													<td>Information Technology</td>
-													<td style="padding: 0px; margin: 1px;">
+													<td><%out.println(hodName);%></td>
+													<td><%out.println(hodContact);%></td>
+													<td><%out.println(hodEmail);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("hodBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
+														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li>
-																<div uk-lightbox>
-																	<a href="viewButtonAdmin.jsp"
-																		uk-icon="icon: push"></a>
-																</div>
-															</li>
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+												</tr>
+												<%
+													}
+													 rs=con.SelectData("select facultyName,facultyContact,facultyEmail,facultyBranch from faculty_master where isApprovedFaculty='Yes'");
+												 mtdt=rs.getMetaData();
+													while(rs.next())
+													{
+														String facultyName=rs.getString("facultyName");
+														String facultyContact=rs.getString("facultyContact");
+														String facultyEmail=rs.getString("facultyEmail");
+														int facultyBranch=rs.getInt("facultyBranch");
+												%>
+												<tr>
+													<td>Faculty</td>
+													<td><%out.println(facultyName);%></td>
+													<td><%out.println(facultyContact);%></td>
+													<td><%out.println(facultyEmail);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("facultyBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);%></td>
+														<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
@@ -103,6 +160,74 @@
 														</ul>
 													</td>
 												</tr>
+												<%
+														}
+														rs=con.SelectData("select wardenName,wardenContact,wardenEmail from warden_master where isApprovedWarden='Yes'");
+														mtdt=rs.getMetaData();
+														while(rs.next())
+														{
+															String wardenName=rs.getString("wardenName");
+															String wardenContact=rs.getString("wardenContact");
+															String wardenEmail=rs.getString("wardenEmail");
+															String wardenBranch="-";
+													%>
+												<tr>
+													<td>Warden</td>
+													<td><%out.println(wardenName);%></td>
+													<td><%out.println(wardenContact);%></td>
+													<td><%out.println(wardenEmail);%></td>
+													<td><%out.println("-");%></td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
+												</tr>
+												<%
+													}
+													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes'");
+													mtdt=rs.getMetaData();
+													while(rs.next())
+													{
+														String studentName=rs.getString("studentName");
+														String studentContact=rs.getString("studentContact");
+														String studentEmail=rs.getString("studentEmail");
+														int studentBranch=rs.getInt("studentBranch");
+												%>
+												<tr>
+													<td>Student</td>
+													<td><%out.println(studentName);%></td>
+													<td><%out.println(studentContact);%></td>
+													<td><%out.println(studentEmail);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);
+														%></td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: check"></a></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
+												</tr>
+												<%
+													}
+													con.CloseConnection();
+												%>
 											</tbody>
 										</table>
 									</div>
