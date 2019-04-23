@@ -180,22 +180,22 @@
 														%></td>
 														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" class="approveHod" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveHod" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td>
 													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td> --%>
 												</tr>
@@ -225,22 +225,22 @@
 														out.println(branch);%></td>
 														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" class="approveFaculty" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveFaculty" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td>
 													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td> --%>
 												</tr>
@@ -263,22 +263,22 @@
 													<td><%out.println("-");%></td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" class="approveWarden" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveWarden" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td>
 													<%-- <td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td> --%>
 												</tr>
@@ -309,12 +309,12 @@
 														%></td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" class="approveStudent" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveStudent" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
+															<li><button style="border: 0px;" uk-icon="icon: close"></button></li>
 														</ul>
 													</td>
 												</tr>
