@@ -9,6 +9,10 @@
 <title>Remove Student</title>
 <jsp:include page="headerFaculty.jsp" />
 
+<%@page import="Connection.Connect"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSetMetaData"%>
+
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -83,7 +87,6 @@
 													<th>Branch</th>
 													<th></th>
 													<th></th>
-													<th></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -97,7 +100,7 @@
 													while(rs.next())
 													{
 														String studentName=rs.getString("studentName");
-														String studentName=rs.getString("studentEno");
+														String studentEno=rs.getString("studentEno");
 														String studentContact=rs.getString("studentContact");
 														String studentEmail=rs.getString("studentEmail");
 														int studentBranch=rs.getInt("studentBranch");
