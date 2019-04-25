@@ -155,7 +155,7 @@
 												 ResultSet rs=null;
 												 ResultSetMetaData mtdt=null;
 												 con=new Connect();
-												 rs=con.SelectData("select hodName,hodContact,hodEmail,hodBranch from hod_master where isApprovedHod='No'");
+												 rs=con.SelectData("select * from hod_master where isApprovedHod='No'");
 												 mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -201,7 +201,7 @@
 												</tr>
 												<%
 													}
-												 rs=con.SelectData("select facultyName,facultyContact,facultyEmail,facultyBranch from faculty_master where isApprovedFaculty='No'");
+												 rs=con.SelectData("select * from faculty_master where isApprovedFaculty='No'");
 												 mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -246,7 +246,7 @@
 												</tr>
 												<%
 														}
-														rs=con.SelectData("select wardenName,wardenContact,wardenEmail from warden_master where isApprovedWarden='No'");
+														rs=con.SelectData("select * from warden_master where isApprovedWarden='No'");
 														mtdt=rs.getMetaData();
 														while(rs.next())
 														{
@@ -284,7 +284,7 @@
 												</tr>
 												<%
 													}
-													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='No'");
+													rs=con.SelectData("select * from student_master where isApprovedStudent='No'");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{
