@@ -181,7 +181,7 @@
 																							String branchstr=str.substring(7,9);
 																							int branch=Integer.parseInt(branchstr);
 																							System.out.println(branch);
-																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender,isApprovedStudent) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"','No');"))
+																							if(con.Ins_Upd_Del("insert into student_master(studentEno,studentName,studentSem,studentAddress,studentCity,studentState,studentEmail,studentContact,studentFatherContact,studentMotherContact,studentHosteller,studentPassword,studentBranch,studentGender,isApprovedStudent) values('"+request.getParameter("studentEno")+"','"+request.getParameter("studentName")+"',"+request.getParameter("studentSem")+",'"+request.getParameter("studentAddress")+"','"+request.getParameter("studentCity")+"','"+request.getParameter("studentState")+"','"+request.getParameter("studentEmail")+"','"+request.getParameter("studentContact")+"','"+request.getParameter("studentFatherContact")+"','"+request.getParameter("studentMotherContact")+"','"+request.getParameter("studentHosteller")+"','"+request.getParameter("studentPassword")+"',"+branch+",'"+request.getParameter("studentGender")+"','no');"))
 																							{
 																								out.println("<script>alert('Record inserted......');</script>");
 																							}
@@ -211,10 +211,10 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('input[type="radio"]').click(function () {
-				if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'Yes') {
+				if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 					$('#hostel').show();
 				}
-				else if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'No') {
+				else if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'no') {
 					$('#hostel').hide();
 				}
 				else { }

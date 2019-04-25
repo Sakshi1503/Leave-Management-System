@@ -92,7 +92,7 @@
                                                     ResultSet rs=null;
                                                     ResultSetMetaData mtdt=null;
                                                     con=new Connect();
-                                                    rs=con.SelectData("select studentName,studentEno,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='Yes' and studentHosteller='Yes'");
+                                                    rs=con.SelectData("select studentName,studentEno,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='yes' and studentHosteller='yes'");
                                                     mtdt=rs.getMetaData();
                                                     while(rs.next())
                                                     {
