@@ -121,7 +121,7 @@
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
-																value="Yes" class="selectgroup-input">
+																value="yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
@@ -155,10 +155,10 @@
 					<script type="text/javascript">
 						$(document).ready(function () {
 							$('input[type="radio"]').click(function () {
-								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'Yes') {
+								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 									$('#hostel').show();
 								}
-								else if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'No') {
+								else if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'no') {
 									$('#hostel').hide();
 								}
 								else { }
