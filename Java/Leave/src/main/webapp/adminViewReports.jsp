@@ -1,0 +1,125 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.google.gson.Gson"%>
+<%@ page import="com.google.gson.JsonObject"%>
+<%
+	String userRole = new String("SUPERSTAR");
+	
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("admin")){
+%>
+<title>Admin Reports</title>
+<jsp:include page="headerAdmin.jsp" />
+
+<%
+Gson gsonObj = new Gson();
+Map<Object,Object> map = null;
+List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
+ 
+map = new HashMap<Object,Object>(); map.put("x", 10); map.put("y", 31); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 20); map.put("y", 65); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 30); map.put("y", 40); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 40); map.put("y", 84); map.put("indexLabel", "Highest"); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 50); map.put("y", 68); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 60); map.put("y", 64); list.add(map);
+map = new HashMap<Object,Object>(); map.put("x", 70); map.put("y", 38); list.add(map);
+ 
+String dataPoints = gsonObj.toJson(list);
+%>
+
+
+<body>
+
+<script type="text/javascript">
+		window.onload = function () {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				exportEnabled: true,
+				title: {
+					text: "Simple Column Chart with Index Labels"
+				},
+				data: [{
+					type: "column", //change type to bar, line, area, pie, etc
+					//indexLabel: "{y}", //Shows y value on all Data Points
+					indexLabelFontColor: "#5A5757",
+					indexLabelPlacement: "outside",
+					dataPoints: <% out.print(dataPoints);%>
+	}]
+});
+		chart.render();
+ 
+}
+	</script>
+    <div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
+        <h1 class="uk-heading-divider"></h1>
+        <h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
+        <h1 class="uk-heading-divider"></h1>
+    </div>
+
+    <div class="page" style="padding: 0px; margin: 0px; height: -webkit-fill-available; background-color: #edf2fa;">
+        <div class="container" style="padding: 0px; margin: 0px; height: -webkit-fill-available;">
+            <div class="row" style="height: 100%; width: 100%;padding: 0px; margin: 0px;">
+                <div class="col-sm-4 col-md-3 col-lg-2"
+                    style="padding: 10px; margin-top: 0px; background-color: #b3d9ff; height: -webkit-fill-available;">
+                    <div class="col-lg order-lg-first">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+                                    Approve User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="adminRemoveUsers.jsp" class="nav-link"><i uk-icon="icon: close"></i> Remove
+                                    User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="adminApproveLeave.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+                                    Approve Leave</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
+                                    Profile</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
+                                    Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="logout.jsp" class="nav-link"><i class="fe fe-minus"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
+                    <%
+						out.print("Welcome "+ (String)session.getAttribute("adminUsername"));
+					%>
+                     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
+<%
+	}
+	else{
+		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
+		response.sendRedirect("login.jsp");
+	}
+%>
