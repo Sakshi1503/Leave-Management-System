@@ -12,6 +12,41 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".approveStudent").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-student-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+	$(document).ready(function () {
+		$(".approveFaculty").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-faculty-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+</script>
+
+
 <body style="height: 91vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -95,42 +130,7 @@
 													ResultSet rs=null;
 													ResultSetMetaData mtdt=null;
 													con=new Connect();
-													rs=con.SelectData("select studentName,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='no'");
-													mtdt=rs.getMetaData();
-													while(rs.next())
-													{
-														String studentName=rs.getString("studentName");
-														String studentContact=rs.getString("studentContact");
-														String studentEmail=rs.getString("studentEmail");
-														int studentBranch=rs.getInt("studentBranch");
-												%>
-												<tr>
-													<td>Student</td>
-													<td><%out.println(studentName);%></td>
-													<td><%out.println(studentContact);%></td>
-													<td><%out.println(studentEmail);%></td>
-													<td><%
-														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
-														ResultSetMetaData mtdt2 = rs2.getMetaData();
-														String branch=null;
-														if(rs2.next()){
-														branch = rs2.getString("branchName");
-														}	
-														out.println(branch);%></td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
-														</ul>
-													</td>
-													<td style="padding: 0px;">
-														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: close"></a></li>
-														</ul>
-													</td>
-												</tr>
-												<%
-													}
-													rs=con.SelectData("select facultyName,facultyContact,facultyEmail,facultyBranch from faculty_master where isApprovedFaculty='no'");
+													rs=con.SelectData("select * from faculty_master where isApprovedFaculty='no'");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -154,7 +154,42 @@
 														out.println(branch);%></td>
 														<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveFaculty" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
+														</ul>
+													</td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><a href="#" uk-icon="icon: close"></a></li>
+														</ul>
+													</td>
+												</tr>
+												<%
+													}
+													rs=con.SelectData("select * from student_master where isApprovedStudent='no'");
+													mtdt=rs.getMetaData();
+													while(rs.next())
+													{
+														String studentName=rs.getString("studentName");
+														String studentContact=rs.getString("studentContact");
+														String studentEmail=rs.getString("studentEmail");
+														int studentBranch=rs.getInt("studentBranch");
+												%>
+												<tr>
+													<td>Student</td>
+													<td><%out.println(studentName);%></td>
+													<td><%out.println(studentContact);%></td>
+													<td><%out.println(studentEmail);%></td>
+													<td><%
+														ResultSet rs2 = con.SelectData("select branchName from branch_info where branchCode="+rs.getInt("studentBranch"));
+														ResultSetMetaData mtdt2 = rs2.getMetaData();
+														String branch=null;
+														if(rs2.next()){
+														branch = rs2.getString("branchName");
+														}	
+														out.println(branch);%></td>
+													<td style="padding: 0px;">
+														<ul class="uk-iconnav">
+															<li><button style="border: 0px;" class="approveStudent" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">

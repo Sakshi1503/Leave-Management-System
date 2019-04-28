@@ -74,22 +74,29 @@
 												<div class="card-title">
 													<center>Edit Profile</center>
 												</div>
+												<%
+												
+													Connect con=new Connect();
+													String adminUsername=(String)session.getAttribute("adminUsername");
+													ResultSet rs=con.SelectData("select * from admin_master where adminEmail='"+adminUsername+"'");
+													if(rs.next()){
+												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="text" name="username" class="form-control"
+													<input type="text" name="username" class="form-control" value="<%=rs.getString("adminName")%>"
 														id="exampleUsername1" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="text" name="contactNo" class="form-control"
+													<input type="text" name="contactNo" class="form-control" value="<%=rs.getString("adminContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo" pattern="[0-9]{10}"
 														placeholder="Enter Mobile No">
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input type="text" name="email" class="form-control"
+													<input type="text" name="email" class="form-control" value="<%=rs.getString("adminEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Email">
@@ -103,11 +110,17 @@
 												</div>
 											</div>
 											<%
-											if(request.getParameter("adminEditProfile")!=null)
-												{
-													Connect con=new Connect();
-													con.Ins_Upd_Del("update admin_master set adminName='"+request.getParameter("username")+"',adminEmail='"+request.getParameter("email")+"',adminContact='"+request.getParameter("contactNo")+"' where adminEmail='"+request.getParameter("email")+"'");
-													out.println("<script>alert('Record successfully updated')</script>");
+														if(request.getParameter("adminEditProfile")!=null)
+													{
+														int adminID=rs.getInt("adminID");
+														if(con.Ins_Upd_Del("update admin_master set adminName='"+request.getParameter("username")+"',adminEmail='"+request.getParameter("email")+"',adminContact='"+request.getParameter("contactNo")+"' where adminID="+adminID+""))
+														{
+														out.println("<script>alert('Record Updated Successfully.')</script>");
+														}
+														else{
+														out.println("<script>alert('There was a problem in updating your Information.')</script>");
+														}
+													}
 												}
 											%>
 										</form>
