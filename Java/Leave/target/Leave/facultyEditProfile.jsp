@@ -125,6 +125,10 @@
 												<div class="form-group">
 													<label class="form-label">Is appointed as a hostel incharge?</label>
 													<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+															<input type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("isHostelIncharge")%>"
+																 class="selectgroup-input" checked="">
+														</label>
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
 																value="yes" class="selectgroup-input">

@@ -88,6 +88,11 @@
 												</div>
 												<div class="form-group" id="teachin" style="margin-bottom: 8px;">
 													<label class="form-label">Semester:</label>
+													
+													<label class="selectgroup-item">
+													<input type="radio" name="studentSem" value="<%=rs.getString("studentSem")%>"
+															class="selectgroup-input" checked="">
+													</label>
 													<label class="selectgroup-item">
 														<input type="radio" name="studentSem" value="1"
 															class="selectgroup-input">
@@ -153,6 +158,10 @@
 												<div class="form-group">
 													<label class="form-label">Are you Hosteller?</label>
 													<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+															<input type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("studentHosteller")%>"
+																class="selectgroup-input" checked="">
+														</label>
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
 																value="yes" class="selectgroup-input">
