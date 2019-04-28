@@ -75,7 +75,6 @@
 													<center>Edit Profile</center>
 												</div>
 												<%
-												
 													Connect con=new Connect();
 													String adminUsername=(String)session.getAttribute("adminUsername");
 													ResultSet rs=con.SelectData("select * from admin_master where adminEmail='"+adminUsername+"'");

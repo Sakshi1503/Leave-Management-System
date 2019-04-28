@@ -84,16 +84,22 @@
 														<option value="HoD" selected="">HoD</option>
 													</select>
 												</div>
+												<%
+													Connect con=new Connect();
+													String hodUsername=(String)session.getAttribute("hodUsername");
+													ResultSet rs=con.SelectData("select * from hod_master where hodEmail='"+hodUsername+"'");
+													if(rs.next()){
+												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" name="username" class="form-control"
+													<input type="username" name="username" class="form-control" value="<%=rs.getString("hodName")%>"
 														id="exampleUsername1" aria-describedby="nameHelp"
 														pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" name="contactNo" class="form-control"
+													<input type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("hodContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo"
 														pattern="[0-9]{10}"
 														placeholder="Enter Mobile No">
@@ -101,26 +107,38 @@
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input type="email" name="email" class="form-control"
+													<input type="email" name="email" class="form-control" value="<%=rs.getString("hodEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Name">
 												</div>
+												<div class="form-group">
+													<label class="form-label">Branch ID</label>
+													<input type="branch" name="branchID" class="form-control" value="<%=rs.getString("hodBranch")%>"
+														id="exampleInputbranch" aria-describedby="branchHelp"
+														placeholder="Enter branch">
+												</div>
 
 												<div class="form-footer">
 													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
-													<button type="submit" class="btn btn-primary btn-block"
+													<button type="submit" class="btn btn-primary btn-block" 
 														id="submitLink" value="submit"
 														name="hodEditProfile">Submit</button>
 												</div>
 											</div>
 											<%
-												if(request.getParameter("hodEditProfile")!=null)
+														if(request.getParameter("hodEditProfile")!=null)
 													{
-														Connect con=new Connect();
-														con.Ins_Upd_Del("update hod_master set hodName='"+request.getParameter("username")+"',hodEmail='"+request.getParameter("email")+"',hodContact='"+request.getParameter("contactNo")+"' where hodEmail='"+request.getParameter("email")+"'");
-														out.println("<script>alert('Record successfully updated')</script>");
+														int hodID=rs.getInt("hodID");
+														if(con.Ins_Upd_Del("update hod_master set hodName='"+request.getParameter("username")+"',hodEmail='"+request.getParameter("email")+"',hodContact='"+request.getParameter("contactNo")+"',hodBranch='"+request.getParameter("branchID")+"' where hodID='"+hodID+"'"))
+														{
+															out.println("<script>alert('Record Updated Successfully.')</script>");
+														}
+														else{
+															out.println("<script>alert('There was a problem in updating your Information.')</script>");
+														}
 													}
+												}
 											%>
 										</form>
 									</div>

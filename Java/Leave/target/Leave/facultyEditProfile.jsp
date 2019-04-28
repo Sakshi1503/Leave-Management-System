@@ -84,35 +84,41 @@
 														<option value="Faculty" selected="">Faculty</option>
 													</select>
 												</div>
+												<%
+													Connect con=new Connect();
+													String facultyUsername=(String)session.getAttribute("facultyUsername");
+													ResultSet rs=con.SelectData("select * from faculty_master where facultyEmail='"+facultyUsername+"'");
+													if(rs.next()){
+												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" name="username" class="form-control"
+													<input type="username" name="username" class="form-control" value="<%=rs.getString("facultyName")%>"
 														id="exampleInputname" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" name="contactNo" class="form-control"
+													<input type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("facultyContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo"
 														pattern="[0-9]{10}"
 														placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
-													<input type="email" name="email" class="form-control"
+													<input type="email" name="email" class="form-control" value="<%=rs.getString("facultyEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input type="branch" name="branchID" class="form-control"
+													<input type="branch" name="branchID" class="form-control" value="<%=rs.getString("facultyBranch")%>"
 														id="exampleInputbranch" aria-describedby="branchHelp"
 														placeholder="Enter branch">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" name="designation" class="form-control"
+													<input type="position" name="designation" class="form-control" value="<%=rs.getString("facultyPosition")%>"
 														id="exampleInputposition" aria-describedby="positionHelp"
 														placeholder="Enter Current Position">
 												</div>
@@ -132,19 +138,24 @@
 													</div>
 												</div>
 												<div class="form-footer">
-													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 													<button type="submit" class="btn btn-primary btn-block"
 														id="submitLink" value="submit"
 														name="facultyEditProfile">Submit</button>
 												</div>
 											</div>
 											<%
-												if(request.getParameter("facultyEditProfile")!=null)
+														if(request.getParameter("facultyEditProfile")!=null)
 													{
-														Connect con=new Connect();
-														con.Ins_Upd_Del("update faculty_master set facultyName='"+request.getParameter("username")+"',facultyEmail='"+request.getParameter("email")+"',facultyContact='"+request.getParameter("contactNo")+"',facultyBranch="+request.getParameter("branchID")+",facultyPosition='"+request.getParameter("designation")+"',isHostelIncharge='"+request.getParameter("hosteller")+"' where facultyEmail='"+request.getParameter("email")+"'");
-														out.println("<script>alert('Record successfully updated')</script>");
+														int facultyID=rs.getInt("facultyID");
+														if(con.Ins_Upd_Del("update faculty_master set facultyName='"+request.getParameter("username")+"',facultyEmail='"+request.getParameter("email")+"',facultyContact='"+request.getParameter("contactNo")+"',facultyBranch="+request.getParameter("branchID")+",facultyPosition='"+request.getParameter("designation")+"',isHostelIncharge='"+request.getParameter("hosteller")+"' where facultyID='"+facultyID+"'"))
+														{
+															out.println("<script>alert('Record Updated Successfully.')</script>");
+														}
+														else{
+															out.println("<script>alert('There was a problem in updating your Information.')</script>");
+														}
 													}
+												}
 											%>
 										</form>
 									</div>

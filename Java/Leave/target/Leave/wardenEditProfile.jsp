@@ -6,6 +6,8 @@
 	}
 	if(userRole.equals("warden")){
 %>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
 <jsp:include page="headerWarden.jsp" />
 
@@ -78,63 +80,47 @@
                                                         <option value="warden" selected="">Warden</option>
                                                     </select>
                                                 </div>
+                                                	<%
+													Connect con=new Connect();
+													String wardenUsername=(String)session.getAttribute("wardenUsername");
+													ResultSet rs=con.SelectData("select * from warden_master where wardenEmail='"+wardenUsername+"'");
+													if(rs.next()){
+												%>
                                                 <div class="form-group">
                                                     <label class="form-label">Name</label>
-                                                    <input type="username" class="form-control" id="exampleInputname"
+                                                    <input type="username" class="form-control" id="exampleInputname" value="<%=rs.getString("wardenName")%>"
                                                         aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Contact No</label>
-                                                    <input type="mobileno" class="form-control" id="exampleInputMobile"
+                                                    <input type="mobileno" class="form-control" id="exampleInputMobile" value="<%=rs.getString("wardenContact")%>"
                                                         aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Mobile No">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Email ID</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" value="<%=rs.getString("wardenEmail")%>"
                                                         aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Branch ID</label>
-                                                    <input type="branch" class="form-control" id="exampleInputbranch"
-                                                        aria-describedby="branchHelp" placeholder="Enter branch">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Designation</label>
-                                                    <input type="position" class="form-control" id="exampleInputposition"
-                                                        aria-describedby="positionHelp" placeholder="Enter Current Position">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Is appointed as a hostel incharge?</label>
-                                                    <div class="selectgroup w-100">
-                                                        <label class="selectgroup-item">
-                                                            <input type="radio" name="hosteller" id="hosteller" value="Yes"
-                                                                class="selectgroup-input">
-                                                            <span class="selectgroup-button">Yes</span>
-                                                        </label>
-                                                        <label class="selectgroup-item">
-                                                            <input type="radio" name="hosteller" id="hosteller" value="No"
-                                                                class="selectgroup-input">
-                                                            <span class="selectgroup-button">No</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="form-group" name="hostel" id="hostel" style="display: none;">
-											<label class="form-label">Hostel</label>
-											<select class="form-control custom-select">
-												<option value="" disabled="" selected="">Select Hostel</option>
-												<option value="">Hostel 1</option>
-												<option value="">Hostel 2</option>
-											</select>
-										</div> -->
-
-
-
+                                                                                      
                                                 <div class="form-footer">
-                                                    <!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
                                                     <button type="submit" class="btn btn-primary btn-block" id="submitLink"
-                                                        value="submit" name="submit" formaction="index.jsp">Submit</button>
+                                                        value="submit" name="wardenEditProfile" formaction="index.jsp">Submit</button>
                                                 </div>
                                             </div>
+                                           	<%
+														if(request.getParameter("wardenEditProfile")!=null)
+													{
+														int wardenID=rs.getInt("wardenID");
+														if(con.Ins_Upd_Del("update warden_master set wardenName='"+request.getParameter("username")+"',wardenEmail='"+request.getParameter("email")+"',wardenContact='"+request.getParameter("contactNo")+"' where wardenID="+wardenID+""))
+														{
+														out.println("<script>alert('Record Updated Successfully.')</script>");
+														}
+														else{
+														out.println("<script>alert('There was a problem in updating your Information.')</script>");
+														}
+													}
+												}
+											%>
                                         </form>
                                     </div>
                                 </div>
