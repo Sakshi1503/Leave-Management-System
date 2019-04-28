@@ -121,7 +121,7 @@
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
-																value="Yes" class="selectgroup-input">
+																value="yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">

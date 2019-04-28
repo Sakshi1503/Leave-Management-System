@@ -12,6 +12,25 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".approveStudent").click(function () {
+			var id2 = this.id;
+			$.ajax({
+				url: "update-approve-student-ajax.jsp",
+				type: "post",
+				data: {
+					id: id2,
+				},
+				success: function (data) {
+					location.reload(true);
+				}
+			});
+		});
+	});
+</script>
+
 <body style="height: 100vh;">
 	<div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
 		<h1 class="uk-heading-divider"></h1>
@@ -94,7 +113,7 @@
 													ResultSet rs=null;
 													ResultSetMetaData mtdt=null;
 													con=new Connect();
-													rs=con.SelectData("select studentName,studentEno ,studentContact,studentEmail,studentBranch from student_master where isApprovedStudent='no'");
+													rs=con.SelectData("select * from student_master where isApprovedStudent='no'");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -121,7 +140,7 @@
 														%></td>
 													<td style="padding: 0px;">
 														<ul class="uk-iconnav">
-															<li><a href="#" uk-icon="icon: check"></a></li>
+															<li><button style="border: 0px;" class="approveStudent" id="<%=rs.getInt(1)%>" uk-icon="icon: check"></button></li>
 														</ul>
 													</td>
 													<td style="padding: 0px;">
