@@ -109,7 +109,7 @@
 									<label class="form-label">Are you Hosteller?</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="studentHosteller" id="hosteller" value="Yes"
+											<input type="radio" name="studentHosteller" id="hosteller" value="yes"
 												class="selectgroup-input">
 											<span class="selectgroup-button">Yes</span>
 										</label>

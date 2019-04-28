@@ -6,6 +6,8 @@
 	}
 	if(userRole.equals("student")){
 %>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Connection.Connect"%>
 <title>Edit Profile</title>
 <jsp:include page="headerStudent.jsp" />
 
@@ -30,8 +32,9 @@
 									Leave</a>
 							</li>
 							<li class="nav-item">
-                                <a href="studentLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i> Your Leaves</a>
-                            </li>
+								<a href="studentLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+									Your Leaves</a>
+							</li>
 							<li class="nav-item">
 								<a href="studentEditProfile.jsp" class="nav-link active"><i class="fe fe-plus"></i> Edit
 									Profile</a>
@@ -52,7 +55,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post">
+										<form class="card" action="" metstudent="post">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Edit Profile</center>
@@ -63,84 +66,163 @@
 														<option value="Student" selected="">Student</option>
 													</select>
 												</div>
-												<div class="form-group">
-													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
-												</div>
+												<%
+													Connect con=new Connect();
+													String studentUsername=(String)session.getAttribute("studentUsername");
+													ResultSet rs=con.SelectData("select * from student_master where studentEmail='"+studentUsername+"'");
+													if(rs.next()){
+												%>
 												<div class="form-group">
 													<label class="form-label">Enrollment No</label>
 													<input type="username" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" pattern="[1][6][0][1][7][0][1][1][6][0][0-9][0-9]" placeholder="Enter Enrollmemt No"
-														disabled="">
+														value="<%=rs.getString("studentEno")%>"
+														aria-describedby="emailHelp" placeholder="Enter Enrollmemt No"
+														name="studentEno" disabled="">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Name</label>
+													<input type="username" class="form-control" id="exampleInputEmail1"
+														value="<%=rs.getString("studentName")%>"
+														aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
+														placeholder="Enter Name" name="studentName">
+												</div>
+												<div class="form-group" id="teachin" style="margin-bottom: 8px;">
+													<label class="form-label">Semester:</label>
+													
+													<label class="selectgroup-item">
+													<input type="radio" name="studentSem" value="<%=rs.getString("studentSem")%>"
+															class="selectgroup-input" checked="">
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="1"
+															class="selectgroup-input">
+														<span class="selectgroup-button">I</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="2"
+															class="selectgroup-input">
+														<span class="selectgroup-button">II</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="3"
+															class="selectgroup-input">
+														<span class="selectgroup-button">III</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="4"
+															class="selectgroup-input">
+														<span class="selectgroup-button">IV</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="5"
+															class="selectgroup-input">
+														<span class="selectgroup-button">V</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="6"
+															class="selectgroup-input">
+														<span class="selectgroup-button">VI</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="7"
+															class="selectgroup-input">
+														<span class="selectgroup-button">VII</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="studentSem" value="8"
+															class="selectgroup-input">
+														<span class="selectgroup-button">VIII</span>
+													</label>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Address</label>
 													<textarea type="address" class="form-control"
+														value="<%=rs.getString("studentAddress")%>"
 														id="exampleInputAddress" aria-describedby="addressHelp"
-														placeholder="Enter Address"></textarea>
+														name="studentAddress" placeholder="Enter Address"></textarea>
 												</div>
 												<div class="form-group">
 													<label class="form-label">City</label>
 													<input type="city" class="form-control" id="exampleInputCity"
-														aria-describedby="cityHelp" placeholder="Enter City">
+														value="<%=rs.getString("studentCity")%>"
+														aria-describedby="cityHelp" placeholder="Enter City"
+														name="studentCity">
 												</div>
 												<div class="form-group">
 													<label class="form-label">State</label>
 													<input type="state" class="form-control" id="exampleInputState"
-														aria-describedby="stateHelp" placeholder="Enter State">
+														value="<%=rs.getString("studentState")%>"
+														aria-describedby="stateHelp" placeholder="Enter State"
+														name="studentState">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Are you Hosteller?</label>
 													<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+															<input type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("studentHosteller")%>"
+																class="selectgroup-input" checked="">
+														</label>
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
-																value="Yes" class="selectgroup-input">
+																value="yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
 															<input type="radio" name="hosteller" id="hosteller"
-																value="No" class="selectgroup-input">
+																value="no" class="selectgroup-input">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
 												</div>
-												<div class="form-group" name="hostel" id="hostel"
-													style="display: none;">
-													<label class="form-label">Hostel</label>
-													<select class="form-control custom-select">
-														<option value="" disabled="" selected="">Select Hostel</option>
-														<option value="">Hostel 1</option>
-														<option value="">Hostel 2</option>
-													</select>
-												</div>
 												<div class="form-group">
 													<label class="form-label">Email Address</label>
 													<input type="email" class="form-control" id="exampleInputEmail1"
-														aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
+														value="<%=rs.getString("studentEmail")%>"
+														aria-describedby="emailHelp"
+														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+														placeholder="Enter Email" name="studentEmail">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Student's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile"
-														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Student's No">
+														value="<%=rs.getString("studentContact")%>"
+														aria-describedby="MobileNo" pattern="[0-9]{10}"
+														placeholder="Student's No" name="studentContact">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Father's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile1"
-														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Father's No">
+														value="<%=rs.getString("studentFatherContact")%>"
+														aria-describedby="MobileNo" pattern="[0-9]{10}"
+														placeholder="Father's No" name="studentFatherContact">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Mother's Contact No</label>
 													<input type="mobileno" class="form-control" id="exampleInputMobile2"
-														aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Mother's No">
+														value="<%=rs.getString("studentMotherContact")%>"
+														aria-describedby="MobileNo" pattern="[0-9]{10}"
+														placeholder="Mother's No" name="studentMotherContact">
 												</div>
 												<div class="form-footer">
-													<!-- <button type="submit" class="btn btn-primary btn-block" id="submit" disabled=""><a href="login.jsp" style="color: white;">Submit</a></button> -->
 													<button type="submit" class="btn btn-primary btn-block"
-														id="submitLink" value="submit" name="submit"
-														formaction="index.jsp">Submit</button>
+														id="submitLink" value="submit"
+														name="studentEditProfile">Submit</button>
 												</div>
 											</div>
+											<%
+														if(request.getParameter("studentEditProfile")!=null)
+													{
+														int s_studentID=rs.getInt("studentID");
+														if(con.Ins_Upd_Del("update student_master set studentName='"+request.getParameter("studentName")+"', studentSem="+request.getParameter("studentSem")+", studentAddress='"+request.getParameter("studentAddress")+"', studentCity='"+request.getParameter("studentCity")+"', studentState='"+request.getParameter("studentState")+"', studentEmail='"+request.getParameter("studentEmail")+"', studentContact='"+request.getParameter("studentContact")+"', studentFatherContact='"+request.getParameter("studentFatherContact")+"', studentMotherContact='"+request.getParameter("studentMotherContact")+"',studentHosteller='"+request.getParameter("hosteller")+"' where studentID="+s_studentID+""))
+														{
+															out.println("<script>alert('Record Updated Successfully.')</script>");
+														}
+														else{
+															out.println("<script>alert('There was a problem in updating your Information.')</script>");
+														}
+													}
+												}
+											%>
 										</form>
 									</div>
 								</div>
