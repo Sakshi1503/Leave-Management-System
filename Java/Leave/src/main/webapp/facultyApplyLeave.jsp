@@ -527,8 +527,16 @@
 														ResultSet rs=null;
 														ResultSetMetaData mtdt=null;
 														con=new Connect();
-														rs=con.SelectData("select hodID,hodName from hod_master");
-														mtdt=rs.getMetaData();
+														String Uname = (String)session.getAttribute("facultyUsername");
+														
+														ResultSet rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");														
+														int branch= new int();
+														if(rs2.next()){
+															branch=rs2.getInt("facultyBranch");
+														}
+														
+														rs=con.SelectData("select hodID,hodName from hod_master where hodBranch = "+ branch +";");
+ 														mtdt=rs.getMetaData();
 														while(rs.next())
 														{
 															int ID = rs.getInt("hodID");
@@ -548,9 +556,9 @@
 											</div>
 												<%
 												try {
-												String Uname = (String)session.getAttribute("facultyUsername");
+												Uname = (String)session.getAttribute("facultyUsername");
 												
-												ResultSet rs2 = con.SelectData("select * from faculty_master where facultyEmail = '+ Uname +'");
+												rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");
 												int appID = 1;
 												if(rs2.next()){
 													out.println(rs2.getInt("facultyID"));
