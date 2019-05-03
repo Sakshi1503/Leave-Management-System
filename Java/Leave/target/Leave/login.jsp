@@ -1,3 +1,27 @@
+<%
+	String userRole = new String("SUPERSTAR");
+	
+	if(session.getAttribute("role") != null){
+		userRole = (String)session.getAttribute("role");
+	}
+	if(userRole.equals("admin")){
+		response.sendRedirect("adminHome.jsp");
+	}
+	else if(userRole.equals("hod")){
+		response.sendRedirect("hodHome.jsp");
+	}
+	else if(userRole.equals("faculty")){
+		response.sendRedirect("facultyHome.jsp");
+	}
+	else if(userRole.equals("warden")){
+		response.sendRedirect("wardenHome.jsp");
+	}
+	else if(userRole.equals("student")){
+		response.sendRedirect("studentHome.jsp");
+	}
+	else{
+%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.io.*"%>
 <%@page import="Connection.Connect"%>
@@ -139,3 +163,7 @@
 </body>
 
 </html>
+
+<%
+}
+%>
