@@ -530,12 +530,12 @@
 														String Uname = (String)session.getAttribute("facultyUsername");
 														
 														ResultSet rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");														
-														int branch= new int();
+														int branchID= 1;
 														if(rs2.next()){
-															branch=rs2.getInt("facultyBranch");
+															branchID=rs2.getInt("facultyBranch");
 														}
 														
-														rs=con.SelectData("select hodID,hodName from hod_master where hodBranch = "+ branch +";");
+														rs=con.SelectData("select hodID,hodName from hod_master where isApprovedHod='yes' and hodBranch = "+ branchID +";");
  														mtdt=rs.getMetaData();
 														while(rs.next())
 														{

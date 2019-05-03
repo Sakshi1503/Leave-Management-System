@@ -115,12 +115,12 @@
 													con=new Connect();
 													
 													rs=con.SelectData("select facultyBranch from faculty_master where facultyEmail = '"+ (String)session.getAttribute("facultyUsername") +"';");
-													int branch = new int();
+													int branchID = 1;
 													if(rs.next()){
-														branch = rs.getInt("facultyBranch");
+														branchID = rs.getInt("facultyBranch");
 													}
 													
-													rs=con.SelectData("select * from student_master where isApprovedStudent='no' and studentBranch="+ branch +";");
+													rs=con.SelectData("select * from student_master where isApprovedStudent='no' and studentBranch="+ branchID +";");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{

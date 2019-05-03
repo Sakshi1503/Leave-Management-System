@@ -131,12 +131,12 @@
 													ResultSetMetaData mtdt=null;
 													con=new Connect();
 													rs=con.SelectData("select hodBranch from hod_master where hodEmail = '"+ (String)session.getAttribute("hodUsername") +"';");
-													int branch = new int();
+													int branchID = 1;
 													if(rs.next()){
-														branch = rs.getInt("hodBranch");
+														branchID = rs.getInt("hodBranch");
 													}
 
-													rs=con.SelectData("select * from faculty_master where isApprovedFaculty='no' and facultyBranch="+ branch +";");
+													rs=con.SelectData("select * from faculty_master where isApprovedFaculty='no' and facultyBranch="+ branchID +";");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{
@@ -171,7 +171,7 @@
 												</tr>
 												<%
 													}
-													rs=con.SelectData("select * from student_master where isApprovedStudent='no' and studentBranch="+ branch +";");
+													rs=con.SelectData("select * from student_master where isApprovedStudent='no' and studentBranch="+ branchID +";");
 													mtdt=rs.getMetaData();
 													while(rs.next())
 													{

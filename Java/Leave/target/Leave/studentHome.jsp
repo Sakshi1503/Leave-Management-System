@@ -480,7 +480,15 @@
 														ResultSet rs=null;
 														ResultSetMetaData mtdt=null;
 														con=new Connect();
-														rs=con.SelectData("select facultyID,facultyName from faculty_master");
+														
+														String Uname = (String)session.getAttribute("studentUsername");
+														ResultSet rs2 = con.SelectData("select * from student_master where studentEmail = '"+ Uname +"'");														
+														int branchID= 1;
+														if(rs2.next()){
+															branchID=rs2.getInt("studentBranch");
+														}
+
+														rs=con.SelectData("select facultyID,facultyName from faculty_master where isApprovedFaculty='yes' and facultyBranch="+ branchID +";");
 														mtdt=rs.getMetaData();
 														while(rs.next())
 														{
@@ -503,9 +511,7 @@
 											</div>
 											<%
 												try {
-												String Uname = (String)session.getAttribute("studentUsername");
-												
-												ResultSet rs2 = con.SelectData("select * from student_master where studentEmail = '+ Uname +'");
+												rs2 = con.SelectData("select * from student_master where studentEmail = '"+ Uname +"';");
 												int appID = 1;
 												if(rs2.next()){
 													out.println(rs2.getInt("studentID"));
