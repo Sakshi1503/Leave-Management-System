@@ -31,7 +31,12 @@
       <artifactId>maven-deploy-plugin</artifactId>
       <version>2.8.2</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.5</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
@@ -56,8 +61,8 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Internal repo</name>
-			<!-- <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>   -->
-      <url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>
+		 <url>file:///C:/Users/Sakshi/Documents/S/GITHUB/Leave-Management-System/Java/Leave</url>  
+    <!--  <url>file:///C:/Users/Preet/Documents/GitHub/Leave-Management-System/Java/Leave</url>-->
 		</repository>
 	</distributionManagement>
 
