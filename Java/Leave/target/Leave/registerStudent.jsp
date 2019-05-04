@@ -38,7 +38,7 @@
 								<div class="form-group">
 									<label class="form-label">Enrollment No</label>
 									<input type="text" name="studentEno" class="form-control" id="enrollmentno"
-										aria-describedby="emailHelp" pattern="[1][6][0][1][7][0][1][1][6][0][0-9][0-9]" placeholder="Enter Enrollmemt No">
+										aria-describedby="emailHelp" pattern="[0-9]{16}" placeholder="Enter Enrollmemt No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
