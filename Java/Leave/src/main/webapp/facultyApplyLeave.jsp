@@ -110,16 +110,18 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post" name="facultyApplyLeave" onsubmit="if (date_check()==false) return false; else return true;">
+										<form class="card" action="" method="post" name="facultyApplyLeave"
+											onsubmit="if (date_check()==false) return false; else return true;">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Apply for Leave</center>
 												</div>
-													<div class="form-group">
+												<div class="form-group">
 													<label class="form-label">Type of Leave</label>
 													<select class="form-control custom-select" id="roleSelect">
 														<option value="Casual Leave">Casual Leave</option>
-														<option value="Special Casual Leave">Special Casual Leave</option>
+														<option value="Special Casual Leave">Special Casual Leave
+														</option>
 														<option value="HalfPay Leave">Half Pay Leave</option>
 														<option value="Earned Leave">Earned Leave</option>
 														<option value="Medical Leave">Medical Leave</option>
@@ -127,8 +129,9 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Reason</label>
-													<textarea type="reason" class="form-control" id="leaveReason" name="facultyReason"
-														aria-describedby="leaveReason" placeholder="Enter reason for leave"></textarea>
+													<textarea type="reason" class="form-control" id="leaveReason"
+														name="facultyReason" aria-describedby="leaveReason"
+														placeholder="Enter reason for leave"></textarea>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Leave Duration</label>
@@ -206,7 +209,8 @@
 																	<option value="2022">2022</option>
 																	<option value="2021">2021</option>
 																	<option value="2020">2020</option>
-																	<option value="2019" selected="selected">2019</option>
+																	<option value="2019" selected="selected">2019
+																	</option>
 																	<option value="2018">2018</option>
 																</select>
 															</div>
@@ -286,7 +290,8 @@
 																	<option value="2022">2022</option>
 																	<option value="2021">2021</option>
 																	<option value="2020">2020</option>
-																	<option value="2019" selected="selected">2019</option>
+																	<option value="2019" selected="selected">2019
+																	</option>
 																	<option value="2018">2018</option>
 															</div>
 														</div>
@@ -297,14 +302,16 @@
 													<div class="form-label">Upload Proof Document</div>
 													<div class="custom-file">
 														<input type="file" class="custom-file-input"
-															name="example-file-input-custom" pattern="/^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.jpeg|.JPEG|.gif|.GIF|.png|.PNG|.JPG|.jpg|.bitmap|.BITMAP|.pdf|.PDF)$/">
+															name="example-file-input-custom"
+															pattern="/^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.jpeg|.JPEG|.gif|.GIF|.png|.PNG|.JPG|.jpg|.bitmap|.BITMAP|.pdf|.PDF)$/">
 														<label class="custom-file-label">Choose file</label>
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Leave Application to:</label>
-													<select class="form-control custom-select" id="applyTo" name="applyTo">
+													<select class="form-control custom-select" id="applyTo"
+														name="applyTo">
 														<%
 														Connect con=null;
 														ResultSet rs=null;
@@ -325,7 +332,7 @@
 															int ID = rs.getInt("hodID");
 													%>
 														<option value="<%= ID%>"><%= rs.getString("hodName")%></option>
-													<%
+														<%
 														}
 														con.CloseConnection();
 													%>
@@ -334,10 +341,11 @@
 
 												<div class="form-footer">
 													<button type="submit" class="btn btn-primary btn-block"
-														id="submitLink" value="submit" name="facultyApplyLeave">Submit</button>
+														id="submitLink" value="submit"
+														name="facultyApplyLeave">Submit</button>
 												</div>
 											</div>
-												<%
+											<%
 												try {
 												Uname = (String)session.getAttribute("facultyUsername");
 												
@@ -368,27 +376,27 @@
 										</form>
 									</div>
 								</div>
-<script type="text/javascript">
-function date_check()
-{
-	var leaveFrom_date = document.facultyApplyLeave.leaveFromMonth.value + "-" + document.facultyApplyLeave.leaveFromDay.value + "-" + document.facultyApplyLeave.leaveFromYear.value;
-	var d = new Date();
-	var today = (d.getMonth()+1) + "-" + d.getDate() + "-" + d.getFullYear();
-	if(new Date(leaveFrom_date) < new Date(today)){
-		window.alert("Enter a valid LeaveFrom Date");
-		return false;
-	}
-	
-	var leaveTo_date = document.facultyApplyLeave.leaveToMonth.value + "-" + document.facultyApplyLeave.leaveToDay.value + "-" + document.facultyApplyLeave.leaveToYear.value;
-	var d = new Date();
-	var today = (d.getMonth()+1) + "-" + d.getDate() + "-" + d.getFullYear();
-	if(new Date(leaveTo_date) < new Date(leaveFrom_date)){
-		window.alert("LeaveTo date is Invalid.");
-		return false;
-	}
-}
-</script>
+								<script type="text/javascript">
+									function date_check() {
+										var leaveFrom_date = document.facultyApplyLeave.leaveFromMonth.value + "-" + document.facultyApplyLeave.leaveFromDay.value + "-" + document.facultyApplyLeave.leaveFromYear.value;
+										var d = new Date();
+										var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
+										if (new Date(leaveFrom_date) < new Date(today)) {
+											window.alert("Enter a valid LeaveFrom Date");
+											return false;
+										}
+
+										var leaveTo_date = document.facultyApplyLeave.leaveToMonth.value + "-" + document.facultyApplyLeave.leaveToDay.value + "-" + document.facultyApplyLeave.leaveToYear.value;
+										var d = new Date();
+										var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
+										if (new Date(leaveTo_date) < new Date(leaveFrom_date)) {
+											window.alert("LeaveTo date is Invalid.");
+											return false;
+										}
+									}
+								</script>
 </body>
+
 </html>
 <%
 	}
