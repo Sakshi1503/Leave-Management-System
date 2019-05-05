@@ -1,17 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="com.google.gson.Gson"%>
-<%@ page import="com.google.gson.JsonObject"%>
-<%
-	String userRole = new String("SUPERSTAR");
+<!DOCTYPE html>
+<html>
 
-	if(session.getAttribute("role") != null){
-		userRole = (String)session.getAttribute("role");
-	}
-	if(userRole.equals("admin")){
-%>
+<head>
+	<!-- hello world -->
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="css/uikit.min.css" />
+	<!-- UIkit JS -->
+	<script src="js/uikit.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="./css/dashboard.css" rel="stylesheet" />
+	<link href="./css/adminHome.css" rel="stylesheet" />
+	<script src="js/uikit-icons.min.js"></script>
+
 <title>Admin Reports</title>
-<jsp:include page="headerAdmin.jsp" />
 
 <body>
 
@@ -29,7 +35,7 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a href="./adminHome.jsp" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                                <a href="./adminHome.jsp" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="adminApproveUsers.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
@@ -47,7 +53,7 @@
                                 <a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a href="adminViewReports.jsp" class="nav-link active"><i class="fe fe-file"></i> View Report</a>
+                                <a href="adminViewReports.jsp" class="nav-link"><i class="fe fe-file"></i> View Report</a>
                             </li>
                             <li class="nav-item">
                                 <a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
@@ -64,9 +70,26 @@
                     </div>
                 </div>
                 <div class="col-sm col-md col-lg" style="margin: 0px; padding: 0px; width: 100%; height: max-content;">
-                    <%
-						out.print("Welcome "+ (String)session.getAttribute("adminUsername"));
-					%>
+                <!-- <div class="border mt-2 ml-2 shadow-sm p-3 bg-white rounded">Month</div> -->
+                <table class="table uk-text-center border mt-2 ml-2 shadow-sm rounded">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Month</th>
+                        <th scope="col">Number of leaves</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>a</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>d</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
                 </div>
             </div>
 
@@ -75,10 +98,3 @@
 </body>
 
 </html>
-<%
-	}
-	else{
-		out.println("<script>alert('SESSION INVALID!!! PLEASE LOGIN AGAIN!!!!!');</script>");
-		response.sendRedirect("login.jsp");
-	}
-%>

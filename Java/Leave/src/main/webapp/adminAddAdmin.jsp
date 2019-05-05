@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 	String userRole = new String("SUPERSTAR");
-	
+
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -48,7 +48,7 @@
 									Admin</a>
 							</li>
 							<li class="nav-item">
-								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+								<a href="adminViewReports.jsp" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
@@ -146,7 +146,7 @@
 														value="submit" name="addAdminSubmit">Submit</button>
 												</div>
 											</div>
-											<% 
+											<%
 											Connect con=new Connect();
 											if(request.getParameter("addAdminSubmit")!=null)
 											{
@@ -193,7 +193,7 @@
 							pass2.classList.add("state-invalid");
 
 						}
-					}  
+					}
 				</script>
 </body>
 

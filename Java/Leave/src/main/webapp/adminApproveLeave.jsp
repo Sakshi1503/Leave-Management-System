@@ -1,6 +1,6 @@
 <%
 	String userRole = new String("SUPERSTAR");
-	
+
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -81,7 +81,7 @@
 								<a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
 							</li>
 							<li class="nav-item">
-								<a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+								<a href="adminViewReports.jsp" class="nav-link"><i class="fe fe-file"></i> View Report</a>
 							</li>
 							<li class="nav-item">
 								<a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
@@ -147,8 +147,8 @@
 								<td><button class="reject" id="<%= rs.getInt("recordID")%>">Reject</button></td>
 								</tr>
 							</table>
-							
-							
+
+
 						</div>
 					</div>
 

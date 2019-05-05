@@ -4,7 +4,7 @@
 <%@ page import="com.google.gson.JsonObject"%>
 <%
 	String userRole = new String("SUPERSTAR");
-	
+
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -13,46 +13,8 @@
 <title>Admin Reports</title>
 <jsp:include page="headerAdmin.jsp" />
 
-<%
-Gson gsonObj = new Gson();
-Map<Object,Object> map = null;
-List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
- 
-map = new HashMap<Object,Object>(); map.put("x", 10); map.put("y", 31); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 20); map.put("y", 65); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 30); map.put("y", 40); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 40); map.put("y", 84); map.put("indexLabel", "Highest"); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 50); map.put("y", 68); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 60); map.put("y", 64); list.add(map);
-map = new HashMap<Object,Object>(); map.put("x", 70); map.put("y", 38); list.add(map);
- 
-String dataPoints = gsonObj.toJson(list);
-%>
-
-
 <body>
 
-<script type="text/javascript">
-		window.onload = function () {
-
-			var chart = new CanvasJS.Chart("chartContainer", {
-				animationEnabled: true,
-				exportEnabled: true,
-				title: {
-					text: "Simple Column Chart with Index Labels"
-				},
-				data: [{
-					type: "column", //change type to bar, line, area, pie, etc
-					//indexLabel: "{y}", //Shows y value on all Data Points
-					indexLabelFontColor: "#5A5757",
-					indexLabelPlacement: "outside",
-					dataPoints: <% out.print(dataPoints);%>
-	}]
-});
-		chart.render();
- 
-}
-	</script>
     <div class="header" style="width: 100%; z-index: 980;" uk-sticky="">
         <h1 class="uk-heading-divider"></h1>
         <h1 class="uk-heading-line uk-text-center"><span>Institute Leave Management System</span></h1>
@@ -85,13 +47,12 @@ String dataPoints = gsonObj.toJson(list);
                                 <a href="adminAddAdmin.jsp" class="nav-link"><i class="fe fe-plus"></i> Add Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link"><i class="fe fe-file"></i> View Report</a>
+                                <a href="adminViewReports.jsp" class="nav-link"><i class="fe fe-file"></i> View Report</a>
                             </li>
                             <li class="nav-item">
                                 <a href="adminEditProfile.jsp" class="nav-link"><i class="fe fe-user"></i> Edit
                                     Profile</a>
                             </li>
-
                             <li class="nav-item">
                                 <a href="adminChangePassword.jsp" class="nav-link"><i class="fe fe-lock"></i> Change
                                     Password</a>
@@ -106,13 +67,11 @@ String dataPoints = gsonObj.toJson(list);
                     <%
 						out.print("Welcome "+ (String)session.getAttribute("adminUsername"));
 					%>
-                     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>
