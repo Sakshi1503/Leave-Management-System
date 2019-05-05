@@ -1,6 +1,6 @@
 <%
 	String userRole = new String("SUPERSTAR");
-	
+
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -89,7 +89,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Leave Duration</label>
-													<div class="col-sm-12" style="padding: 0px;">
+													<div class="col-sm-12" id="leaveDurationFrom" style="padding: 0px;">
 														<label class="form-label">From</label>
 													</div>
 
@@ -97,7 +97,7 @@
 														<div class="row gutters-xs">
 															<div class="col-5">
 																<select name="leaveFromMonth"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
 																	<option value="2">February</option>
@@ -115,7 +115,7 @@
 															</div>
 															<div class="col-3">
 																<select name="leaveFromDay"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -152,7 +152,7 @@
 															</div>
 															<div class="col-4">
 																<select name="leaveFromYear"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Year</option>
 																	<option value="2028">2028</option>
 																	<option value="2027">2027</option>
@@ -171,7 +171,7 @@
 														</div>
 													</div>
 
-													<div class="col-sm-12" style="padding: 0px; margin-top: 1rem;">
+													<div class="col-sm-12" id="leaveDurationTo" style="padding: 0px; margin-top: 1rem;">
 														<label class="form-label">To</label>
 													</div>
 													<div class="col-sm" style="padding: 0px;">
@@ -272,9 +272,9 @@
 														ResultSet rs=null;
 														ResultSetMetaData mtdt=null;
 														con=new Connect();
-														
+
 														String Uname = (String)session.getAttribute("studentUsername");
-														ResultSet rs2 = con.SelectData("select * from student_master where studentEmail = '"+ Uname +"'");														
+														ResultSet rs2 = con.SelectData("select * from student_master where studentEmail = '"+ Uname +"'");
 														int branchID= 1;
 														if(rs2.next()){
 															branchID=rs2.getInt("studentBranch");
@@ -311,13 +311,13 @@
 													out.println(rs2.getInt("studentID"));
 													appID = rs2.getInt("studentID");
 												}
-											
+
 												if (request.getParameter("studentApplyLeave") != null) {
 												if (con.CheckData(
 												"select * from leave_record where appID='" + appID + "' and appRole='student' and leaveApproved='no' and leaveRejected='no'")) {
 												out.println("<script>alert('You have already applied for leave');</script>");
 												}
-												
+
 												else {
 												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'student','"+request.getParameter("studentReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
@@ -334,20 +334,37 @@
 								</div>
 								<script type="text/javascript">
 									function date_check() {
-										var leaveFrom_date = document.studentApplyLeave.leaveFromMonth.value + "-" + document.studentApplyLeave.leaveFromDay.value + "-" + document.studentApplyLeave.leaveFromYear.value;
+										var lFl = document.getElementById('leaveDurationFrom');
+										var lTl = document.getElementById('leaveDurationTo');
+										var b = document.getElementById('submitLink');
+										var leaveFrom_date = document.facultyApplyLeave.leaveFromMonth.value + "-" + document.facultyApplyLeave.leaveFromDay.value + "-" + document.facultyApplyLeave.leaveFromYear.value;
+										var leaveTo_date = document.facultyApplyLeave.leaveToMonth.value + "-" + document.facultyApplyLeave.leaveToDay.value + "-" + document.facultyApplyLeave.leaveToYear.value;
 										var d = new Date();
 										var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
-										if (new Date(leaveFrom_date) < new Date(today)) {
-											window.alert("Enter a valid LeaveFrom Date");
-											return false;
-										}
+										if(new Date(leaveFrom_date) < new Date(today)){
+											lFl.classList.add("state-invalid");
+											if(new Date(leaveTo_date) < new Date(leaveFrom_date)){
+												lTl.classList.add("state-invalid");
+												b.disabled=true;
+											}
+											else{
+												lTl.classList.remove("state-invalid");
+												b.disabled=true;
+											}
 
-										var leaveTo_date = document.studentApplyLeave.leaveToMonth.value + "-" + document.studentApplyLeave.leaveToDay.value + "-" + document.studentApplyLeave.leaveToYear.value;
-										var d = new Date();
-										var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
-										if (new Date(leaveTo_date) < new Date(leaveFrom_date)) {
-											window.alert("LeaveTo date is Invalid.");
-											return false;
+										}
+										else{
+											if(new Date(leaveFrom_date) > new Date(today)){
+												lFl.classList.remove("state-invalid");
+												if(new Date(leaveTo_date) < new Date(leaveFrom_date)){
+													lTl.classList.add("state-invalid");
+													b.disabled=true;
+												}
+												else{
+													lTl.classList.remove("state-invalid");
+													b.disabled=false;
+												}
+											}
 										}
 									}
 								</script>
