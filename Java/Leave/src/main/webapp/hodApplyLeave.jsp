@@ -73,8 +73,7 @@
 							<div class="container" style="height: auto;">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post" name="hodApplyLeave"
-											onsubmit="if (date_check()==false) return false; else return true;">
+										<form class="card" action="" method="post" name="hodApplyLeave">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Apply for Leave</center>
@@ -99,7 +98,7 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Leave Duration</label>
-													<div class="col-sm-12" style="padding: 0px;">
+													<div class="col-sm-12"  id="leaveDurationFrom" style="padding: 0px;">
 														<label class="form-label">From</label>
 													</div>
 
@@ -107,7 +106,7 @@
 														<div class="row gutters-xs">
 															<div class="col-5">
 																<select name="leaveFromMonth"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
 																	<option value="2">February</option>
@@ -125,7 +124,7 @@
 															</div>
 															<div class="col-3">
 																<select name="leaveFromDay"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -162,7 +161,7 @@
 															</div>
 															<div class="col-4">
 																<select name="leaveFromYear"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Year</option>
 																	<option value="2028">2028</option>
 																	<option value="2027">2027</option>
@@ -181,14 +180,14 @@
 														</div>
 													</div>
 
-													<div class="col-sm-12" style="padding: 0px; margin-top: 1rem;">
+													<div class="col-sm-12"  id="leaveDurationTo" style="padding: 0px; margin-top: 1rem;">
 														<label class="form-label">To</label>
 													</div>
 													<div class="col-sm" style="padding: 0px;">
 														<div class="row gutters-xs">
 															<div class="col-5">
 																<select name="leaveToMonth"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Month</option>
 																	<option value="1">January</option>
 																	<option value="2">February</option>
@@ -206,7 +205,7 @@
 															</div>
 															<div class="col-3">
 																<select name="leaveToDay"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Day</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -243,7 +242,7 @@
 															</div>
 															<div class="col-4">
 																<select name="leaveToYear"
-																	class="form-control custom-select">
+																	class="form-control custom-select" onchange="date_check(); return false;">
 																	<option value="">Year</option>
 																	<option value="2028">2028</option>
 																	<option value="2027">2027</option>
@@ -341,20 +340,37 @@
 	</div>
 	<script type="text/javascript">
 		function date_check() {
-			var leaveFrom_date = document.hodApplyLeave.leaveFromMonth.value + "-" + document.hodApplyLeave.leaveFromDay.value + "-" + document.hodApplyLeave.leaveFromYear.value;
+			var lFl = document.getElementById('leaveDurationFrom');
+			var lTl = document.getElementById('leaveDurationTo');
+			var b = document.getElementById('submitLink');
+			var leaveFrom_date = document.facultyApplyLeave.leaveFromMonth.value + "-" + document.facultyApplyLeave.leaveFromDay.value + "-" + document.facultyApplyLeave.leaveFromYear.value;
+			var leaveTo_date = document.facultyApplyLeave.leaveToMonth.value + "-" + document.facultyApplyLeave.leaveToDay.value + "-" + document.facultyApplyLeave.leaveToYear.value;
 			var d = new Date();
 			var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
-			if (new Date(leaveFrom_date) < new Date(today)) {
-				window.alert("Enter a valid LeaveFrom Date");
-				return false;
+			if(new Date(leaveFrom_date) < new Date(today)){
+				lFl.classList.add("state-invalid");
+				if(new Date(leaveTo_date) < new Date(leaveFrom_date)){
+					lTl.classList.add("state-invalid");
+					b.disabled=true;
+				}
+				else{
+					lTl.classList.remove("state-invalid");
+					b.disabled=true;
+				}
+			
 			}
-
-			var leaveTo_date = document.hodApplyLeave.leaveToMonth.value + "-" + document.hodApplyLeave.leaveToDay.value + "-" + document.hodApplyLeave.leaveToYear.value;
-			var d = new Date();
-			var today = (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear();
-			if (new Date(leaveTo_date) < new Date(leaveFrom_date)) {
-				window.alert("LeaveTo date is Invalid.");
-				return false;
+			else{
+				if(new Date(leaveFrom_date) > new Date(today)){
+					lFl.classList.remove("state-invalid");
+					if(new Date(leaveTo_date) < new Date(leaveFrom_date)){
+						lTl.classList.add("state-invalid");
+						b.disabled=true;
+					}
+					else{
+						lTl.classList.remove("state-invalid");
+						b.disabled=false;
+					}	
+				}
 			}
 		}
 	</script>
