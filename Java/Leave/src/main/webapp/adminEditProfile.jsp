@@ -82,20 +82,20 @@
 												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="text" name="username" class="form-control" value="<%=rs.getString("adminName")%>"
+													<input required = "required" type="text" name="username" class="form-control" value="<%=rs.getString("adminName")%>"
 														id="exampleUsername1" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="text" name="contactNo" class="form-control" value="<%=rs.getString("adminContact")%>"
+													<input required = "required" type="text" name="contactNo" class="form-control" value="<%=rs.getString("adminContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo" pattern="[0-9]{10}"
 														placeholder="Enter Mobile No">
 												</div>
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input type="text" name="email" class="form-control" value="<%=rs.getString("adminEmail")%>"
+													<input required = "required" type="text" name="email" class="form-control" value="<%=rs.getString("adminEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Email">

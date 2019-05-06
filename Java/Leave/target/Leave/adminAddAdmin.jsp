@@ -79,7 +79,7 @@
 												<div class="form-group">
 													<label class="form-label">Name<span
 															style="color:red">*</span></label>
-													<input type="text" class="form-control"
+													<input required = "required" type="text" class="form-control"
 														pattern="[a-zA-Z][a-zA-Z\s]*" id="exampleUsername1"
 														aria-describedby="nameHelp" placeholder="Enter Name"
 														name="adminName" required="">
@@ -89,13 +89,13 @@
 															style="color:red">*</span></label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="adminGender" value="Female"
-																class="selectgroup-input" required="">
+															<input required = "required" type="radio" name="adminGender" value="Female"
+																class="selectgroup-input required = "required"" required="">
 															<span class="selectgroup-button">Female</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="adminGender" value="Male"
-																class="selectgroup-input" required="">
+															<input required = "required" type="radio" name="adminGender" value="Male"
+																class="selectgroup-input required = "required"" required="">
 															<span class="selectgroup-button">Male</span>
 														</label>
 													</div>
@@ -103,7 +103,7 @@
 												<div class="form-group">
 													<label class="form-label">Contact No<span
 															style="color:red">*</span></label>
-													<input type="text" class="form-control" pattern="[0-9]{10}"
+													<input required = "required" type="text" class="form-control" pattern="[0-9]{10}"
 														id="exampleInputMobile" aria-describedby="MobileNo"
 														placeholder="Enter Mobile No" name="adminContact" required="">
 												</div>
@@ -111,7 +111,7 @@
 												<div class="form-group">
 													<label class="form-label">Email<span
 															style="color:red">*</span></label>
-													<input type="text" class="form-control"
+													<input required = "required" type="text" class="form-control"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														placeholder="Enter Email" name="adminEmail" required="">
@@ -119,7 +119,7 @@
 												<div class="form-group">
 													<label class="form-label">Designation<span
 															style="color:red">*</span></label>
-													<input type="text" class="form-control" id="exampleInputposition"
+													<input required = "required" type="text" class="form-control" id="exampleInputposition"
 														aria-describedby="positionHelp"
 														placeholder="Enter Current Position" name="adminPosition"
 														required="">
@@ -127,7 +127,7 @@
 												<div class="form-group">
 													<label class="form-label">Password<span
 															style="color:red">*</span></label>
-													<input type="password" class="form-control"
+													<input required = "required" type="password" class="form-control"
 														title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 														pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="Password1"
 														aria-describedby="passwordHelp" placeholder="Enter Password"
@@ -136,7 +136,7 @@
 												<div class="form-group">
 													<label class="form-label">Confirm Password<span
 															style="color:red">*</span></label>
-													<input type="password" class="form-control" id="Password2"
+													<input required = "required" type="password" class="form-control" id="Password2"
 														placeholder="Re-enter Password"
 														onkeyup="checkPass(); return false;" required="">
 												</div>
