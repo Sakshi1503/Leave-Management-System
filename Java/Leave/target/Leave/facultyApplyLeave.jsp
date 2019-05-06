@@ -1,6 +1,6 @@
 <%
 	String userRole = new String("SUPERSTAR");
-
+	
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -110,8 +110,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post" name="facultyApplyLeave"
-											onsubmit="if (date_check()==false) return false; else return true;">
+										<form class="card" action="" method="post" name="facultyApplyLeave">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Apply for Leave</center>
@@ -318,13 +317,13 @@
 														ResultSetMetaData mtdt=null;
 														con=new Connect();
 														String Uname = (String)session.getAttribute("facultyUsername");
-
-														ResultSet rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");
+														
+														ResultSet rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");														
 														int branchID= 1;
 														if(rs2.next()){
 															branchID=rs2.getInt("facultyBranch");
 														}
-
+														
 														rs=con.SelectData("select hodID,hodName from hod_master where isApprovedHod='yes' and hodBranch = "+ branchID +";");
  														mtdt=rs.getMetaData();
 														while(rs.next())
@@ -348,20 +347,20 @@
 											<%
 												try {
 												Uname = (String)session.getAttribute("facultyUsername");
-
+												
 												rs2 = con.SelectData("select * from faculty_master where facultyEmail = '"+ Uname +"'");
 												int appID = 1;
 												if(rs2.next()){
 													out.println(rs2.getInt("facultyID"));
 													appID = rs2.getInt("facultyID");
 												}
-
+											
 												if (request.getParameter("facultyApplyLeave") != null) {
 												if (con.CheckData(
 												"select * from leave_record where appID='" + appID + "' and appRole='faculty' and leaveApproved='no' and leaveRejected='no'")) {
 												out.println("<script>alert('You have already applied for leave');</script>");
 												}
-
+												
 												else {
 												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'faculty','"+request.getParameter("facultyReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
@@ -395,7 +394,7 @@
 												lTl.classList.remove("state-invalid");
 												b.disabled=true;
 											}
-
+										
 										}
 										else{
 											if(new Date(leaveFrom_date) > new Date(today)){
@@ -407,7 +406,7 @@
 												else{
 													lTl.classList.remove("state-invalid");
 													b.disabled=false;
-												}
+												}	
 											}
 										}
 									}

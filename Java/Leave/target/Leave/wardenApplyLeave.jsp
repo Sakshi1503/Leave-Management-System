@@ -1,6 +1,6 @@
 <%
 	String userRole = new String("SUPERSTAR");
-
+	
 	if(session.getAttribute("role") != null){
 		userRole = (String)session.getAttribute("role");
 	}
@@ -71,8 +71,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col col-login mx-auto">
-										<form class="card" action="" method="post" name="wardenApplyLeave"
-											onsubmit="if (date_check()==false) return false; else return true;">
+										<form class="card" action="" method="post" name="wardenApplyLeave">
 											<div class="card-body p-6">
 												<div class="card-title">
 													<center>Apply for Leave</center>
@@ -304,19 +303,19 @@
 											<%
 												try {
 												String Uname = (String)session.getAttribute("wardenUsername");
-
+												
 												ResultSet rs2 = con.SelectData("select * from warden_master where wardenEmail = '+ Uname +'");
 												int appID = 1;
 												if(rs2.next()){
 													out.println(rs2.getInt("wardenID"));
 													appID = rs2.getInt("wardenID");
 												}
-
+											
 												if (request.getParameter("wardenApplyLeave") != null) {
 												if (con.CheckData("select * from leave_record where appID='" + appID + "' and appRole='warden' and leaveApproved='no' and leaveRejected='no'")) {
 												out.println("<script>alert('You have already applied for leave');</script>");
 												}
-
+												
 												else {
 												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveType ,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'warden','"+request.getParameter("wardenTypeLeave")+"','"+request.getParameter("wardenReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
@@ -350,7 +349,7 @@
 												lTl.classList.remove("state-invalid");
 												b.disabled=true;
 											}
-
+										
 										}
 										else{
 											if(new Date(leaveFrom_date) > new Date(today)){
@@ -362,7 +361,7 @@
 												else{
 													lTl.classList.remove("state-invalid");
 													b.disabled=false;
-												}
+												}	
 											}
 										}
 									}
