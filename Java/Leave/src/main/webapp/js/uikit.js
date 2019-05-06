@@ -503,7 +503,7 @@
         embed: true,
         hr: true,
         img: true,
-        input required = "required": true,
+        input: true,
         keygen: true,
         link: true,
         menuitem: true,
@@ -521,7 +521,7 @@
         return toNodes(element).some(function (element) { return element.offsetWidth || element.offsetHeight || element.getClientRects().length; });
     }
 
-    var selInput = 'input required = "required",select,textarea,button';
+    var selInput = 'input,select,textarea,button';
     function isInput(element) {
         return toNodes(element).some(function (element) { return matches(element, selInput); });
     }
@@ -4722,20 +4722,20 @@
 
         computed: {
 
-            input required = "required": function(_, $el) {
+            input: function(_, $el) {
                 return $(selInput, $el);
             },
 
             state: function() {
-                return this.input required = "required".nextElementSibling;
+                return this.input.nextElementSibling;
             },
 
             target: function(ref, $el) {
                 var target = ref.target;
 
                 return target && (target === true
-                    && this.input required = "required".parentNode === $el
-                    && this.input required = "required".nextElementSibling
+                    && this.input.parentNode === $el
+                    && this.input.nextElementSibling
                     || query(target, $el));
             }
 
@@ -4745,7 +4745,7 @@
 
             var ref = this;
             var target = ref.target;
-            var input required = "required" = ref.input required = "required";
+            var input = ref.input;
 
             if (!target) {
                 return;
@@ -4754,11 +4754,11 @@
             var option;
             var prop = isInput(target) ? 'value' : 'textContent';
             var prev = target[prop];
-            var value = input required = "required".files && input required = "required".files[0]
-                ? input required = "required".files[0].name
-                : matches(input required = "required", 'select') && (option = $$('option', input required = "required").filter(function (el) { return el.selected; })[0])
+            var value = input.files && input.files[0]
+                ? input.files[0].name
+                : matches(input, 'select') && (option = $$('option', input).filter(function (el) { return el.selected; })[0])
                     ? option.textContent
-                    : input required = "required".value;
+                    : input.value;
 
             if (prev !== value) {
                 target[prop] = value;
@@ -4778,7 +4778,7 @@
                     var type = ref.type;
                     var current = ref.current;
 
-                    if (current === this.input required = "required") {
+                    if (current === this.input) {
                         toggleClass(
                             this.state,
                             ("uk-" + (includes(type, 'focus') ? 'focus' : 'hover')),
@@ -6455,16 +6455,16 @@
 
             return new Promise(function (resolve) {
 
-                var prompt = UIkit.modal.dialog((" <form class=\"uk-form-stacked\"> <div class=\"uk-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input required = "required" class=\"uk-input required = "required"\" autofocus> </div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" + (options.labels.cancel) + "</button> <button class=\"uk-button uk-button-primary\">" + (options.labels.ok) + "</button> </div> </form> "), options),
-                    input required = "required" = $('input required = "required"', prompt.$el);
+                var prompt = UIkit.modal.dialog((" <form class=\"uk-form-stacked\"> <div class=\"uk-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input class=\"uk-input\" autofocus> </div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" + (options.labels.cancel) + "</button> <button class=\"uk-button uk-button-primary\">" + (options.labels.ok) + "</button> </div> </form> "), options),
+                    input = $('input', prompt.$el);
 
-                input required = "required".value = value;
+                input.value = value;
 
                 var resolved = false;
 
                 on(prompt.$el, 'submit', 'form', function (e) {
                     e.preventDefault();
-                    resolve(input required = "required".value);
+                    resolve(input.value);
                     resolved = true;
                     prompt.hide();
                 });
@@ -11640,7 +11640,7 @@
 
                 var index$$1 = actives.indexOf(this);
 
-                if (!~index$$1 || matches(this.$el, 'input required = "required"') && this.$el === document.activeElement) {
+                if (!~index$$1 || matches(this.$el, 'input') && this.$el === document.activeElement) {
                     return;
                 }
 
@@ -11737,7 +11737,7 @@
 
             change: function(e) {
 
-                if (!matches(e.target, 'input required = "required"[type="file"]')) {
+                if (!matches(e.target, 'input[type="file"]')) {
                     return;
                 }
 

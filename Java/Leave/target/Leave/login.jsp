@@ -58,12 +58,12 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email</label>
-									<input required = "required" type="email" name="email" class="form-control" id="exampleInputEmail1"
+									<input type="email" name="email" class="form-control" id="exampleInputEmail1"
 										aria-describedby="emailHelp" placeholder="Enter Email" required="">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input required = "required" type="password" name="password" class="form-control"
+									<input type="password" name="password" class="form-control"
 										id="exampleInputPassword1" placeholder="Password" required="">
 								</div>
 

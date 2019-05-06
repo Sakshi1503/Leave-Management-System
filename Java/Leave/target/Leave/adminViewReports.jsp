@@ -71,24 +71,24 @@
                     <label class="form-label"><h4>SELECT ROLE</h4></label>
                     <div class="selectgroup w-100">
                         <label class="selectgroup-item">
-                            <input type="radio" name="hoD" value="hoD" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="hod" class="selectgroup-input">
                             <span class="selectgroup-button">Head of Department</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="faculty" value="faculty" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="faculty" class="selectgroup-input">
                             <span class="selectgroup-button">Faculty</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="warden" value="warden" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="warden" class="selectgroup-input">
                             <span class="selectgroup-button">Warden</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="student" value="student" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="student" class="selectgroup-input">
                             <span class="selectgroup-button">Student</span>
                         </label>
                     </div>
                 </div>
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="hodTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -105,6 +105,8 @@
 			        con=new Connect();
 					
                     rs = con.SelectData("select hodID, hodName, hodContact, count(appID) from hod_master left join leave_record on hodID = appID where appRole='hod' and isApprovedHod='yes' group by hodID order by hodID;");
+                    if(rs.next()){
+                    rs.beforeFirst();
                     while(rs.next()){	
                 %>
                     <tr id="hodLeave">
@@ -115,11 +117,12 @@
                         </tr>
                 <%
                     }
+                    }
                 %>
                     </tbody>
                 </table>
 
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="facultyTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -131,6 +134,8 @@
                     <tbody>
                 <%
                     rs = con.SelectData("select facultyID, facultyName, facultyContact, count(appID) from faculty_master left join leave_record on facultyID = appID where appRole='faculty' and isApprovedFaculty='yes' group by facultyID order by facultyID;");
+                    if(rs.next()){
+                    rs.beforeFirst();
                     while(rs.next()){	
                 %>
                     <tr id="facultyLeave">
@@ -141,11 +146,12 @@
                         </tr>
                 <%
                     }
+                    }
                 %>
                     </tbody>
                 </table>
 
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="wardenTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -156,7 +162,9 @@
                     </thead>
                     <tbody>
                 <%
-                    rs = con.SelectData("select wardenID, wardenName, wardenContact, count(appID) from warden_master left join leave_record on wardenID = appID where appRole='warden' and isApprovedFaculty='yes' group by wardenID order by wardenID;");
+                    rs = con.SelectData("select wardenID, wardenName, wardenContact, count(appID) from warden_master left join leave_record on wardenID = appID where appRole='warden' and isApprovedWarden='yes' group by wardenID order by wardenID;");
+                    if(rs.next()){
+                    rs.beforeFirst();
                     while(rs.next()){	
                 %>
                     <tr id="wardenLeave">
@@ -167,11 +175,12 @@
                         </tr>
                 <%
                     }
+                    }
                 %>
                     </tbody>
                 </table>
 
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="studentTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -182,7 +191,9 @@
                     </thead>
                     <tbody>
                 <%
-                    rs = con.SelectData("select studentID, studentName, studentContact, count(appID) from student_master left join leave_record on studentID = appID where appRole='student' and isApprovedFaculty='yes' group by studentID order by studentID;");
+                    rs = con.SelectData("select studentID, studentName, studentContact, count(appID) from student_master left join leave_record on studentID = appID where appRole='student' and isApprovedStudent='yes' group by studentID order by studentID;");
+                    if(rs.next()){
+                    rs.beforeFirst();
                     while(rs.next()){	
                 %>
                     <tr id="studentLeave">
@@ -193,6 +204,7 @@
                         </tr>
                 <%
                     }
+                    }
                 %>
                     </tbody>
                 </table>
@@ -202,6 +214,40 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+                $('input[type="radio"]').click(function () {
+                    if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'hod') {
+                        $('#hodTable').show();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').hide();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'faculty') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').show();
+                        $('#wardenTable').hide();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'warden') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').show();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'student') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').hide();
+                        $('#studentTable').show();
+                    }
+                    else { }
+                });
+            });
+    
+    </script>
+
 </body>
 
 </html>

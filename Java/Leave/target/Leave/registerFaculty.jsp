@@ -28,7 +28,7 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input required = "required" type="text" class="form-control" name="facultyName" id="name"
+									<input type="text" class="form-control" name="facultyName" id="name"
 									pattern="[a-zA-Z][a-zA-Z\s]*"
 										placeholder="Enter Name">
 								</div>
@@ -36,13 +36,13 @@
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="facultyGender" value="female"
-												class="selectgroup-input required = "required"">
+											<input type="radio" name="facultyGender" value="female"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="facultyGender" value="male"
-												class="selectgroup-input required = "required"">
+											<input type="radio" name="facultyGender" value="male"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -67,43 +67,43 @@
 										Branch?</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="hostelincharge" value="yes"
-												class="selectgroup-input required = "required"">
+											<input type="radio" name="hostelincharge" value="yes"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Yes</span>
 										</label>
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="hostelincharge" value="no"
-												class="selectgroup-input required = "required"">
+											<input type="radio" name="hostelincharge" value="no"
+												class="selectgroup-input">
 											<span class="selectgroup-button">No</span>
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="form-label">Position</label>
-									<input required = "required" type="text" class="form-control" name="facultyPosition" id="position"
+									<input type="text" class="form-control" name="facultyPosition" id="position"
 										placeholder="Enter Position">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input required = "required" type="text" class="form-control" name="facultyEmail" id="email"
+									<input type="text" class="form-control" name="facultyEmail" id="email"
 									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 										placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input required = "required" type="text" class="form-control" name="facultyMobile" id="mobile"
+									<input type="text" class="form-control" name="facultyMobile" id="mobile"
 									pattern="[0-9]{10}"
 										placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input required = "required" type="password" class="form-control" name="facultyPassword" id="Password"
+									<input type="password" class="form-control" name="facultyPassword" id="Password"
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 										placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input required = "required" type="password" class="form-control" name="facultyConfirmPassword"
+									<input type="password" class="form-control" name="facultyConfirmPassword"
 										id="ConfirmPassword" placeholder="Enter Confirm Password"
 										onkeyup="checkPass(); return false;">
 								</div>

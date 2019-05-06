@@ -251,7 +251,7 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-input required = "required",
+input,
 button,
 select,
 optgroup,
@@ -263,7 +263,7 @@ textarea {
 }
 
 button,
-input required = "required" {
+input {
   overflow: visible;
 }
 
@@ -287,16 +287,16 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-input required = "required"[type="radio"],
-input required = "required"[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-input required = "required"[type="date"],
-input required = "required"[type="time"],
-input required = "required"[type="datetime-local"],
-input required = "required"[type="month"] {
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
   -webkit-appearance: listbox;
 }
 
@@ -1817,7 +1817,7 @@ pre code {
   border: 0;
 }
 
-.form-control, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_filter input required = "required" {
+.form-control, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_filter input {
   display: block;
   width: 100%;
   height: 2.375rem;
@@ -1833,17 +1833,17 @@ pre code {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .form-control, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_filter input required = "required" {
+  .form-control, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_filter input {
     transition: none;
   }
 }
 
-.form-control::-ms-expand, .dataTables_wrapper .dataTables_length select::-ms-expand, .dataTables_wrapper .dataTables_filter input required = "required"::-ms-expand {
+.form-control::-ms-expand, .dataTables_wrapper .dataTables_length select::-ms-expand, .dataTables_wrapper .dataTables_filter input::-ms-expand {
   background-color: transparent;
   border: 0;
 }
 
-.form-control:focus, .dataTables_wrapper .dataTables_length select:focus, .dataTables_wrapper .dataTables_filter input required = "required":focus {
+.form-control:focus, .dataTables_wrapper .dataTables_length select:focus, .dataTables_wrapper .dataTables_filter input:focus {
   color: #495057;
   background-color: #fff;
   border-color: #1991eb;
@@ -1851,27 +1851,27 @@ pre code {
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
 
-.form-control::-webkit-input required = "required"-placeholder, .dataTables_wrapper .dataTables_length select::-webkit-input required = "required"-placeholder, .dataTables_wrapper .dataTables_filter input required = "required"::-webkit-input required = "required"-placeholder {
+.form-control::-webkit-input-placeholder, .dataTables_wrapper .dataTables_length select::-webkit-input-placeholder, .dataTables_wrapper .dataTables_filter input::-webkit-input-placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control::-moz-placeholder, .dataTables_wrapper .dataTables_length select::-moz-placeholder, .dataTables_wrapper .dataTables_filter input required = "required"::-moz-placeholder {
+.form-control::-moz-placeholder, .dataTables_wrapper .dataTables_length select::-moz-placeholder, .dataTables_wrapper .dataTables_filter input::-moz-placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control::-ms-input required = "required"-placeholder, .dataTables_wrapper .dataTables_length select::-ms-input required = "required"-placeholder, .dataTables_wrapper .dataTables_filter input required = "required"::-ms-input required = "required"-placeholder {
+.form-control::-ms-input-placeholder, .dataTables_wrapper .dataTables_length select::-ms-input-placeholder, .dataTables_wrapper .dataTables_filter input::-ms-input-placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control::placeholder, .dataTables_wrapper .dataTables_length select::placeholder, .dataTables_wrapper .dataTables_filter input required = "required"::placeholder {
+.form-control::placeholder, .dataTables_wrapper .dataTables_length select::placeholder, .dataTables_wrapper .dataTables_filter input::placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control:disabled, .dataTables_wrapper .dataTables_length select:disabled, .dataTables_wrapper .dataTables_filter input required = "required":disabled, .form-control[readonly], .dataTables_wrapper .dataTables_length select[readonly], .dataTables_wrapper .dataTables_filter input required = "required"[readonly] {
+.form-control:disabled, .dataTables_wrapper .dataTables_length select:disabled, .dataTables_wrapper .dataTables_filter input:disabled, .form-control[readonly], .dataTables_wrapper .dataTables_length select[readonly], .dataTables_wrapper .dataTables_filter input[readonly] {
   background-color: #f8f9fa;
   opacity: 1;
 }
@@ -1981,13 +1981,13 @@ textarea.form-control {
   padding-right: 1.25rem;
 }
 
-.form-check-input required = "required" {
+.form-check-input {
   position: absolute;
   margin-top: 0.3rem;
   margin-right: -1.25rem;
 }
 
-.form-check-input required = "required":disabled ~ .form-check-label {
+.form-check-input:disabled ~ .form-check-label {
   color: #9aa0ac;
 }
 
@@ -2004,7 +2004,7 @@ textarea.form-control {
   margin-left: 0.75rem;
 }
 
-.form-check-inline .form-check-input required = "required" {
+.form-check-inline .form-check-input {
   position: static;
   margin-top: 0;
   margin-left: 0.3125rem;
@@ -2034,28 +2034,28 @@ textarea.form-control {
   border-radius: 3px;
 }
 
-.was-validated .form-control:valid, .was-validated .dataTables_wrapper .dataTables_length select:valid, .dataTables_wrapper .dataTables_length .was-validated select:valid, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":valid, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":valid, .form-control.is-valid, .dataTables_wrapper .dataTables_length select.is-valid, .dataTables_wrapper .dataTables_filter input required = "required".is-valid, .was-validated .custom-select:valid, .was-validated .dataTables_wrapper .dataTables_length select:valid, .dataTables_wrapper .dataTables_length .was-validated select:valid,
+.was-validated .form-control:valid, .was-validated .dataTables_wrapper .dataTables_length select:valid, .dataTables_wrapper .dataTables_length .was-validated select:valid, .was-validated .dataTables_wrapper .dataTables_filter input:valid, .dataTables_wrapper .dataTables_filter .was-validated input:valid, .form-control.is-valid, .dataTables_wrapper .dataTables_length select.is-valid, .dataTables_wrapper .dataTables_filter input.is-valid, .was-validated .custom-select:valid, .was-validated .dataTables_wrapper .dataTables_length select:valid, .dataTables_wrapper .dataTables_length .was-validated select:valid,
 .custom-select.is-valid,
 .dataTables_wrapper .dataTables_length select.is-valid {
   border-color: #5eba00;
 }
 
-.was-validated .form-control:valid:focus, .was-validated .dataTables_wrapper .dataTables_length select:valid:focus, .dataTables_wrapper .dataTables_length .was-validated select:valid:focus, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":valid:focus, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":valid:focus, .form-control.is-valid:focus, .dataTables_wrapper .dataTables_length select.is-valid:focus, .dataTables_wrapper .dataTables_filter input required = "required".is-valid:focus, .was-validated .custom-select:valid:focus, .was-validated .dataTables_wrapper .dataTables_length select:valid:focus, .dataTables_wrapper .dataTables_length .was-validated select:valid:focus,
+.was-validated .form-control:valid:focus, .was-validated .dataTables_wrapper .dataTables_length select:valid:focus, .dataTables_wrapper .dataTables_length .was-validated select:valid:focus, .was-validated .dataTables_wrapper .dataTables_filter input:valid:focus, .dataTables_wrapper .dataTables_filter .was-validated input:valid:focus, .form-control.is-valid:focus, .dataTables_wrapper .dataTables_length select.is-valid:focus, .dataTables_wrapper .dataTables_filter input.is-valid:focus, .was-validated .custom-select:valid:focus, .was-validated .dataTables_wrapper .dataTables_length select:valid:focus, .dataTables_wrapper .dataTables_length .was-validated select:valid:focus,
 .custom-select.is-valid:focus,
 .dataTables_wrapper .dataTables_length select.is-valid:focus {
   border-color: #5eba00;
   box-shadow: 0 0 0 2px rgba(94, 186, 0, 0.25);
 }
 
-.was-validated .form-control:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":valid ~ .valid-feedback, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_filter input:valid ~ .valid-feedback, .dataTables_wrapper .dataTables_filter .was-validated input:valid ~ .valid-feedback,
 .was-validated .form-control:valid ~ .valid-tooltip,
 .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-tooltip,
 .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-tooltip,
-.was-validated .dataTables_wrapper .dataTables_filter input required = "required":valid ~ .valid-tooltip,
-.dataTables_wrapper .dataTables_filter .was-validated input required = "required":valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length select.is-valid ~ .valid-feedback, .dataTables_wrapper .dataTables_filter input required = "required".is-valid ~ .valid-feedback,
+.was-validated .dataTables_wrapper .dataTables_filter input:valid ~ .valid-tooltip,
+.dataTables_wrapper .dataTables_filter .was-validated input:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length select.is-valid ~ .valid-feedback, .dataTables_wrapper .dataTables_filter input.is-valid ~ .valid-feedback,
 .form-control.is-valid ~ .valid-tooltip,
 .dataTables_wrapper .dataTables_length select.is-valid ~ .valid-tooltip,
-.dataTables_wrapper .dataTables_filter input required = "required".is-valid ~ .valid-tooltip, .was-validated .custom-select:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-feedback,
+.dataTables_wrapper .dataTables_filter input.is-valid ~ .valid-tooltip, .was-validated .custom-select:valid ~ .valid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-feedback,
 .was-validated .custom-select:valid ~ .valid-tooltip,
 .was-validated .dataTables_wrapper .dataTables_length select:valid ~ .valid-tooltip,
 .dataTables_wrapper .dataTables_length .was-validated select:valid ~ .valid-tooltip,
@@ -2072,53 +2072,53 @@ textarea.form-control {
   display: block;
 }
 
-.was-validated .form-check-input required = "required":valid ~ .form-check-label, .form-check-input required = "required".is-valid ~ .form-check-label {
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
   color: #5eba00;
 }
 
-.was-validated .form-check-input required = "required":valid ~ .valid-feedback,
-.was-validated .form-check-input required = "required":valid ~ .valid-tooltip, .form-check-input required = "required".is-valid ~ .valid-feedback,
-.form-check-input required = "required".is-valid ~ .valid-tooltip {
+.was-validated .form-check-input:valid ~ .valid-feedback,
+.was-validated .form-check-input:valid ~ .valid-tooltip, .form-check-input.is-valid ~ .valid-feedback,
+.form-check-input.is-valid ~ .valid-tooltip {
   display: block;
 }
 
-.was-validated .custom-control-input required = "required":valid ~ .custom-control-label, .custom-control-input required = "required".is-valid ~ .custom-control-label {
+.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
   color: #5eba00;
 }
 
-.was-validated .custom-control-input required = "required":valid ~ .custom-control-label::before, .custom-control-input required = "required".is-valid ~ .custom-control-label::before {
+.was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
   background-color: #9eff3b;
 }
 
-.was-validated .custom-control-input required = "required":valid ~ .valid-feedback,
-.was-validated .custom-control-input required = "required":valid ~ .valid-tooltip, .custom-control-input required = "required".is-valid ~ .valid-feedback,
-.custom-control-input required = "required".is-valid ~ .valid-tooltip {
+.was-validated .custom-control-input:valid ~ .valid-feedback,
+.was-validated .custom-control-input:valid ~ .valid-tooltip, .custom-control-input.is-valid ~ .valid-feedback,
+.custom-control-input.is-valid ~ .valid-tooltip {
   display: block;
 }
 
-.was-validated .custom-control-input required = "required":valid:checked ~ .custom-control-label::before, .custom-control-input required = "required".is-valid:checked ~ .custom-control-label::before {
+.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
   background-color: #78ed00;
 }
 
-.was-validated .custom-control-input required = "required":valid:focus ~ .custom-control-label::before, .custom-control-input required = "required".is-valid:focus ~ .custom-control-label::before {
+.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 1px #f5f7fb, 0 0 0 2px rgba(94, 186, 0, 0.25);
 }
 
-.was-validated .custom-file-input required = "required":valid ~ .custom-file-label, .custom-file-input required = "required".is-valid ~ .custom-file-label {
+.was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
   border-color: #5eba00;
 }
 
-.was-validated .custom-file-input required = "required":valid ~ .custom-file-label::after, .custom-file-input required = "required".is-valid ~ .custom-file-label::after {
+.was-validated .custom-file-input:valid ~ .custom-file-label::after, .custom-file-input.is-valid ~ .custom-file-label::after {
   border-color: inherit;
 }
 
-.was-validated .custom-file-input required = "required":valid ~ .valid-feedback,
-.was-validated .custom-file-input required = "required":valid ~ .valid-tooltip, .custom-file-input required = "required".is-valid ~ .valid-feedback,
-.custom-file-input required = "required".is-valid ~ .valid-tooltip {
+.was-validated .custom-file-input:valid ~ .valid-feedback,
+.was-validated .custom-file-input:valid ~ .valid-tooltip, .custom-file-input.is-valid ~ .valid-feedback,
+.custom-file-input.is-valid ~ .valid-tooltip {
   display: block;
 }
 
-.was-validated .custom-file-input required = "required":valid:focus ~ .custom-file-label, .custom-file-input required = "required".is-valid:focus ~ .custom-file-label {
+.was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {
   box-shadow: 0 0 0 2px rgba(94, 186, 0, 0.25);
 }
 
@@ -2145,28 +2145,28 @@ textarea.form-control {
   border-radius: 3px;
 }
 
-.was-validated .form-control:invalid, .was-validated .dataTables_wrapper .dataTables_length select:invalid, .dataTables_wrapper .dataTables_length .was-validated select:invalid, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":invalid, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":invalid, .form-control.is-invalid, .dataTables_wrapper .dataTables_length select.is-invalid, .dataTables_wrapper .dataTables_filter input required = "required".is-invalid, .was-validated .custom-select:invalid, .was-validated .dataTables_wrapper .dataTables_length select:invalid, .dataTables_wrapper .dataTables_length .was-validated select:invalid,
+.was-validated .form-control:invalid, .was-validated .dataTables_wrapper .dataTables_length select:invalid, .dataTables_wrapper .dataTables_length .was-validated select:invalid, .was-validated .dataTables_wrapper .dataTables_filter input:invalid, .dataTables_wrapper .dataTables_filter .was-validated input:invalid, .form-control.is-invalid, .dataTables_wrapper .dataTables_length select.is-invalid, .dataTables_wrapper .dataTables_filter input.is-invalid, .was-validated .custom-select:invalid, .was-validated .dataTables_wrapper .dataTables_length select:invalid, .dataTables_wrapper .dataTables_length .was-validated select:invalid,
 .custom-select.is-invalid,
 .dataTables_wrapper .dataTables_length select.is-invalid {
   border-color: #cd201f;
 }
 
-.was-validated .form-control:invalid:focus, .was-validated .dataTables_wrapper .dataTables_length select:invalid:focus, .dataTables_wrapper .dataTables_length .was-validated select:invalid:focus, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":invalid:focus, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":invalid:focus, .form-control.is-invalid:focus, .dataTables_wrapper .dataTables_length select.is-invalid:focus, .dataTables_wrapper .dataTables_filter input required = "required".is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .dataTables_wrapper .dataTables_length select:invalid:focus, .dataTables_wrapper .dataTables_length .was-validated select:invalid:focus,
+.was-validated .form-control:invalid:focus, .was-validated .dataTables_wrapper .dataTables_length select:invalid:focus, .dataTables_wrapper .dataTables_length .was-validated select:invalid:focus, .was-validated .dataTables_wrapper .dataTables_filter input:invalid:focus, .dataTables_wrapper .dataTables_filter .was-validated input:invalid:focus, .form-control.is-invalid:focus, .dataTables_wrapper .dataTables_length select.is-invalid:focus, .dataTables_wrapper .dataTables_filter input.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .dataTables_wrapper .dataTables_length select:invalid:focus, .dataTables_wrapper .dataTables_length .was-validated select:invalid:focus,
 .custom-select.is-invalid:focus,
 .dataTables_wrapper .dataTables_length select.is-invalid:focus {
   border-color: #cd201f;
   box-shadow: 0 0 0 2px rgba(205, 32, 31, 0.25);
 }
 
-.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_filter input required = "required":invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_filter .was-validated input required = "required":invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_filter input:invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_filter .was-validated input:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-tooltip,
 .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-tooltip,
 .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-tooltip,
-.was-validated .dataTables_wrapper .dataTables_filter input required = "required":invalid ~ .invalid-tooltip,
-.dataTables_wrapper .dataTables_filter .was-validated input required = "required":invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length select.is-invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_filter input required = "required".is-invalid ~ .invalid-feedback,
+.was-validated .dataTables_wrapper .dataTables_filter input:invalid ~ .invalid-tooltip,
+.dataTables_wrapper .dataTables_filter .was-validated input:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length select.is-invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_filter input.is-invalid ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-tooltip,
 .dataTables_wrapper .dataTables_length select.is-invalid ~ .invalid-tooltip,
-.dataTables_wrapper .dataTables_filter input required = "required".is-invalid ~ .invalid-tooltip, .was-validated .custom-select:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-feedback,
+.dataTables_wrapper .dataTables_filter input.is-invalid ~ .invalid-tooltip, .was-validated .custom-select:invalid ~ .invalid-feedback, .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-feedback, .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-feedback,
 .was-validated .custom-select:invalid ~ .invalid-tooltip,
 .was-validated .dataTables_wrapper .dataTables_length select:invalid ~ .invalid-tooltip,
 .dataTables_wrapper .dataTables_length .was-validated select:invalid ~ .invalid-tooltip,
@@ -2183,53 +2183,53 @@ textarea.form-control {
   display: block;
 }
 
-.was-validated .form-check-input required = "required":invalid ~ .form-check-label, .form-check-input required = "required".is-invalid ~ .form-check-label {
+.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
   color: #cd201f;
 }
 
-.was-validated .form-check-input required = "required":invalid ~ .invalid-feedback,
-.was-validated .form-check-input required = "required":invalid ~ .invalid-tooltip, .form-check-input required = "required".is-invalid ~ .invalid-feedback,
-.form-check-input required = "required".is-invalid ~ .invalid-tooltip {
+.was-validated .form-check-input:invalid ~ .invalid-feedback,
+.was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback,
+.form-check-input.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .custom-control-input required = "required":invalid ~ .custom-control-label, .custom-control-input required = "required".is-invalid ~ .custom-control-label {
+.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {
   color: #cd201f;
 }
 
-.was-validated .custom-control-input required = "required":invalid ~ .custom-control-label::before, .custom-control-input required = "required".is-invalid ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {
   background-color: #ec8080;
 }
 
-.was-validated .custom-control-input required = "required":invalid ~ .invalid-feedback,
-.was-validated .custom-control-input required = "required":invalid ~ .invalid-tooltip, .custom-control-input required = "required".is-invalid ~ .invalid-feedback,
-.custom-control-input required = "required".is-invalid ~ .invalid-tooltip {
+.was-validated .custom-control-input:invalid ~ .invalid-feedback,
+.was-validated .custom-control-input:invalid ~ .invalid-tooltip, .custom-control-input.is-invalid ~ .invalid-feedback,
+.custom-control-input.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .custom-control-input required = "required":invalid:checked ~ .custom-control-label::before, .custom-control-input required = "required".is-invalid:checked ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before {
   background-color: #e23e3d;
 }
 
-.was-validated .custom-control-input required = "required":invalid:focus ~ .custom-control-label::before, .custom-control-input required = "required".is-invalid:focus ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 1px #f5f7fb, 0 0 0 2px rgba(205, 32, 31, 0.25);
 }
 
-.was-validated .custom-file-input required = "required":invalid ~ .custom-file-label, .custom-file-input required = "required".is-invalid ~ .custom-file-label {
+.was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
   border-color: #cd201f;
 }
 
-.was-validated .custom-file-input required = "required":invalid ~ .custom-file-label::after, .custom-file-input required = "required".is-invalid ~ .custom-file-label::after {
+.was-validated .custom-file-input:invalid ~ .custom-file-label::after, .custom-file-input.is-invalid ~ .custom-file-label::after {
   border-color: inherit;
 }
 
-.was-validated .custom-file-input required = "required":invalid ~ .invalid-feedback,
-.was-validated .custom-file-input required = "required":invalid ~ .invalid-tooltip, .custom-file-input required = "required".is-invalid ~ .invalid-feedback,
-.custom-file-input required = "required".is-invalid ~ .invalid-tooltip {
+.was-validated .custom-file-input:invalid ~ .invalid-feedback,
+.was-validated .custom-file-input:invalid ~ .invalid-tooltip, .custom-file-input.is-invalid ~ .invalid-feedback,
+.custom-file-input.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .custom-file-input required = "required":invalid:focus ~ .custom-file-label, .custom-file-input required = "required".is-invalid:focus ~ .custom-file-label {
+.was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
   box-shadow: 0 0 0 2px rgba(205, 32, 31, 0.25);
 }
 
@@ -2267,7 +2267,7 @@ textarea.form-control {
     align-items: center;
     margin-bottom: 0;
   }
-  .form-inline .form-control, .form-inline .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_length .form-inline select, .form-inline .dataTables_wrapper .dataTables_filter input required = "required", .dataTables_wrapper .dataTables_filter .form-inline input required = "required" {
+  .form-inline .form-control, .form-inline .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_length .form-inline select, .form-inline .dataTables_wrapper .dataTables_filter input, .dataTables_wrapper .dataTables_filter .form-inline input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -2275,7 +2275,7 @@ textarea.form-control {
   .form-inline .form-control-plaintext {
     display: inline-block;
   }
-  .form-inline .input required = "required"-group,
+  .form-inline .input-group,
   .form-inline .custom-select,
   .form-inline .dataTables_wrapper .dataTables_length select,
   .dataTables_wrapper .dataTables_length .form-inline select {
@@ -2291,7 +2291,7 @@ textarea.form-control {
     width: auto;
     padding-right: 0;
   }
-  .form-inline .form-check-input required = "required" {
+  .form-inline .form-check-input {
     position: relative;
     margin-top: 0;
     margin-left: 0.25rem;
@@ -2951,9 +2951,9 @@ fieldset:disabled .dataTables_wrapper .dataTables_paginate a.paginate_button,
   margin-top: 0.5rem;
 }
 
-input required = "required"[type="submit"].btn-block,
-input required = "required"[type="reset"].btn-block,
-input required = "required"[type="button"].btn-block {
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
   width: 100%;
 }
 
@@ -3258,7 +3258,7 @@ input required = "required"[type="button"].btn-block {
   justify-content: flex-start;
 }
 
-.btn-toolbar .input required = "required"-group {
+.btn-toolbar .input-group {
   width: auto;
 }
 
@@ -3349,19 +3349,19 @@ input required = "required"[type="button"].btn-block {
   margin-bottom: 0;
 }
 
-.btn-group-toggle > .btn input required = "required"[type="radio"], .dataTables_wrapper .dataTables_paginate .btn-group-toggle > .paginate_button input required = "required"[type="radio"],
-.btn-group-toggle > .btn input required = "required"[type="checkbox"],
-.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .paginate_button input required = "required"[type="checkbox"],
-.btn-group-toggle > .btn-group > .btn input required = "required"[type="radio"],
-.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .btn-group > .paginate_button input required = "required"[type="radio"],
-.btn-group-toggle > .btn-group > .btn input required = "required"[type="checkbox"],
-.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .btn-group > .paginate_button input required = "required"[type="checkbox"] {
+.btn-group-toggle > .btn input[type="radio"], .dataTables_wrapper .dataTables_paginate .btn-group-toggle > .paginate_button input[type="radio"],
+.btn-group-toggle > .btn input[type="checkbox"],
+.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .paginate_button input[type="checkbox"],
+.btn-group-toggle > .btn-group > .btn input[type="radio"],
+.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .btn-group > .paginate_button input[type="radio"],
+.btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+.dataTables_wrapper .dataTables_paginate .btn-group-toggle > .btn-group > .paginate_button input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
 
-.input required = "required"-group {
+.input-group {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -3372,10 +3372,10 @@ input required = "required"[type="button"].btn-block {
   width: 100%;
 }
 
-.input required = "required"-group > .form-control, .dataTables_wrapper .dataTables_length .input required = "required"-group > select, .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required",
-.input required = "required"-group > .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select,
-.input required = "required"-group > .custom-file {
+.input-group > .form-control, .dataTables_wrapper .dataTables_length .input-group > select, .dataTables_wrapper .dataTables_filter .input-group > input,
+.input-group > .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > select,
+.input-group > .custom-file {
   position: relative;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -3383,130 +3383,130 @@ input required = "required"[type="button"].btn-block {
   margin-bottom: 0;
 }
 
-.input required = "required"-group > .form-control + .form-control, .dataTables_wrapper .dataTables_length .input required = "required"-group > select + .form-control, .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required" + .form-control, .dataTables_wrapper .dataTables_length .input required = "required"-group > .form-control + select, .dataTables_wrapper .dataTables_length .input required = "required"-group > select + select, .dataTables_wrapper .dataTables_filter .dataTables_length .input required = "required"-group > input required = "required" + select, .dataTables_wrapper .dataTables_length .dataTables_filter .input required = "required"-group > input required = "required" + select, .dataTables_wrapper .dataTables_filter .input required = "required"-group > .form-control + input required = "required", .dataTables_wrapper .dataTables_length .dataTables_filter .input required = "required"-group > select + input required = "required", .dataTables_wrapper .dataTables_filter .dataTables_length .input required = "required"-group > select + input required = "required", .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required" + input required = "required",
-.input required = "required"-group > .form-control + .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + .custom-select,
-.dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required" + .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > .form-control + select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + select,
-.dataTables_wrapper .dataTables_filter .dataTables_length .input required = "required"-group > input required = "required" + select,
-.dataTables_wrapper .dataTables_length .dataTables_filter .input required = "required"-group > input required = "required" + select,
-.input required = "required"-group > .form-control + .custom-file,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + .custom-file,
-.dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required" + .custom-file,
-.input required = "required"-group > .custom-select + .form-control,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + .form-control,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > .custom-select + select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + select,
-.dataTables_wrapper .dataTables_filter .input required = "required"-group > .custom-select + input required = "required",
-.dataTables_wrapper .dataTables_length .dataTables_filter .input required = "required"-group > select + input required = "required",
-.dataTables_wrapper .dataTables_filter .dataTables_length .input required = "required"-group > select + input required = "required",
-.input required = "required"-group > .custom-select + .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > .custom-select + select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + select,
-.input required = "required"-group > .custom-select + .custom-file,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select + .custom-file,
-.input required = "required"-group > .custom-file + .form-control,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > .custom-file + select,
-.dataTables_wrapper .dataTables_filter .input required = "required"-group > .custom-file + input required = "required",
-.input required = "required"-group > .custom-file + .custom-select,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > .custom-file + select,
-.input required = "required"-group > .custom-file + .custom-file {
+.input-group > .form-control + .form-control, .dataTables_wrapper .dataTables_length .input-group > select + .form-control, .dataTables_wrapper .dataTables_filter .input-group > input + .form-control, .dataTables_wrapper .dataTables_length .input-group > .form-control + select, .dataTables_wrapper .dataTables_length .input-group > select + select, .dataTables_wrapper .dataTables_filter .dataTables_length .input-group > input + select, .dataTables_wrapper .dataTables_length .dataTables_filter .input-group > input + select, .dataTables_wrapper .dataTables_filter .input-group > .form-control + input, .dataTables_wrapper .dataTables_length .dataTables_filter .input-group > select + input, .dataTables_wrapper .dataTables_filter .dataTables_length .input-group > select + input, .dataTables_wrapper .dataTables_filter .input-group > input + input,
+.input-group > .form-control + .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > select + .custom-select,
+.dataTables_wrapper .dataTables_filter .input-group > input + .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > .form-control + select,
+.dataTables_wrapper .dataTables_length .input-group > select + select,
+.dataTables_wrapper .dataTables_filter .dataTables_length .input-group > input + select,
+.dataTables_wrapper .dataTables_length .dataTables_filter .input-group > input + select,
+.input-group > .form-control + .custom-file,
+.dataTables_wrapper .dataTables_length .input-group > select + .custom-file,
+.dataTables_wrapper .dataTables_filter .input-group > input + .custom-file,
+.input-group > .custom-select + .form-control,
+.dataTables_wrapper .dataTables_length .input-group > select + .form-control,
+.dataTables_wrapper .dataTables_length .input-group > .custom-select + select,
+.dataTables_wrapper .dataTables_length .input-group > select + select,
+.dataTables_wrapper .dataTables_filter .input-group > .custom-select + input,
+.dataTables_wrapper .dataTables_length .dataTables_filter .input-group > select + input,
+.dataTables_wrapper .dataTables_filter .dataTables_length .input-group > select + input,
+.input-group > .custom-select + .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > select + .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > .custom-select + select,
+.dataTables_wrapper .dataTables_length .input-group > select + select,
+.input-group > .custom-select + .custom-file,
+.dataTables_wrapper .dataTables_length .input-group > select + .custom-file,
+.input-group > .custom-file + .form-control,
+.dataTables_wrapper .dataTables_length .input-group > .custom-file + select,
+.dataTables_wrapper .dataTables_filter .input-group > .custom-file + input,
+.input-group > .custom-file + .custom-select,
+.dataTables_wrapper .dataTables_length .input-group > .custom-file + select,
+.input-group > .custom-file + .custom-file {
   margin-right: -1px;
 }
 
-.input required = "required"-group > .form-control:focus, .dataTables_wrapper .dataTables_length .input required = "required"-group > select:focus, .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required":focus,
-.input required = "required"-group > .custom-select:focus,
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select:focus,
-.input required = "required"-group > .custom-file .custom-file-input required = "required":focus ~ .custom-file-label {
+.input-group > .form-control:focus, .dataTables_wrapper .dataTables_length .input-group > select:focus, .dataTables_wrapper .dataTables_filter .input-group > input:focus,
+.input-group > .custom-select:focus,
+.dataTables_wrapper .dataTables_length .input-group > select:focus,
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
 }
 
-.input required = "required"-group > .custom-file .custom-file-input required = "required":focus {
+.input-group > .custom-file .custom-file-input:focus {
   z-index: 4;
 }
 
-.input required = "required"-group > .form-control:not(:last-child), .dataTables_wrapper .dataTables_length .input required = "required"-group > select:not(:last-child), .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required":not(:last-child),
-.input required = "required"-group > .custom-select:not(:last-child),
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select:not(:last-child) {
+.input-group > .form-control:not(:last-child), .dataTables_wrapper .dataTables_length .input-group > select:not(:last-child), .dataTables_wrapper .dataTables_filter .input-group > input:not(:last-child),
+.input-group > .custom-select:not(:last-child),
+.dataTables_wrapper .dataTables_length .input-group > select:not(:last-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.input required = "required"-group > .form-control:not(:first-child), .dataTables_wrapper .dataTables_length .input required = "required"-group > select:not(:first-child), .dataTables_wrapper .dataTables_filter .input required = "required"-group > input required = "required":not(:first-child),
-.input required = "required"-group > .custom-select:not(:first-child),
-.dataTables_wrapper .dataTables_length .input required = "required"-group > select:not(:first-child) {
+.input-group > .form-control:not(:first-child), .dataTables_wrapper .dataTables_length .input-group > select:not(:first-child), .dataTables_wrapper .dataTables_filter .input-group > input:not(:first-child),
+.input-group > .custom-select:not(:first-child),
+.dataTables_wrapper .dataTables_length .input-group > select:not(:first-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input required = "required"-group > .custom-file {
+.input-group > .custom-file {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.input required = "required"-group > .custom-file:not(:last-child) .custom-file-label,
-.input required = "required"-group > .custom-file:not(:last-child) .custom-file-label::after {
+.input-group > .custom-file:not(:last-child) .custom-file-label,
+.input-group > .custom-file:not(:last-child) .custom-file-label::after {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.input required = "required"-group > .custom-file:not(:first-child) .custom-file-label {
+.input-group > .custom-file:not(:first-child) .custom-file-label {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input required = "required"-group-prepend,
-.input required = "required"-group-append {
+.input-group-prepend,
+.input-group-append {
   display: -ms-flexbox;
   display: flex;
 }
 
-.input required = "required"-group-prepend .btn, .input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button, .dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .paginate_button,
-.input required = "required"-group-append .btn,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .paginate_button,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .paginate_button {
+.input-group-prepend .btn, .input-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button, .dataTables_wrapper .dataTables_paginate .input-group-prepend .paginate_button,
+.input-group-append .btn,
+.input-group-append .dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_paginate .input-group-append .paginate_button {
   position: relative;
   z-index: 2;
 }
 
-.input required = "required"-group-prepend .btn + .btn, .input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .btn, .dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .paginate_button + .btn, .input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .btn + .paginate_button, .dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .btn + .paginate_button, .input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .paginate_button, .dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .paginate_button + .paginate_button,
-.input required = "required"-group-prepend .btn + .input required = "required"-group-text,
-.input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .input required = "required"-group-text,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .paginate_button + .input required = "required"-group-text,
-.input required = "required"-group-prepend .input required = "required"-group-text + .input required = "required"-group-text,
-.input required = "required"-group-prepend .input required = "required"-group-text + .btn,
-.input required = "required"-group-prepend .dataTables_wrapper .dataTables_paginate .input required = "required"-group-text + .paginate_button,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend .input required = "required"-group-text + .paginate_button,
-.input required = "required"-group-append .btn + .btn,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .paginate_button + .btn,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .btn + .paginate_button,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .btn + .paginate_button,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .paginate_button,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .paginate_button + .paginate_button,
-.input required = "required"-group-append .btn + .input required = "required"-group-text,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .input required = "required"-group-text,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .paginate_button + .input required = "required"-group-text,
-.input required = "required"-group-append .input required = "required"-group-text + .input required = "required"-group-text,
-.input required = "required"-group-append .input required = "required"-group-text + .btn,
-.input required = "required"-group-append .dataTables_wrapper .dataTables_paginate .input required = "required"-group-text + .paginate_button,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append .input required = "required"-group-text + .paginate_button {
+.input-group-prepend .btn + .btn, .input-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .btn, .dataTables_wrapper .dataTables_paginate .input-group-prepend .paginate_button + .btn, .input-group-prepend .dataTables_wrapper .dataTables_paginate .btn + .paginate_button, .dataTables_wrapper .dataTables_paginate .input-group-prepend .btn + .paginate_button, .input-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .paginate_button, .dataTables_wrapper .dataTables_paginate .input-group-prepend .paginate_button + .paginate_button,
+.input-group-prepend .btn + .input-group-text,
+.input-group-prepend .dataTables_wrapper .dataTables_paginate .paginate_button + .input-group-text,
+.dataTables_wrapper .dataTables_paginate .input-group-prepend .paginate_button + .input-group-text,
+.input-group-prepend .input-group-text + .input-group-text,
+.input-group-prepend .input-group-text + .btn,
+.input-group-prepend .dataTables_wrapper .dataTables_paginate .input-group-text + .paginate_button,
+.dataTables_wrapper .dataTables_paginate .input-group-prepend .input-group-text + .paginate_button,
+.input-group-append .btn + .btn,
+.input-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-append .paginate_button + .btn,
+.input-group-append .dataTables_wrapper .dataTables_paginate .btn + .paginate_button,
+.dataTables_wrapper .dataTables_paginate .input-group-append .btn + .paginate_button,
+.input-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .paginate_button,
+.dataTables_wrapper .dataTables_paginate .input-group-append .paginate_button + .paginate_button,
+.input-group-append .btn + .input-group-text,
+.input-group-append .dataTables_wrapper .dataTables_paginate .paginate_button + .input-group-text,
+.dataTables_wrapper .dataTables_paginate .input-group-append .paginate_button + .input-group-text,
+.input-group-append .input-group-text + .input-group-text,
+.input-group-append .input-group-text + .btn,
+.input-group-append .dataTables_wrapper .dataTables_paginate .input-group-text + .paginate_button,
+.dataTables_wrapper .dataTables_paginate .input-group-append .input-group-text + .paginate_button {
   margin-right: -1px;
 }
 
-.input required = "required"-group-prepend {
+.input-group-prepend {
   margin-left: -1px;
 }
 
-.input required = "required"-group-append {
+.input-group-append {
   margin-right: -1px;
 }
 
-.input required = "required"-group-text {
+.input-group-text {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -3524,18 +3524,18 @@ input required = "required"[type="button"].btn-block {
   border-radius: 3px;
 }
 
-.input required = "required"-group-text input required = "required"[type="radio"],
-.input required = "required"-group-text input required = "required"[type="checkbox"] {
+.input-group-text input[type="radio"],
+.input-group-text input[type="checkbox"] {
   margin-top: 0;
 }
 
-.input required = "required"-group-lg > .form-control, .dataTables_wrapper .dataTables_length .input required = "required"-group-lg > select, .dataTables_wrapper .dataTables_filter .input required = "required"-group-lg > input required = "required",
-.input required = "required"-group-lg > .input required = "required"-group-prepend > .input required = "required"-group-text,
-.input required = "required"-group-lg > .input required = "required"-group-append > .input required = "required"-group-text,
-.input required = "required"-group-lg > .input required = "required"-group-prepend > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-lg > .input required = "required"-group-prepend > .paginate_button,
-.input required = "required"-group-lg > .input required = "required"-group-append > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-lg > .input required = "required"-group-append > .paginate_button {
+.input-group-lg > .form-control, .dataTables_wrapper .dataTables_length .input-group-lg > select, .dataTables_wrapper .dataTables_filter .input-group-lg > input,
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-lg > .input-group-prepend > .paginate_button,
+.input-group-lg > .input-group-append > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-lg > .input-group-append > .paginate_button {
   height: calc(2.6875rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.125rem;
@@ -3543,13 +3543,13 @@ input required = "required"[type="button"].btn-block {
   border-radius: 3px;
 }
 
-.input required = "required"-group-sm > .form-control, .dataTables_wrapper .dataTables_length .input required = "required"-group-sm > select, .dataTables_wrapper .dataTables_filter .input required = "required"-group-sm > input required = "required",
-.input required = "required"-group-sm > .input required = "required"-group-prepend > .input required = "required"-group-text,
-.input required = "required"-group-sm > .input required = "required"-group-append > .input required = "required"-group-text,
-.input required = "required"-group-sm > .input required = "required"-group-prepend > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-sm > .input required = "required"-group-prepend > .paginate_button,
-.input required = "required"-group-sm > .input required = "required"-group-append > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-sm > .input required = "required"-group-append > .paginate_button {
+.input-group-sm > .form-control, .dataTables_wrapper .dataTables_length .input-group-sm > select, .dataTables_wrapper .dataTables_filter .input-group-sm > input,
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-sm > .input-group-prepend > .paginate_button,
+.input-group-sm > .input-group-append > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-sm > .input-group-append > .paginate_button {
   height: calc(1.8125rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -3557,26 +3557,26 @@ input required = "required"[type="button"].btn-block {
   border-radius: 3px;
 }
 
-.input required = "required"-group > .input required = "required"-group-prepend > .btn, .dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-prepend > .paginate_button,
-.input required = "required"-group > .input required = "required"-group-prepend > .input required = "required"-group-text,
-.input required = "required"-group > .input required = "required"-group-append:not(:last-child) > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-append:not(:last-child) > .paginate_button,
-.input required = "required"-group > .input required = "required"-group-append:not(:last-child) > .input required = "required"-group-text,
-.input required = "required"-group > .input required = "required"-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-append:last-child > .paginate_button:not(:last-child):not(.dropdown-toggle),
-.input required = "required"-group > .input required = "required"-group-append:last-child > .input required = "required"-group-text:not(:last-child) {
+.input-group > .input-group-prepend > .btn, .dataTables_wrapper .dataTables_paginate .input-group > .input-group-prepend > .paginate_button,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group > .input-group-append:not(:last-child) > .paginate_button,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.dataTables_wrapper .dataTables_paginate .input-group > .input-group-append:last-child > .paginate_button:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.input required = "required"-group > .input required = "required"-group-append > .btn, .dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-append > .paginate_button,
-.input required = "required"-group > .input required = "required"-group-append > .input required = "required"-group-text,
-.input required = "required"-group > .input required = "required"-group-prepend:not(:first-child) > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-prepend:not(:first-child) > .paginate_button,
-.input required = "required"-group > .input required = "required"-group-prepend:not(:first-child) > .input required = "required"-group-text,
-.input required = "required"-group > .input required = "required"-group-prepend:first-child > .btn:not(:first-child),
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group > .input required = "required"-group-prepend:first-child > .paginate_button:not(:first-child),
-.input required = "required"-group > .input required = "required"-group-prepend:first-child > .input required = "required"-group-text:not(:first-child) {
+.input-group > .input-group-append > .btn, .dataTables_wrapper .dataTables_paginate .input-group > .input-group-append > .paginate_button,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group > .input-group-prepend:not(:first-child) > .paginate_button,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.dataTables_wrapper .dataTables_paginate .input-group > .input-group-prepend:first-child > .paginate_button:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -3594,31 +3594,31 @@ input required = "required"[type="button"].btn-block {
   margin-left: 1rem;
 }
 
-.custom-control-input required = "required" {
+.custom-control-input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.custom-control-input required = "required":checked ~ .custom-control-label::before {
+.custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   background-color: #467fcf;
 }
 
-.custom-control-input required = "required":focus ~ .custom-control-label::before {
+.custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 1px #f5f7fb, 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
 
-.custom-control-input required = "required":active ~ .custom-control-label::before {
+.custom-control-input:active ~ .custom-control-label::before {
   color: #fff;
   background-color: #d4e1f4;
 }
 
-.custom-control-input required = "required":disabled ~ .custom-control-label {
+.custom-control-input:disabled ~ .custom-control-label {
   color: #868e96;
 }
 
-.custom-control-input required = "required":disabled ~ .custom-control-label::before {
+.custom-control-input:disabled ~ .custom-control-label::before {
   background-color: #e9ecef;
 }
 
@@ -3660,27 +3660,27 @@ input required = "required"[type="button"].btn-block {
   border-radius: 3px;
 }
 
-.custom-checkbox .custom-control-input required = "required":checked ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #467fcf;
 }
 
-.custom-checkbox .custom-control-input required = "required":checked ~ .custom-control-label::after {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 
-.custom-checkbox .custom-control-input required = "required":indeterminate ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #467fcf;
 }
 
-.custom-checkbox .custom-control-input required = "required":indeterminate ~ .custom-control-label::after {
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E");
 }
 
-.custom-checkbox .custom-control-input required = "required":disabled:checked ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
   background-color: rgba(70, 127, 207, 0.5);
 }
 
-.custom-checkbox .custom-control-input required = "required":disabled:indeterminate ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
   background-color: rgba(70, 127, 207, 0.5);
 }
 
@@ -3688,15 +3688,15 @@ input required = "required"[type="button"].btn-block {
   border-radius: 50%;
 }
 
-.custom-radio .custom-control-input required = "required":checked ~ .custom-control-label::before {
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #467fcf;
 }
 
-.custom-radio .custom-control-input required = "required":checked ~ .custom-control-label::after {
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
 }
 
-.custom-radio .custom-control-input required = "required":disabled:checked ~ .custom-control-label::before {
+.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
   background-color: rgba(70, 127, 207, 0.5);
 }
 
@@ -3765,7 +3765,7 @@ input required = "required"[type="button"].btn-block {
   margin-bottom: 0;
 }
 
-.custom-file-input required = "required" {
+.custom-file-input {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -3774,20 +3774,20 @@ input required = "required"[type="button"].btn-block {
   opacity: 0;
 }
 
-.custom-file-input required = "required":focus ~ .custom-file-label {
+.custom-file-input:focus ~ .custom-file-label {
   border-color: #1991eb;
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
 
-.custom-file-input required = "required":focus ~ .custom-file-label::after {
+.custom-file-input:focus ~ .custom-file-label::after {
   border-color: #1991eb;
 }
 
-.custom-file-input required = "required":disabled ~ .custom-file-label {
+.custom-file-input:disabled ~ .custom-file-label {
   background-color: #f8f9fa;
 }
 
-.custom-file-input required = "required":lang(en) ~ .custom-file-label::after {
+.custom-file-input:lang(en) ~ .custom-file-label::after {
   content: "Browse";
 }
 
@@ -14183,45 +14183,45 @@ textarea[cols] {
   line-height: 1.5rem;
 }
 
-.input required = "required"-group-prepend,
-.input required = "required"-group-append,
-.input required = "required"-group-btn {
+.input-group-prepend,
+.input-group-append,
+.input-group-btn {
   font-size: 0.9375rem;
 }
 
-.input required = "required"-group-prepend > .btn, .dataTables_wrapper .dataTables_paginate .input required = "required"-group-prepend > .paginate_button,
-.input required = "required"-group-append > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-append > .paginate_button,
-.input required = "required"-group-btn > .btn,
-.dataTables_wrapper .dataTables_paginate .input required = "required"-group-btn > .paginate_button {
+.input-group-prepend > .btn, .dataTables_wrapper .dataTables_paginate .input-group-prepend > .paginate_button,
+.input-group-append > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-append > .paginate_button,
+.input-group-btn > .btn,
+.dataTables_wrapper .dataTables_paginate .input-group-btn > .paginate_button {
   height: 100%;
   border-color: rgba(0, 40, 100, 0.12);
 }
 
-.input required = "required"-group-prepend > .input required = "required"-group-text {
+.input-group-prepend > .input-group-text {
   border-left: 0;
 }
 
-.input required = "required"-group-append > .input required = "required"-group-text {
+.input-group-append > .input-group-text {
   border-right: 0;
 }
 
 /**
-Icon input required = "required"
+Icon input
  */
-.input required = "required"-icon {
+.input-icon {
   position: relative;
 }
 
-.input required = "required"-icon .form-control:not(:last-child), .input required = "required"-icon .dataTables_wrapper .dataTables_length select:not(:last-child), .dataTables_wrapper .dataTables_length .input required = "required"-icon select:not(:last-child), .input required = "required"-icon .dataTables_wrapper .dataTables_filter input required = "required":not(:last-child), .dataTables_wrapper .dataTables_filter .input required = "required"-icon input required = "required":not(:last-child) {
+.input-icon .form-control:not(:last-child), .input-icon .dataTables_wrapper .dataTables_length select:not(:last-child), .dataTables_wrapper .dataTables_length .input-icon select:not(:last-child), .input-icon .dataTables_wrapper .dataTables_filter input:not(:last-child), .dataTables_wrapper .dataTables_filter .input-icon input:not(:last-child) {
   padding-left: 2.5rem;
 }
 
-.input required = "required"-icon .form-control:not(:first-child), .input required = "required"-icon .dataTables_wrapper .dataTables_length select:not(:first-child), .dataTables_wrapper .dataTables_length .input required = "required"-icon select:not(:first-child), .input required = "required"-icon .dataTables_wrapper .dataTables_filter input required = "required":not(:first-child), .dataTables_wrapper .dataTables_filter .input required = "required"-icon input required = "required":not(:first-child) {
+.input-icon .form-control:not(:first-child), .input-icon .dataTables_wrapper .dataTables_length select:not(:first-child), .dataTables_wrapper .dataTables_length .input-icon select:not(:first-child), .input-icon .dataTables_wrapper .dataTables_filter input:not(:first-child), .dataTables_wrapper .dataTables_filter .input-icon input:not(:first-child) {
   padding-right: 2.5rem;
 }
 
-.input required = "required"-icon-addon {
+.input-icon-addon {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -14237,7 +14237,7 @@ Icon input required = "required"
   pointer-events: none;
 }
 
-.input required = "required"-icon-addon:last-child {
+.input-icon-addon:last-child {
   right: auto;
   left: 0;
 }
@@ -15209,7 +15209,7 @@ a.tag-addon:hover {
   color: #495057;
 }
 
-.dataTables_wrapper .dataTables_filter input required = "required" {
+.dataTables_wrapper .dataTables_filter input {
   width: auto;
   margin-right: 0.2rem;
   display: inline-block;
@@ -15401,7 +15401,7 @@ a.tag-addon:hover {
   border-bottom-left-radius: 0;
 }
 
-.selectgroup-input required = "required" {
+.selectgroup-input {
   opacity: 0;
   position: absolute;
   z-index: -1;
@@ -15433,14 +15433,14 @@ a.tag-addon:hover {
   font-size: 1rem;
 }
 
-.selectgroup-input required = "required":checked + .selectgroup-button {
+.selectgroup-input:checked + .selectgroup-button {
   border-color: #467fcf;
   z-index: 1;
   color: #467fcf;
   background: #edf2fa;
 }
 
-.selectgroup-input required = "required":focus + .selectgroup-button {
+.selectgroup-input:focus + .selectgroup-button {
   border-color: #467fcf;
   z-index: 2;
   color: #467fcf;
@@ -15477,7 +15477,7 @@ a.tag-addon:hover {
   margin: 0;
 }
 
-.custom-switch-input required = "required" {
+.custom-switch-input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -15519,15 +15519,15 @@ a.tag-addon:hover {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
-.custom-switch-input required = "required":checked ~ .custom-switch-indicator {
+.custom-switch-input:checked ~ .custom-switch-indicator {
   background: #467fcf;
 }
 
-.custom-switch-input required = "required":checked ~ .custom-switch-indicator:before {
+.custom-switch-input:checked ~ .custom-switch-indicator:before {
   right: calc(1rem + 1px);
 }
 
-.custom-switch-input required = "required":focus ~ .custom-switch-indicator {
+.custom-switch-input:focus ~ .custom-switch-indicator {
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
   border-color: #467fcf;
 }
@@ -15538,7 +15538,7 @@ a.tag-addon:hover {
   transition: .3s color;
 }
 
-.custom-switch-input required = "required":checked ~ .custom-switch-description {
+.custom-switch-input:checked ~ .custom-switch-description {
   color: #495057;
 }
 
@@ -15548,7 +15548,7 @@ a.tag-addon:hover {
   cursor: pointer;
 }
 
-.imagecheck-input required = "required" {
+.imagecheck-input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -15561,12 +15561,12 @@ a.tag-addon:hover {
   position: relative;
 }
 
-.imagecheck-input required = "required":focus ~ .imagecheck-figure {
+.imagecheck-input:focus ~ .imagecheck-figure {
   border-color: #467fcf;
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
 
-.imagecheck-input required = "required":checked ~ .imagecheck-figure {
+.imagecheck-input:checked ~ .imagecheck-figure {
   border-color: rgba(0, 40, 100, 0.24);
 }
 
@@ -15591,7 +15591,7 @@ a.tag-addon:hover {
   transition: .3s opacity;
 }
 
-.imagecheck-input required = "required":checked ~ .imagecheck-figure:before {
+.imagecheck-input:checked ~ .imagecheck-figure:before {
   opacity: 1;
 }
 
@@ -15612,8 +15612,8 @@ a.tag-addon:hover {
 }
 
 .imagecheck:hover .imagecheck-image,
-.imagecheck-input required = "required":focus ~ .imagecheck-figure .imagecheck-image,
-.imagecheck-input required = "required":checked ~ .imagecheck-figure .imagecheck-image {
+.imagecheck-input:focus ~ .imagecheck-figure .imagecheck-image,
+.imagecheck-input:checked ~ .imagecheck-figure .imagecheck-image {
   opacity: 1;
 }
 
@@ -15626,8 +15626,8 @@ a.tag-addon:hover {
 }
 
 .imagecheck:hover .imagecheck-caption,
-.imagecheck-input required = "required":focus ~ .imagecheck-figure .imagecheck-caption,
-.imagecheck-input required = "required":checked ~ .imagecheck-figure .imagecheck-caption {
+.imagecheck-input:focus ~ .imagecheck-figure .imagecheck-caption,
+.imagecheck-input:checked ~ .imagecheck-figure .imagecheck-caption {
   color: #495057;
 }
 
@@ -15637,7 +15637,7 @@ a.tag-addon:hover {
   cursor: pointer;
 }
 
-.colorinput-input required = "required" {
+.colorinput-input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -15665,11 +15665,11 @@ a.tag-addon:hover {
   background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
 }
 
-.colorinput-input required = "required":checked ~ .colorinput-color:before {
+.colorinput-input:checked ~ .colorinput-color:before {
   opacity: 1;
 }
 
-.colorinput-input required = "required":focus ~ .colorinput-color {
+.colorinput-input:focus ~ .colorinput-color {
   border-color: #467fcf;
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
@@ -17459,7 +17459,7 @@ svg {
  *
  * @author Brian Reavis <brian@thirdroute.com>
  */
-.selectize-control.plugin-drag_drop.multi > .selectize-input required = "required" > div.ui-sortable-placeholder {
+.selectize-control.plugin-drag_drop.multi > .selectize-input > div.ui-sortable-placeholder {
   visibility: visible !important;
   background: #f2f2f2 !important;
   background: rgba(0, 0, 0, 0.06) !important;
@@ -17574,8 +17574,8 @@ svg {
 }
 
 .selectize-dropdown,
-.selectize-input required = "required",
-.selectize-input required = "required" input required = "required" {
+.selectize-input,
+.selectize-input input {
   color: #495057;
   font-family: inherit;
   font-size: 15px;
@@ -17583,14 +17583,14 @@ svg {
   -webkit-font-smoothing: inherit;
 }
 
-.selectize-input required = "required",
-.selectize-control.single .selectize-input required = "required".input required = "required"-active {
+.selectize-input,
+.selectize-control.single .selectize-input.input-active {
   background: #fff;
   cursor: text;
   display: inline-block;
 }
 
-.selectize-input required = "required" {
+.selectize-input {
   border: 1px solid rgba(0, 40, 100, 0.12);
   padding: 0.5625rem 0.75rem;
   display: inline-block;
@@ -17604,29 +17604,29 @@ svg {
   transition: .3s border-color, .3s box-shadow;
 }
 
-.selectize-control.multi .selectize-input required = "required".has-items {
+.selectize-control.multi .selectize-input.has-items {
   padding: 7px 7px 4px 0.75rem;
 }
 
-.selectize-input required = "required".full {
+.selectize-input.full {
   background-color: #fff;
 }
 
-.selectize-input required = "required".disabled,
-.selectize-input required = "required".disabled * {
+.selectize-input.disabled,
+.selectize-input.disabled * {
   cursor: default !important;
 }
 
-.selectize-input required = "required".focus {
+.selectize-input.focus {
   border-color: #467fcf;
   box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
 }
 
-.selectize-input required = "required".dropdown-active {
+.selectize-input.dropdown-active {
   border-radius: 3px 3px 0 0;
 }
 
-.selectize-input required = "required" > * {
+.selectize-input > * {
   vertical-align: baseline;
   display: -moz-inline-stack;
   display: inline-block;
@@ -17634,7 +17634,7 @@ svg {
   *display: inline;
 }
 
-.selectize-control.multi .selectize-input required = "required" > div {
+.selectize-control.multi .selectize-input > div {
   cursor: pointer;
   margin: 0 0 3px 3px;
   padding: 2px 6px;
@@ -17646,20 +17646,20 @@ svg {
   font-weight: 400;
 }
 
-.selectize-control.multi .selectize-input required = "required" > div.active {
+.selectize-control.multi .selectize-input > div.active {
   background: #e8e8e8;
   color: #303030;
   border: 0 solid #cacaca;
 }
 
-.selectize-control.multi .selectize-input required = "required".disabled > div,
-.selectize-control.multi .selectize-input required = "required".disabled > div.active {
+.selectize-control.multi .selectize-input.disabled > div,
+.selectize-control.multi .selectize-input.disabled > div.active {
   color: #7d7d7d;
   background: #fff;
   border: 0 solid #fff;
 }
 
-.selectize-input required = "required" > input required = "required" {
+.selectize-input > input {
   display: inline-block !important;
   padding: 0 !important;
   min-height: 0 !important;
@@ -17673,21 +17673,21 @@ svg {
   box-shadow: none !important;
 }
 
-.selectize-input required = "required" > input required = "required"::-ms-clear {
+.selectize-input > input::-ms-clear {
   display: none;
 }
 
-.selectize-input required = "required" > input required = "required":focus {
+.selectize-input > input:focus {
   outline: none !important;
 }
 
-.selectize-input required = "required"::after {
+.selectize-input::after {
   content: ' ';
   display: block;
   clear: right;
 }
 
-.selectize-input required = "required".dropdown-active::before {
+.selectize-input.dropdown-active::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -17756,17 +17756,17 @@ svg {
   -webkit-overflow-scrolling: touch;
 }
 
-.selectize-control.single .selectize-input required = "required",
-.selectize-control.single .selectize-input required = "required" input required = "required" {
+.selectize-control.single .selectize-input,
+.selectize-control.single .selectize-input input {
   cursor: pointer;
 }
 
-.selectize-control.single .selectize-input required = "required".input required = "required"-active,
-.selectize-control.single .selectize-input required = "required".input required = "required"-active input required = "required" {
+.selectize-control.single .selectize-input.input-active,
+.selectize-control.single .selectize-input.input-active input {
   cursor: text;
 }
 
-.selectize-control.single .selectize-input required = "required":after {
+.selectize-control.single .selectize-input:after {
   content: '';
   display: block;
   position: absolute;
@@ -17779,18 +17779,18 @@ svg {
   transition: .3s transform;
 }
 
-.selectize-control.single .selectize-input required = "required".dropdown-active:after {
+.selectize-control.single .selectize-input.dropdown-active:after {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
-.selectize-control .selectize-input required = "required".disabled {
+.selectize-control .selectize-input.disabled {
   opacity: 0.5;
   background-color: #fafafa;
 }
 
 .selectize-dropdown .image,
-.selectize-input required = "required" .image {
+.selectize-input .image {
   width: 1.25rem;
   height: 1.25rem;
   background-size: contain;
@@ -17806,13 +17806,13 @@ svg {
 }
 
 .selectize-dropdown .image img,
-.selectize-input required = "required" .image img {
+.selectize-input .image img {
   max-width: 100%;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
 
-.selectize-input required = "required" .image {
+.selectize-input .image {
   width: 1.5rem;
   height: 1.5rem;
   margin: -3px -5px -3px .75rem;

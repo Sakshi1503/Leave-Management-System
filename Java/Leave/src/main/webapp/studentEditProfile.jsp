@@ -74,14 +74,14 @@
 												%>
 												<div class="form-group">
 													<label class="form-label">Enrollment No</label>
-													<input required = "required" type="username" class="form-control" id="exampleInputEmail1"
+													<input type="username" class="form-control" id="exampleInputEmail1"
 														value="<%=rs.getString("studentEno")%>"
 														aria-describedby="emailHelp" placeholder="Enter Enrollmemt No"
 														name="studentEno" disabled="">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input required = "required" type="username" class="form-control" id="exampleInputEmail1"
+													<input type="username" class="form-control" id="exampleInputEmail1"
 														value="<%=rs.getString("studentName")%>"
 														aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name" name="studentName">
@@ -90,47 +90,47 @@
 													<label class="form-label">Semester:</label>
 													
 													<label class="selectgroup-item">
-													<input required = "required" type="radio" name="studentSem" value="<%=rs.getString("studentSem")%>"
-															class="selectgroup-input required = "required"" checked="">
+													<input type="radio" name="studentSem" value="<%=rs.getString("studentSem")%>"
+															class="selectgroup-input" checked="">
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="1"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="1"
+															class="selectgroup-input">
 														<span class="selectgroup-button">I</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="2"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="2"
+															class="selectgroup-input">
 														<span class="selectgroup-button">II</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="3"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="3"
+															class="selectgroup-input">
 														<span class="selectgroup-button">III</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="4"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="4"
+															class="selectgroup-input">
 														<span class="selectgroup-button">IV</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="5"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="5"
+															class="selectgroup-input">
 														<span class="selectgroup-button">V</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="6"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="6"
+															class="selectgroup-input">
 														<span class="selectgroup-button">VI</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="7"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="7"
+															class="selectgroup-input">
 														<span class="selectgroup-button">VII</span>
 													</label>
 													<label class="selectgroup-item">
-														<input required = "required" type="radio" name="studentSem" value="8"
-															class="selectgroup-input required = "required"">
+														<input type="radio" name="studentSem" value="8"
+															class="selectgroup-input">
 														<span class="selectgroup-button">VIII</span>
 													</label>
 												</div>
@@ -143,14 +143,14 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">City</label>
-													<input required = "required" type="city" class="form-control" id="exampleInputCity"
+													<input type="city" class="form-control" id="exampleInputCity"
 														value="<%=rs.getString("studentCity")%>"
 														aria-describedby="cityHelp" placeholder="Enter City"
 														name="studentCity">
 												</div>
 												<div class="form-group">
 													<label class="form-label">State</label>
-													<input required = "required" type="state" class="form-control" id="exampleInputState"
+													<input type="state" class="form-control" id="exampleInputState"
 														value="<%=rs.getString("studentState")%>"
 														aria-describedby="stateHelp" placeholder="Enter State"
 														name="studentState">
@@ -159,24 +159,24 @@
 													<label class="form-label">Are you Hosteller?</label>
 													<div class="selectgroup w-100">
 													<label class="selectgroup-item">
-															<input required = "required" type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("studentHosteller")%>"
-																class="selectgroup-input required = "required"" checked="">
+															<input type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("studentHosteller")%>"
+																class="selectgroup-input" checked="">
 														</label>
 														<label class="selectgroup-item">
-															<input required = "required" type="radio" name="hosteller" id="hosteller"
-																value="yes" class="selectgroup-input required = "required"">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="yes" class="selectgroup-input">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input required = "required" type="radio" name="hosteller" id="hosteller"
-																value="no" class="selectgroup-input required = "required"">
+															<input type="radio" name="hosteller" id="hosteller"
+																value="no" class="selectgroup-input">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email Address</label>
-													<input required = "required" type="email" class="form-control" id="exampleInputEmail1"
+													<input type="email" class="form-control" id="exampleInputEmail1"
 														value="<%=rs.getString("studentEmail")%>"
 														aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -184,21 +184,21 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Student's Contact No</label>
-													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile"
+													<input type="mobileno" class="form-control" id="exampleInputMobile"
 														value="<%=rs.getString("studentContact")%>"
 														aria-describedby="MobileNo" pattern="[0-9]{10}"
 														placeholder="Student's No" name="studentContact">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Father's Contact No</label>
-													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile1"
+													<input type="mobileno" class="form-control" id="exampleInputMobile1"
 														value="<%=rs.getString("studentFatherContact")%>"
 														aria-describedby="MobileNo" pattern="[0-9]{10}"
 														placeholder="Father's No" name="studentFatherContact">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Mother's Contact No</label>
-													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile2"
+													<input type="mobileno" class="form-control" id="exampleInputMobile2"
 														value="<%=rs.getString("studentMotherContact")%>"
 														aria-describedby="MobileNo" pattern="[0-9]{10}"
 														placeholder="Mother's No" name="studentMotherContact">
@@ -231,7 +231,7 @@
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function () {
-							$('input required = "required"[type="radio"]').click(function () {
+							$('input[type="radio"]').click(function () {
 								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 									$('#hostel').show();
 								}

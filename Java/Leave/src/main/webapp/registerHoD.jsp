@@ -32,19 +32,19 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input required = "required" type="text" name="hodName" class="form-control"
+									<input type="text" name="hodName" class="form-control"
 									pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="hodGender" value="female"
-												class="selectgroup-input required = "required"">
+											<input type="radio" name="hodGender" value="female"
+												class="selectgroup-input">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input required = "required" type="radio" name="hodGender" value="male" class="selectgroup-input required = "required"">
+											<input type="radio" name="hodGender" value="male" class="selectgroup-input">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -66,22 +66,22 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input required = "required" type="text" name="hodEmail" class="form-control"
+									<input type="text" name="hodEmail" class="form-control"
 									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input required = "required" type="text" name="hodContact" class="form-control"
+									<input type="text" name="hodContact" class="form-control"
 										pattern="[0-9]{10}" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input required = "required" type="password" name="hodPassword" class="form-control" id="Password"
+									<input type="password" name="hodPassword" class="form-control" id="Password"
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input required = "required" type="password" name="hodConfirmPassword" class="form-control"
+									<input type="password" name="hodConfirmPassword" class="form-control"
 										id="ConfirmPassword" placeholder="Enter Confirm Password"
 										onkeyup="checkPass(); return false;">
 								</div>

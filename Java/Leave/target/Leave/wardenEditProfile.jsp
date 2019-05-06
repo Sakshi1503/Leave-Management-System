@@ -88,17 +88,17 @@
 												%>
                                                 <div class="form-group">
                                                     <label class="form-label">Name</label>
-                                                    <input required = "required" type="username" class="form-control" id="exampleInputname" value="<%=rs.getString("wardenName")%>"
+                                                    <input type="username" class="form-control" id="exampleInputname" value="<%=rs.getString("wardenName")%>"
                                                         aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Contact No</label>
-                                                    <input required = "required" type="mobileno" class="form-control" id="exampleInputMobile" value="<%=rs.getString("wardenContact")%>"
+                                                    <input type="mobileno" class="form-control" id="exampleInputMobile" value="<%=rs.getString("wardenContact")%>"
                                                         aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Mobile No">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Email ID</label>
-                                                    <input required = "required" type="email" class="form-control" id="exampleInputEmail1" value="<%=rs.getString("wardenEmail")%>"
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" value="<%=rs.getString("wardenEmail")%>"
                                                         aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
                                                 </div>
                                                                                       
@@ -129,7 +129,7 @@
                     </div>
                     <script type="text/javascript">
                         $(document).ready(function () {
-                            $('input required = "required"[type="radio"]').click(function () {
+                            $('input[type="radio"]').click(function () {
                                 if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
                                     $('#hostel').show();
                                 }

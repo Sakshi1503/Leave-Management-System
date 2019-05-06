@@ -92,14 +92,14 @@
 												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input required = "required" type="username" name="username" class="form-control" value="<%=rs.getString("hodName")%>"
+													<input type="username" name="username" class="form-control" value="<%=rs.getString("hodName")%>"
 														id="exampleUsername1" aria-describedby="nameHelp"
 														pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input required = "required" type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("hodContact")%>"
+													<input type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("hodContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo"
 														pattern="[0-9]{10}"
 														placeholder="Enter Mobile No">
@@ -107,14 +107,14 @@
 
 												<div class="form-group">
 													<label class="form-label">Email</label>
-													<input required = "required" type="email" name="email" class="form-control" value="<%=rs.getString("hodEmail")%>"
+													<input type="email" name="email" class="form-control" value="<%=rs.getString("hodEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input required = "required" type="branch" name="branchID" class="form-control" value="<%=rs.getString("hodBranch")%>"
+													<input type="branch" name="branchID" class="form-control" value="<%=rs.getString("hodBranch")%>"
 														id="exampleInputbranch" aria-describedby="branchHelp"
 														placeholder="Enter branch">
 												</div>

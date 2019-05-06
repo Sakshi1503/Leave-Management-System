@@ -75,24 +75,24 @@
                     <label class="form-label"><h4>SELECT ROLE</h4></label>
                     <div class="selectgroup w-100">
                         <label class="selectgroup-item">
-                            <input type="radio" name="studentGender" value="female" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="hod" class="selectgroup-input">
                             <span class="selectgroup-button">Head of Department</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="studentGender" value="male" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="faculty" class="selectgroup-input">
                             <span class="selectgroup-button">Faculty</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="studentGender" value="male" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="warden" class="selectgroup-input">
                             <span class="selectgroup-button">Warden</span>
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="studentGender" value="male" class="selectgroup-input">
+                            <input type="radio" id="reportRole" name="reportRole" value="student" class="selectgroup-input">
                             <span class="selectgroup-button">Student</span>
                         </label>
                     </div>
                 </div>
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="hodTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -116,7 +116,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="facultyTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -139,7 +139,7 @@
                             <td>d</td>
                         </tr>
                     </tbody>
-                </table><table class="table uk-text-center border mt-2 shadow-sm rounded">
+                </table><table class="table uk-text-center border mt-2 shadow-sm rounded" id="wardenTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -163,7 +163,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table uk-text-center border mt-2 shadow-sm rounded">
+                <table class="table uk-text-center border mt-2 shadow-sm rounded" id="studentTable" style="display: none;">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Role</th>
@@ -193,6 +193,40 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+                $('input[type="radio"]').click(function () {
+                    if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'hod') {
+                        $('#hodTable').show();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').hide();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'faculty') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').show();
+                        $('#wardenTable').hide();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'warden') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').show();
+                        $('#studentTable').hide();
+                    }
+                    else if ($(this).attr('id') == 'reportRole' && $(this).attr('value') == 'student') {
+                        $('#hodTable').hide();
+                        $('#facultyTable').hide();
+                        $('#wardenTable').hide();
+                        $('#studentTable').show();
+                    }
+                    else { }
+                });
+            });
+    
+    </script>
+
 </body>
 
 </html>
