@@ -32,25 +32,25 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Name</label>
-									<input type="text" name="studentName" class="form-control" id="name"
+									<input required = "required" type="text" name="studentName" class="form-control" id="name"
 										aria-describedby="emailHelp" pattern="[a-zA-Z][a-zA-Z\s]*" placeholder="Enter Name">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Enrollment No</label>
-									<input type="text" name="studentEno" class="form-control" id="enrollmentno"
+									<input required = "required" type="text" name="studentEno" class="form-control" id="enrollmentno"
 										aria-describedby="emailHelp" pattern="[0-9]{12}" placeholder="Enter Enrollmemt No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Gender</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="studentGender" value="female"
-												class="selectgroup-input">
+											<input required = "required" type="radio" name="studentGender" value="female"
+												class="selectgroup-input required = "required"">
 											<span class="selectgroup-button">Female</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="studentGender" value="male"
-												class="selectgroup-input">
+											<input required = "required" type="radio" name="studentGender" value="male"
+												class="selectgroup-input required = "required"">
 											<span class="selectgroup-button">Male</span>
 										</label>
 									</div>
@@ -58,35 +58,35 @@
 								<div class="form-group" id="teachin" style="margin-bottom: 8px;">
 									<label class="form-label">Semester:</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="1" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="1" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">I</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="2" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="2" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">II</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="3" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="3" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">III</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="4" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="4" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">IV</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="5" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="5" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">V</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="6" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="6" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">VI</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="7" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="7" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">VII</span>
 									</label>
 									<label class="selectgroup-item">
-										<input type="radio" name="studentSem" value="8" class="selectgroup-input">
+										<input required = "required" type="radio" name="studentSem" value="8" class="selectgroup-input required = "required"">
 										<span class="selectgroup-button">VIII</span>
 									</label>
 								</div>
@@ -97,25 +97,25 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">City</label>
-									<input type="text" name="studentCity" class="form-control" id="city"
+									<input required = "required" required="required" "text" name="studentCity" class="form-control" id="city"
 										aria-describedby="cityHelp" placeholder="Enter City">
 								</div>
 								<div class="form-group">
 									<label class="form-label">State</label>
-									<input type="text" name="studentState" class="form-control" id="state"
+									<input required = "required" type="text" name="studentState" class="form-control" id="state"
 										aria-describedby="stateHelp" placeholder="Enter State">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Are you Hosteller?</label>
 									<div class="selectgroup w-100">
 										<label class="selectgroup-item">
-											<input type="radio" name="studentHosteller" id="hosteller" value="yes"
-												class="selectgroup-input">
+											<input required = "required" type="radio" name="studentHosteller" id="hosteller" value="yes"
+												class="selectgroup-input required = "required"">
 											<span class="selectgroup-button">Yes</span>
 										</label>
 										<label class="selectgroup-item">
-											<input type="radio" name="studentHosteller" id="hosteller" value="No"
-												class="selectgroup-input">
+											<input required = "required" type="radio" name="studentHosteller" id="hosteller" value="No"
+												class="selectgroup-input required = "required"">
 											<span class="selectgroup-button">No</span>
 										</label>
 									</div>
@@ -130,34 +130,34 @@
 								</div>
 								<div class="form-group">
 									<label class="form-label">Email Address</label>
-									<input type="text" name="studentEmail" class="form-control" id="email"
+									<input required = "required" type="text" name="studentEmail" class="form-control" id="email"
 										aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mobile No</label>
-									<input type="text" name="studentContact" class="form-control" id="mobile"
+									<input required = "required" type="text" name="studentContact" class="form-control" id="mobile"
 										aria-describedby="MobileNo" pattern="[0-9]{10}" placeholder="Enter Mobile No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Father's Contact No.</label>
-									<input type="text" name="studentFatherContact" class="form-control"
+									<input required = "required" type="text" name="studentFatherContact" class="form-control"
 										id="fathercontact" pattern="[0-9]{10}" aria-describedby="MobileNo"
 										placeholder="Enter Father's Contact No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Mother's Contact No.</label>
-									<input type="text" name="studentMotherContact" class="form-control"
+									<input required = "required" type="text" name="studentMotherContact" class="form-control"
 										id="mothercontact" pattern="[0-9]{10}" aria-describedby="MobileNo"
 										placeholder="Enter Mother's Contact No">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Password</label>
-									<input type="password" name="studentPassword" class="form-control" id="Password"
+									<input required = "required" type="password" name="studentPassword" class="form-control" id="Password"
 										placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="checkPass(); return false;">
 								</div>
 								<div class="form-group">
 									<label class="form-label">Confirm Password</label>
-									<input type="password" name="studentPasswordCheck" class="form-control"
+									<input required = "required" type="password" name="studentPasswordCheck" class="form-control"
 										id="ConfirmPassword" placeholder="Enter Confirm Password"
 										onkeyup="checkPass(); return false;">
 								</div>
@@ -210,7 +210,7 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$('input[type="radio"]').click(function () {
+			$('input required = "required"[type="radio"]').click(function () {
 				if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 					$('#hostel').show();
 				}

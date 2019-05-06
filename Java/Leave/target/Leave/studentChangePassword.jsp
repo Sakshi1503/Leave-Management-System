@@ -61,18 +61,18 @@
 											</div>
 											<div class="form-group">
 												<label class="form-label">Old Password</label>
-												<input type="password" name="studentPassword" class="form-control"
+												<input required = "required" type="password" name="studentPassword" class="form-control"
 													id="oldPassword" placeholder="Enter Old Password">
 											</div>
 											<div class="form-group">
 												<label class="form-label">New Password</label>
-												<input type="password" name="studentNewPassword" class="form-control"
+												<input required = "required" type="password" name="studentNewPassword" class="form-control"
 													id="exampleInputPassword1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter New Password"
 													onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-group">
 												<label class="form-label">Confirm New Password</label>
-												<input type="password" name="studentConfirmPassword"
+												<input required = "required" type="password" name="studentConfirmPassword"
 													class="form-control" id="exampleInputPassword2"
 													placeholder="Confirm New Password"
 													onkeyup="checkPass(); return false;">

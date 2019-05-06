@@ -69,12 +69,12 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+													<input required = "required" type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 													 placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Enrollment No</label>
-													<input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+													<input required = "required" type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 													 placeholder="Enter Enrollmemt No" disabled="">
 												</div>
 												<div class="form-group">
@@ -84,21 +84,21 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">City</label>
-													<input type="city" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
+													<input required = "required" type="city" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
 												</div>
 												<div class="form-group">
 													<label class="form-label">State</label>
-													<input type="state" class="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter State">
+													<input required = "required" type="state" class="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter State">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Are you Hosteller?</label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
@@ -113,21 +113,21 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email Address</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+													<input required = "required" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Student's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
+													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
 													 placeholder="Student's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Father's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile1" aria-describedby="MobileNo"
+													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile1" aria-describedby="MobileNo"
 													 placeholder="Father's No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Mother's Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile2" aria-describedby="MobileNo"
+													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile2" aria-describedby="MobileNo"
 													 placeholder="Mother's No">
 												</div>
 												<div class="form-footer">
@@ -144,7 +144,7 @@
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function () {
-							$('input[type="radio"]').click(function () {
+							$('input required = "required"[type="radio"]').click(function () {
 								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 									$('#hostel').show();
 								}

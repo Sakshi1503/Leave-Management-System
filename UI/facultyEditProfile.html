@@ -81,36 +81,36 @@
 												</div>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" class="form-control" id="exampleInputname" aria-describedby="nameHelp" placeholder="Enter Name">
+													<input required = "required" type="username" class="form-control" id="exampleInputname" aria-describedby="nameHelp" placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
+													<input required = "required" type="mobileno" class="form-control" id="exampleInputMobile" aria-describedby="MobileNo"
 													 placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+													<input required = "required" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input type="branch" class="form-control" id="exampleInputbranch" aria-describedby="branchHelp"
+													<input required = "required" type="branch" class="form-control" id="exampleInputbranch" aria-describedby="branchHelp"
 													 placeholder="Enter branch">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
+													<input required = "required" type="position" class="form-control" id="exampleInputposition" aria-describedby="positionHelp"
 													 placeholder="Enter Current Position">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Is appointed as a hostel incharge?</label>
 													<div class="selectgroup w-100">
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller" value="Yes" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller" value="No" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
@@ -140,7 +140,7 @@
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function () {
-							$('input[type="radio"]').click(function () {
+							$('input required = "required"[type="radio"]').click(function () {
 								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 									$('#hostel').show();
 								}

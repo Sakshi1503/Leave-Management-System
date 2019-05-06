@@ -265,7 +265,7 @@
 												<div class="form-group col-sm" style="padding: 0px;">
 													<div class="form-label">Upload Proof Document</div>
 													<div class="custom-file">
-														<input type="file" class="custom-file-input" name="document"
+														<input required = "required" type="file" class="custom-file-input required = "required"" name="document"
 															pattern="/^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.jpeg|.JPEG|.gif|.GIF|.png|.PNG|.JPG|.jpg|.bitmap|.BITMAP|.pdf|.PDF)$/">
 														<label class="custom-file-label">Choose file</label>
 													</div>

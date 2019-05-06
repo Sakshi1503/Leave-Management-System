@@ -78,18 +78,18 @@
 											</div>
 											<div class="form-group">
 												<label class="form-label">Old Password</label>
-												<input type="password" name="hodPassword" class="form-control"
+												<input required = "required" type="password" name="hodPassword" class="form-control"
 													id="oldPassword" placeholder="Enter Old Password">
 											</div>
 											<div class="form-group">
 												<label class="form-label">New Password</label>
-												<input type="password" name="hodNewPassword" class="form-control"
+												<input required = "required" type="password" name="hodNewPassword" class="form-control"
 													id="exampleInputPassword1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter New Password"
 													onkeyup="checkPass(); return false;">
 											</div>
 											<div class="form-group">
 												<label class="form-label">Confirm New Password</label>
-												<input type="password" name="hodConfirmPassword" class="form-control"
+												<input required = "required" type="password" name="hodConfirmPassword" class="form-control"
 													id="exampleInputPassword2" placeholder="Confirm New Password"
 													onkeyup="checkPass(); return false;">
 											</div>

@@ -92,33 +92,33 @@
 												%>
 												<div class="form-group">
 													<label class="form-label">Name</label>
-													<input type="username" name="username" class="form-control" value="<%=rs.getString("facultyName")%>"
+													<input required = "required" type="username" name="username" class="form-control" value="<%=rs.getString("facultyName")%>"
 														id="exampleInputname" aria-describedby="nameHelp" pattern="[a-zA-Z][a-zA-Z\s]*"
 														placeholder="Enter Name">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Contact No</label>
-													<input type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("facultyContact")%>"
+													<input required = "required" type="mobileno" name="contactNo" class="form-control" value="<%=rs.getString("facultyContact")%>"
 														id="exampleInputMobile" aria-describedby="MobileNo"
 														pattern="[0-9]{10}"
 														placeholder="Mobile No">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Email ID</label>
-													<input type="email" name="email" class="form-control" value="<%=rs.getString("facultyEmail")%>"
+													<input required = "required" type="email" name="email" class="form-control" value="<%=rs.getString("facultyEmail")%>"
 														id="exampleInputEmail1" aria-describedby="emailHelp"
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 														placeholder="Enter Email">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Branch ID</label>
-													<input type="branch" name="branchID" class="form-control" value="<%=rs.getString("facultyBranch")%>"
+													<input required = "required" type="branch" name="branchID" class="form-control" value="<%=rs.getString("facultyBranch")%>"
 														id="exampleInputbranch" aria-describedby="branchHelp"
 														placeholder="Enter branch">
 												</div>
 												<div class="form-group">
 													<label class="form-label">Designation</label>
-													<input type="position" name="designation" class="form-control" value="<%=rs.getString("facultyPosition")%>"
+													<input required = "required" type="position" name="designation" class="form-control" value="<%=rs.getString("facultyPosition")%>"
 														id="exampleInputposition" aria-describedby="positionHelp"
 														placeholder="Enter Current Position">
 												</div>
@@ -126,17 +126,17 @@
 													<label class="form-label">Is appointed as a hostel incharge?</label>
 													<div class="selectgroup w-100">
 													<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("isHostelIncharge")%>"
-																 class="selectgroup-input" checked="">
+															<input required = "required" type="radio" name="hosteller" id="hosteller" value="<%=rs.getString("isHostelIncharge")%>"
+																 class="selectgroup-input required = "required"" checked="">
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller"
-																value="yes" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller"
+																value="yes" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">Yes</span>
 														</label>
 														<label class="selectgroup-item">
-															<input type="radio" name="hosteller" id="hosteller"
-																value="No" class="selectgroup-input">
+															<input required = "required" type="radio" name="hosteller" id="hosteller"
+																value="No" class="selectgroup-input required = "required"">
 															<span class="selectgroup-button">No</span>
 														</label>
 													</div>
@@ -169,7 +169,7 @@
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function () {
-							$('input[type="radio"]').click(function () {
+							$('input required = "required"[type="radio"]').click(function () {
 								if ($(this).attr('id') == 'hosteller' && $(this).attr('value') == 'yes') {
 									$('#hostel').show();
 								}
