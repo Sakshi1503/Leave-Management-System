@@ -83,7 +83,7 @@
 									Approve Leave</a>
 							</li>
 							<li class="nav-item">
-								<a href="hodLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
+								<a href="facultyLeaveRequests.jsp" class="nav-link"><i class="fe fe-check-circle"></i>
 									Your Leaves</a>
 							</li>
 							<li class="nav-item">
@@ -356,17 +356,12 @@
 												}
 											
 												if (request.getParameter("facultyApplyLeave") != null) {
-												if (con.CheckData(
-												"select * from leave_record where appID='" + appID + "' and appRole='faculty' and leaveApproved='no' and leaveRejected='no'")) {
-												out.println("<script>alert('You have already applied for leave');</script>");
-												}
 												
-												else {
 												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'faculty','"+request.getParameter("facultyReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
 												else
 												out.println("<script>alert('Record was not inserted......');</script>");
-												}
+												
 												}
 												} catch (Exception e) {
 												//out.println(e);

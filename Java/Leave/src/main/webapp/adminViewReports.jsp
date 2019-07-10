@@ -104,7 +104,7 @@
 					ResultSetMetaData mtdt=null;
 			        con=new Connect();
 					
-                    rs = con.SelectData("select hodID, hodName, hodContact, count(appID) from hod_master left join leave_record on hodID = appID where appRole='hod' and isApprovedHod='yes' group by hodID order by hodID;");
+                    rs = con.SelectData("select hodID, hodName, hodContact, count(appID) from hod_master left join leave_record on hodID = appID where appRole='hod' and isApprovedHod='yes' and leaveApproved='yes' group by hodID order by hodID;");
                     if(rs.next()){
                     rs.beforeFirst();
                     while(rs.next()){	
@@ -133,7 +133,7 @@
                     </thead>
                     <tbody>
                 <%
-                    rs = con.SelectData("select facultyID, facultyName, facultyContact, count(appID) from faculty_master left join leave_record on facultyID = appID where appRole='faculty' and isApprovedFaculty='yes' group by facultyID order by facultyID;");
+                    rs = con.SelectData("select facultyID, facultyName, facultyContact, count(appID) from faculty_master left join leave_record on facultyID = appID where appRole='faculty' and isApprovedFaculty='yes' and leaveApproved='yes' group by facultyID order by facultyID;");
                     if(rs.next()){
                     rs.beforeFirst();
                     while(rs.next()){	
@@ -162,7 +162,7 @@
                     </thead>
                     <tbody>
                 <%
-                    rs = con.SelectData("select wardenID, wardenName, wardenContact, count(appID) from warden_master left join leave_record on wardenID = appID where appRole='warden' and isApprovedWarden='yes' group by wardenID order by wardenID;");
+                    rs = con.SelectData("select wardenID, wardenName, wardenContact, count(appID) from warden_master left join leave_record on wardenID = appID where appRole='warden' and isApprovedWarden='yes' and leaveApproved='yes' group by wardenID order by wardenID;");
                     if(rs.next()){
                     rs.beforeFirst();
                     while(rs.next()){	
@@ -191,7 +191,7 @@
                     </thead>
                     <tbody>
                 <%
-                    rs = con.SelectData("select studentID, studentName, studentContact, count(appID) from student_master left join leave_record on studentID = appID where appRole='student' and isApprovedStudent='yes' group by studentID order by studentID;");
+                    rs = con.SelectData("select studentID, studentName, studentContact, count(appID) from student_master left join leave_record on studentID = appID where appRole='student' and isApprovedStudent='yes' and leaveApproved='yes' group by studentID order by studentID;");
                     if(rs.next()){
                     rs.beforeFirst();
                     while(rs.next()){	
@@ -259,4 +259,4 @@
 		response.sendRedirect("login.jsp");
 	}
 %>
-<%-- select hodID, hodName, hodContact, count(appID) from hod_master left join leave_record on hodID = appID where appRole='hod' and isApprovedHod='yes' group by hodID; --%>
+<%-- select hodID, hodName, hodContact, count(appID) from hod_master left join leave_record on hodID = appID where appRole='hod' and isApprovedHod='yes' and leaveApproved='yes' group by hodID; --%>

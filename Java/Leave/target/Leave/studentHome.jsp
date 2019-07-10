@@ -312,18 +312,13 @@
 												}
 											
 												if (request.getParameter("studentApplyLeave") != null) {
-												if (con.CheckData(
-												"select * from leave_record where appID='" + appID + "' and appRole='student' and leaveApproved='no' and leaveRejected='no'")) {
-												out.println("<script>alert('You have already applied for leave');</script>");
-												}
 												
-												else {
 												if (con.Ins_Upd_Del("insert into leave_record(appID,appRole,leaveReason,leaveFrom,leaveTo,leaveApproved,apptoID,apptoRole) VALUES("+appID+",'student','"+request.getParameter("studentReason")+"','"+request.getParameter("leaveFromYear")+"-"+request.getParameter("leaveFromMonth")+"-"+request.getParameter("leaveFromDay")+"','"+request.getParameter("leaveToYear")+"-"+request.getParameter("leaveToMonth")+"-"+request.getParameter("leaveToDay")+"','no',"+request.getParameter("applyTo")+",'hod');"))
 												out.println("<script>alert('Record inserted......');</script>");
 												else
 												out.println("<script>alert('Record was not inserted......');</script>");
 												}
-												}
+												
 												} catch (Exception e) {
 												out.println(e);
 												}
